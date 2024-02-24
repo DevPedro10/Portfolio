@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 const Header = () => {
     return (
         <header className=" flex h-16 w-3/4 items-center justify-between m-auto">
-            <div className="logo text-2xl">pdro.</div>
+            <div className="logo text-2xl">Natã</div>
             <nav>
                 <ul className="flex gap-4 items-center ">
                     <li><Button variant={"ghost"}>Work</Button></li>
