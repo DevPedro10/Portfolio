@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -15,9 +16,14 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      fontFamily: {
+        'leo': ['leo']
+      },
     },
     extend: {
       colors: {
+        darkPurple: "hsl(240, 8%, 9%)",
+        lightPurple: "#7F5AF0",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
