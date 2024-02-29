@@ -1,14 +1,13 @@
 import { Github, Linkedin } from 'lucide-react'
 
 import { Button } from '../ui/button';
-import './Main.css';
 const Main = () => {
     return (
-        <main>
+        <main className='w-3/5 mx-auto mt-40'>
             <div>
-                <p className='text-zinc-400 text-xl mb-3 ml-1'>I'm</p>
-                <h1 className='text-zinc-100 text-8xl mb-3'>Natã Pedro.</h1>
-                <h2 className='ml-2 text-zinc-200'>A full stack developer with solid experience in Java and React. Currently, I work at <span>Plusoft</span>. I focus on creating robust and intuitive solutions for our projects. My expertise lies in development both on the front-end and back-end. I'm committed to building efficient and scalable systems that deliver a superior experience to end user</h2>
+                <p className='text-zinc-400 text-xl mb-3 ml-1 font-bold'>HI, I'M NATÃ.</p>
+                <h1 className='text-zinc-100 text-7xl mb-3 font-leo font-semibold'>Crafting web solutions.</h1>
+                <h2 className='ml-2 text-zinc-200 text-3xl font-thin'>A Full Stack Developer specializing in TypeScript, React, and Java, with a focus on browser-based projects. Currently, I work at Plusoft.</h2>
 
                 <div className='flex items-center mt-8 ml-2 gap-3'>
                     <Button variant={"outline"} className='px-10 py-5'>Resume</Button>
