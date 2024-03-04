@@ -11,9 +11,9 @@ const Main = () => {
                 <h2 className='ml-2 text-zinc-200 text-3xl font-thin mt-6'>A Full Stack Developer specializing in TypeScript, React, and Java, with a focus on browser-based projects. Currently, I work at Plusoft.</h2>
 
                 <div className='flex items-center mt-8 ml-2 gap-3'>
-                    <Button variant={"outline"} className='px-10 py-5 text-zinc-50'>Resume</Button>
-                    <Button className="px-2 py-5" variant={'ghost'}><Github className="text-violet-500" /></Button>
-                    <Button className="px-2 py-5" variant={'ghost'}><Linkedin className="text-violet-500" /></Button>
+                    <Button variant={"outline"} className='px-10 py-5 text-zinc-50 hover:text-zinc-300'>Resume</Button>
+                    <Button className="px-2 py-5" variant={'link'}><Github className="text-violet-500" /></Button>
+                    <Button className="px-2 py-5" variant={'link'}><Linkedin className="text-violet-500" /></Button>
                 </div>
             </div>
 

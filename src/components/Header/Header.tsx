@@ -21,7 +21,7 @@ const Header = () => {
                 </ul>
             </nav>
 
-            <Button variant={"outline"}>Say Hi</Button>
+            <Button className="text-zinc-50 hover:text-zinc-300" variant={"outline"}>Say Hi</Button>
         </header>
     )
 }
