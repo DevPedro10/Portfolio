@@ -1,6 +1,9 @@
 // import { ModeToggle } from "../mode-toggle";
+import { Link } from "react-router-dom";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
+
+
 
 const Header = () => {
     return (
@@ -13,10 +16,10 @@ const Header = () => {
             </div>
             <nav>
                 <ul className="flex gap-6 items-center text-xl ">
-                    <li>Work</li>
-                    <li>Projects</li>
-                    <li>Articles</li>
-                    <li>About me</li>
+                    <Link to="/work">Work</Link>
+                    <Link to="/projects">Projects</Link>
+                    <Link to="/articles">Articles</Link>
+                    <Link to="/about">About me</Link>
                     {/* <ModeToggle /> */}
                 </ul>
             </nav>
