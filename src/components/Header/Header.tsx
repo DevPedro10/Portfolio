@@ -16,7 +16,7 @@ const Header = () => {
             </div>
             <nav>
                 <ul className="flex gap-6 items-center text-xl ">
-                    <Link to="/work">Work</Link>
+                    <Link to="/experience">Experience</Link>
                     <Link to="/projects">Projects</Link>
                     <Link to="/articles">Articles</Link>
                     <Link to="/about">About me</Link>
