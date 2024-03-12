@@ -9,19 +9,24 @@ const NameAvatar = tw.h1`text-xl font-semibold`;
 const NavBar = tw.nav``;
 const List = tw.ul`flex gap-6 items-center text-xl `;
 
+interface HeaderProps {
+    noPhoto?: boolean;
+}
 
-const Header = () => {
+const Header = ({ noPhoto }: HeaderProps) => {
     return (
         <Container>
             <AvatarContainer>
-                <Avatar>
-                    <AvatarImage src="https://github.com/DevPedro10.png" alt="Natã Profile" />
-                </Avatar>
+                {!noPhoto && (
+                    <Avatar>
+                        <AvatarImage src="https://github.com/DevPedro10.png" alt="Natã Profile" />
+                    </Avatar>
+                )}
                 <NameAvatar>Natã Pedro</NameAvatar>
             </AvatarContainer>
             <NavBar>
                 <List className="flex gap-6 items-center text-xl ">
-                    <Link to="/experience">Experience</Link>
+                    {/* <Link to="/experience">Experience</Link> */}
                     <Link to="/projects">Projects</Link>
                     <Link to="/articles">Articles</Link>
                     <Link to="/about">About me</Link>

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Projects from './components/Projects/Projects.tsx';
+import About from './components/About/About.tsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -11,10 +12,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/experience' element={<App />} />
+        {/* <Route path='/experience' element={<App />} /> */}
         <Route path='/projects' element={<Projects />} />
         <Route path='/articles' element={<App />} />
-        <Route path='/about' element={<App />} />
+        <Route path='/about' element={<About />} />
         <Route path='/contact' element={<App />} />
         
       </Routes>
