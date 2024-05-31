@@ -27,6 +27,7 @@ const Header = ({ noPhoto }: HeaderProps) => {
             <NavBar>
                 <List className="flex gap-6 items-center text-xl ">
                     {/* <Link to="/experience">Experience</Link> */}
+                    <Link to="/">Home</Link>
                     <Link to="/projects">Projects</Link>
                     <Link to="/articles">Articles</Link>
                     <Link to="/about">About me</Link>

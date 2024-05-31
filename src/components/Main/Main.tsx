@@ -2,7 +2,7 @@ import tw from 'tailwind-styled-components'
 import { Button } from '../ui/button';
 import { Github, Linkedin, Mouse } from 'lucide-react'
 
-const Container = tw.main`w-3/5 mx-auto mt-40`;
+const Container = tw.main`w-3/5 mx-auto mt-40 h-screen`;
 const HomeContainer = tw.div``;
 const Title = tw.h1`text-violet-500 text-xl mb-3 ml-1 font-bold`;
 const Subtitle = tw.h2`text-zinc-100 text-7xl mb-3 font-leo font-semibold`

@@ -1,13 +1,10 @@
 import tw from "tailwind-styled-components";
 import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
-
 type Tags = "Javascript" | "Typescript";
 
 interface ProjectProps {
     thumbnail: string;
-    keyWord?: string;
     title: string;
     description: string;
     tags: Tags[];
@@ -15,42 +12,44 @@ interface ProjectProps {
     liveDemoLink?: string; // Opcional enquanto estiver desenvolvendo.
 }
 
-const Container = tw.div`items-center rounded-lg max-w-max mx-auto transition duration-150 ease-in-out hover:shadow-sm hover:border-zinc-100 flex gap-5 text-zinc-50 p-5 mb-5 hover:bg-violet-400/5`;
-const Figure = tw.figure`mt-1 rounded-lg min-w-[20rem] max-w-[28rem]`;
-const Image = tw.img`rounded-lg blur-[1px] hover:blur-none`;
-const ProjectInfo = tw.div`mt-3 max-w-min relative`;
-const Keyword = tw.p`ml-3 uppercase text-violet-900 text-sm font-bold`;
-const Title = tw.h1`ml-3 mt-3 text-xl`;
-const Description = tw.h2`mt-2 text-zinc-400 rounded-md p-3 w-[26rem] right-20`;
-const TagsContainer = tw.div`flex items-center mt-5 justify-between`;
-const LinksContainer = tw.div`flex gap-3 ml-3`;
-const ButtonsContainer = tw.div``;
+const Container = tw.div`rounded-lg w-80 transition duration-150 ease-in-out hover:shadow-sm hover:border-zinc-100 text-zinc-50 mb-5`;
+const Figure = tw.figure`rounded-lg w-80`;
+const Image = tw.img`rounded-t-lg w-max`;
+const ProjectInfo = tw.div`mt-3 p-3`;
+const Title = tw.h1` mt-3 text-xl`;
+const Description = tw.h2`mt-2 text-zinc-400 rounded-md w-[26rem] right-20 w-full`;
+const TagsContainer = tw.div`flex items-center gap-3 w-max`;
+const LinksContainer = tw.div`mt-3`;
+const ButtonsContainer = tw.div`flex gap-3`;
+const Button = tw.button``;
+const styleIcons = `text-zinc-400 hover:text-violet-500`
 
-const ProjectCard = ({ title, thumbnail, description, tags, keyWord, liveDemoLink, repositoryLink }: ProjectProps) => {
+const ProjectCard = ({ title, thumbnail, description, tags, liveDemoLink, repositoryLink }: ProjectProps) => {
     return (
-        <Container>
+        <Container className="basis-80 hover:hover:translate-y-[-10px] hover:bg-zinc-950/15 ease-in-out duration-300 hover:shadow-xl">
             <Figure>
-                <Image src={thumbnail} alt="" />
+                <Image src={thumbnail} alt=""/>
             </Figure>
             <ProjectInfo>
-                <Keyword>{keyWord}</Keyword>
+                <TagsContainer>
+                    {tags.map((tag) => (
+                        <Badge variant="default" className="text-xs font-medium">{tag}</Badge>
+                    ))}
+                </TagsContainer>
                 <Title >{title}</Title>
                 <Description>{description}</Description>
-                <TagsContainer>
-                    <LinksContainer>
-                        {tags.map((tag) => (
-                            <Badge variant="default" className="text-sm">{tag}</Badge>
-                        ))}
-                    </LinksContainer>
+
+                <LinksContainer>
                     <ButtonsContainer>
-                        <Button variant={"link"}>
-                            <a href={repositoryLink} target="_blank" rel="noopener noreferrer"><Github className="text-zinc-400" /></a>
+                        <Button>
+                            <a href={repositoryLink} target="_blank" rel="noopener noreferrer"><Github className={styleIcons} /></a>
                         </Button>
-                        <Button variant={"link"}>
-                            <a href={liveDemoLink} target="_blank" rel="noopener noreferrer"><ExternalLink className="text-zinc-400" /></a>
+                        <Button>
+                            <a href={liveDemoLink} target="_blank" rel="noopener noreferrer"><ExternalLink className={styleIcons} /></a>
                         </Button>
                     </ButtonsContainer>
-                </TagsContainer>
+                </LinksContainer>
+
             </ProjectInfo>
         </Container>
     )

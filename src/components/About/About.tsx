@@ -1,5 +1,6 @@
 import tw from "tailwind-styled-components";
 import Header from "../Header/Header";
+import Message from "../Message/Message";
 
 
 const MainSection = tw.section``;
@@ -29,6 +30,7 @@ const About = () => {
                     </ContainerTexts>
                 </div>
             </MainSection>
+            <Message />
         </>
     )
 }
