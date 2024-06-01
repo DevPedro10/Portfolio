@@ -26,7 +26,7 @@ const styleIcons = `text-zinc-400 hover:text-violet-500`
 
 const ProjectCard = ({ title, thumbnail, description, tags, liveDemoLink, repositoryLink }: ProjectProps) => {
     return (
-        <Container className="basis-80 hover:hover:translate-y-[-10px] hover:bg-zinc-950/15 ease-in-out duration-300 hover:shadow-xl">
+        <Container className="backdrop-blur-sm basis-80 hover:hover:translate-y-[-10px] hover:bg-zinc-950/15 ease-in-out duration-300 hover:shadow-xl">
             <Figure>
                 <Image src={thumbnail} alt=""/>
             </Figure>

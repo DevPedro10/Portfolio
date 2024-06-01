@@ -1,8 +1,9 @@
 import tw from 'tailwind-styled-components'
 import { Button } from '../ui/button';
 import { Github, Linkedin, Mouse } from 'lucide-react'
+import Header from '../Header/Header';
 
-const Container = tw.main`w-3/5 mx-auto mt-40 h-screen`;
+const Container = tw.main`w-3/5 mx-auto mt-40`;
 const HomeContainer = tw.div``;
 const Title = tw.h1`text-violet-500 text-xl mb-3 ml-1 font-bold`;
 const Subtitle = tw.h2`text-zinc-100 text-7xl mb-3 font-leo font-semibold`
@@ -17,22 +18,25 @@ const MouseIcon = tw(Mouse)`mx-auto w-[32px] h-[32px]`;
 const MouseText = tw.p`text-center mt-2 font-bold`;
 const Main = () => {
     return (
-        <Container>
-            <HomeContainer>
-                <Title>HI, I'M NATÃ.</Title>
-                <Subtitle>Crafting web solutions.</Subtitle>
-                <Description>A Full Stack Developer specializing in TypeScript, React, and Java, with a focus on browser-based projects. Currently, I work at Plusoft.</Description>
-                <SocialContainer>
-                    <ResumeButton variant={"outline"}>Resume</ResumeButton>
-                    <SocialButton variant={'link'}><GithubButton /></SocialButton>
-                    <SocialButton variant={'link'}><LinkedinButton /></SocialButton>
-                </SocialContainer>
-            </HomeContainer>
-            <Scroll>
-                <MouseIcon />
-                <MouseText>Scroll</MouseText>
-            </Scroll>
-        </Container>
+        <div className='h-screen'>
+            <Header />
+            <Container>
+                <HomeContainer>
+                    <Title>HI, I'M NATÃ.</Title>
+                    <Subtitle>Crafting web solutions.</Subtitle>
+                    <Description>A Full Stack Developer specializing in TypeScript, React, and Java, with a focus on browser-based projects. Currently, I work at Plusoft.</Description>
+                    <SocialContainer>
+                        <ResumeButton variant={"outline"}>Resume</ResumeButton>
+                        <SocialButton variant={'link'}><GithubButton /></SocialButton>
+                        <SocialButton variant={'link'}><LinkedinButton /></SocialButton>
+                    </SocialContainer>
+                </HomeContainer>
+                <Scroll>
+                    <MouseIcon />
+                    <MouseText>Scroll</MouseText>
+                </Scroll>
+            </Container>
+        </div>
     )
 }
 export default Main;
