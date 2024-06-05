@@ -3,8 +3,12 @@ import { Button } from '../ui/button';
 import { Github, Linkedin, Mouse } from 'lucide-react'
 import Header from '../Header/Header';
 
-const Container = tw.main`w-3/5 mx-auto mt-40`;
-const HomeContainer = tw.div``;
+interface MainProps {
+    extendsClassName: string;
+}
+
+const Container = tw.main`w-3/5 mx-auto`;
+const HomeContainer = tw.div`mt-40`;
 const Title = tw.h1`text-violet-500 text-xl mb-3 ml-1 font-bold`;
 const Subtitle = tw.h2`text-zinc-100 text-7xl mb-3 font-leo font-semibold`
 const Description = tw.h3`ml-2 text-zinc-200 text-3xl font-thin mt-6`;
@@ -16,9 +20,9 @@ const LinkedinButton = tw(Linkedin)`text-violet-500`;
 const Scroll = tw.div`mt-40 blink text-zinc-50 animate-blink`;
 const MouseIcon = tw(Mouse)`mx-auto w-[32px] h-[32px]`;
 const MouseText = tw.p`text-center mt-2 font-bold`;
-const Main = () => {
+const Main = ({extendsClassName} : MainProps) => {
     return (
-        <div className='h-screen'>
+        <div className={`${extendsClassName} h-screen`}>
             <Header />
             <Container>
                 <HomeContainer>

@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<App />} />
         {/* <Route path='/experience' element={<App />} /> */}
-        <Route path='/projects' element={<Projects />} />
+        <Route path='/projects' element={<Projects extendsClassName='section' />} />
         <Route path='/articles' element={<App />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<App />} />
