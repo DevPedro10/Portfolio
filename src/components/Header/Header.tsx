@@ -1,7 +1,6 @@
 import './Header.scss'
 import tw from "tailwind-styled-components";
 import { Avatar, AvatarImage } from "../ui/avatar";
-import { Button } from "../ui/button";
 import { Mail, MailOpen } from 'lucide-react';
 import { useState } from 'react';
 
