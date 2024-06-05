@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+body, html {
+  overflow: hidden;
+  background-color: hsl(240, 8%, 9%);
+}
+
+.font-leo {
+  font-family: "leo";
+}
+
 ::selection {
   background-color: rgb(109 40 217);
 }
@@ -94,12 +103,4 @@ body::-webkit-scrollbar-thumb {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.font-leo {
-  font-family: "leo";
-}
-
-body {
-  background-color: hsl(240, 8%, 9%);
 }
