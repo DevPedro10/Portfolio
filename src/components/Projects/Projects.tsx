@@ -1,9 +1,7 @@
 import tw from "tailwind-styled-components";
 import ProjectCard from "./ProjectCard";
 
-interface ProjectsProps {
-    extendsClassName: string;
-}
+interface ProjectsProps { };
 
 
 const MainSection = tw.section`w-full md:w-3/5 mx-auto h-screen`
@@ -12,13 +10,11 @@ const TextDiv = tw.div`md:px-0`;
 const Title = tw.h1`text-violet-500 text-1xl font-bold mt-5`;
 const SubTitle = tw.h2`w-fit md:w-1/2 mt-4 text-4xl font-leo text-zinc-400 font-semibold`;
 
-const Projects = ({ extendsClassName }: ProjectsProps) => {
+const Projects = ({ }: ProjectsProps) => {
     return (
         <>
-            <MainSection className={`${extendsClassName}`}>
+            <MainSection>
                 <Wrapper>
-
-
                     <TextDiv className="my-12">
                         <Title>PROJECTS</Title>
                         <SubTitle className="">Here are some of the projects i've worked on</SubTitle>

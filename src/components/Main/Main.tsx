@@ -3,9 +3,7 @@ import { Button } from '../ui/button';
 import { Github, Linkedin, Mouse } from 'lucide-react'
 import Header from '../Header/Header';
 
-interface MainProps {
-    extendsClassName: string;
-}
+interface MainProps { };
 
 const Container = tw.main`w-3/5 mx-auto`;
 const HomeContainer = tw.div`mt-40`;
@@ -20,9 +18,9 @@ const LinkedinButton = tw(Linkedin)`text-violet-500`;
 const Scroll = tw.div`mt-40 blink text-zinc-50 animate-blink`;
 const MouseIcon = tw(Mouse)`mx-auto w-[32px] h-[32px]`;
 const MouseText = tw.p`text-center mt-2 font-bold`;
-const Main = ({extendsClassName} : MainProps) => {
+const Main = ({ }: MainProps) => {
     return (
-        <div className={`${extendsClassName} h-screen`}>
+        <div className={`h-screen`}>
             <Header />
             <Container>
                 <HomeContainer>
