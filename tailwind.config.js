@@ -25,6 +25,9 @@ export const theme = {
   },
   extend: {
     colors: {
+      mainBlue: "#27496D",
+      secondaryBlue: "#0C7B93",
+      mainOrange: "#F27F0C",
       darkPurple: "hsl(240, 8%, 9%)",
       lightPurple: "#7F5AF0",
       border: "hsl(var(--border))",

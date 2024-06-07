@@ -4,8 +4,14 @@ import Projects from "./components/Projects/Projects";
 function App() {
     return (
         <>
-            <Main />
-            <Projects />
+            <div className="border">
+                <Main />
+            </div>
+
+            <div className="border border-black">
+                <Projects />
+            </div>
+
         </>
     )
 }

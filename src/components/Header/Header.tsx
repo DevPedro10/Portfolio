@@ -4,11 +4,11 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { Mail, MailOpen } from 'lucide-react';
 import { useState } from 'react';
 
-const Container = tw.header`text-zinc-300 flex h-16 w-3/5 items-center justify-between mx-auto mt-10`;
+const Container = tw.header`text-zinc-300 flex w-9/12 h-28 items-center justify-between mx-auto`;
 const AvatarContainer = tw.div`flex items-center gap-4`;
-const NameAvatar = tw.h1`text-xl font-semibold`;
+const NameAvatar = tw.h1`text-xl font-semibold text-[#27496D]`;
 const NavBar = tw.nav``;
-// const List = tw.ul`flex gap-6 items-center text-xl `;
+const List = tw.ul``;
 const ListItem = tw.li``;
 const Ancor = tw.a`customLink`;
 
@@ -30,7 +30,7 @@ const Header = ({ noPhoto }: HeaderProps) => {
                 <NameAvatar>Natã Pedro</NameAvatar>
             </AvatarContainer>
             <NavBar>
-                <ul>
+                <List>
                     {/* <Link to="/experience">Experience</Link> */}
 
                     <ListItem>
@@ -45,18 +45,18 @@ const Header = ({ noPhoto }: HeaderProps) => {
                     <ListItem>
                         <Ancor className='customLink' href="/about">About me</Ancor>
                     </ListItem>
-                </ul>
+                </List>
             </NavBar>
 
-            <ul>
-                <ListItem>
+            <List>
+                <ListItem className=''>
                     <a href="#" className="customLink" id="sayHi"
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
                     >
                         {hover ? <MailOpen /> : <Mail />} Say Hi</a>
                 </ListItem>
-            </ul>
+            </List>
         </Container>
     )
 }

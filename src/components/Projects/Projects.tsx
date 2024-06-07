@@ -4,8 +4,8 @@ import ProjectCard from "./ProjectCard";
 interface ProjectsProps { };
 
 
-const MainSection = tw.section`w-full md:w-3/5 mx-auto h-screen`
-const Wrapper = tw.div`pt-20`
+const Container = tw.section`h-screen`
+const Wrapper = tw.div`w-full md:w-3/5 mx-auto pt-20`
 const TextDiv = tw.div`md:px-0`;
 const Title = tw.h1`text-violet-500 text-1xl font-bold mt-5`;
 const SubTitle = tw.h2`w-fit md:w-1/2 mt-4 text-4xl font-leo text-zinc-400 font-semibold`;
@@ -13,7 +13,7 @@ const SubTitle = tw.h2`w-fit md:w-1/2 mt-4 text-4xl font-leo text-zinc-400 font-
 const Projects = ({ }: ProjectsProps) => {
     return (
         <>
-            <MainSection>
+            <Container className="bg-zinc-50">
                 <Wrapper>
                     <TextDiv className="my-12">
                         <Title>PROJECTS</Title>
@@ -47,7 +47,7 @@ const Projects = ({ }: ProjectsProps) => {
                         />
                     </div>
                 </Wrapper>
-            </MainSection>
+            </Container>
         </>
     )
 }

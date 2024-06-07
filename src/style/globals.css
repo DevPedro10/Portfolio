@@ -4,10 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
-  overflow: hidden;
-  background-color: hsl(240, 8%, 9%);
+body,
+html {
+  /* overflow: hidden; */
+  /* background-color: #151519; */
 }
+
 
 .font-leo {
   font-family: "leo";
@@ -18,17 +20,22 @@ body, html {
 }
 
 body::-webkit-scrollbar {
-  width: 9px;               /* width of the entire scrollbar */
+  width: 9px;
+  /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
+  background: transparent;
+  /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(109 40 217);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid rgb(109 40 217);  /* creates padding around scroll thumb */
+  background-color: rgb(109 40 217);
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid rgb(109 40 217);
+  /* creates padding around scroll thumb */
 }
 
 @layer base {
