@@ -5,16 +5,16 @@ interface ProjectsProps { };
 
 
 const Container = tw.section`h-screen`
-const Wrapper = tw.div`w-full md:w-3/5 mx-auto pt-20`
+const Wrapper = tw.div`w-full  mx-auto pt-20`
 const TextDiv = tw.div`md:px-0`;
-const Title = tw.h1`text-violet-500 text-1xl font-bold mt-5`;
-const SubTitle = tw.h2`w-fit md:w-1/2 mt-4 text-4xl font-leo text-zinc-400 font-semibold`;
+const Title = tw.h1`text-3xl mb-3 ml-1 font-bold text-mainOrange`;
+const SubTitle = tw.h2`text-zinc-100 text-5xl w-1/2 mb-3 font-leo font-semibold text-mainBlue`;
 
 const Projects = ({ }: ProjectsProps) => {
     return (
         <>
-            <Container className="bg-zinc-50">
-                <Wrapper>
+            <Container className="">
+                <Wrapper className="md:w-9/12">
                     <TextDiv className="my-12">
                         <Title>PROJECTS</Title>
                         <SubTitle className="">Here are some of the projects i've worked on</SubTitle>

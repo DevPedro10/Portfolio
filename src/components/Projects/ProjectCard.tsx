@@ -13,13 +13,13 @@ interface ProjectProps {
     liveDemoLink?: string; // Opcional enquanto estiver desenvolvendo.
 }
 
-const Container = tw.div`w-92 transition duration-150 ease-in-out hover:shadow-sm`;
+const Container = tw.div` transition duration-150 ease-in-out hover:shadow-sm`;
 const Figure = tw.figure`w-92`;
 const Image = tw.img`w-max`;
 const ProjectInfo = tw.div`p-3`;
-const Title = tw.h1`text-xl text-mainOrange`;
+const Title = tw.h1`text-xl text-mainBlue`;
 const Description = tw.h2`mt-2`;
-const Divider = tw.hr`my-3 h-[2px] bg-mainOrange`;
+const Divider = tw.hr`my-3 h-[2px] bg-mainBlue`;
 const TagsContainer = tw.div`flex items-center gap-3 w-max`;
 const LinksContainer = tw.div`mt-3`;
 const ButtonsContainer = tw.div`flex gap-3 ml-1`;
@@ -29,10 +29,10 @@ const styleIcons = `text-mainBlue hover:text-secondaryBlue`
 const ProjectCard = ({ title, thumbnail, description, tags, liveDemoLink, repositoryLink }: ProjectProps) => {
     return (
         <div className="">
-            <div className="card border-2 hover:border-transparent">
+            <div className="card border-2 border-mainBlue hover:border-transparent">
                 <div className="borderCustom"></div>
                 <div className="content">
-                    <Container className="basis-80">
+                    <Container className="w-96 basis-80">
                         <Figure>
                             <Image src={thumbnail} alt="" />
                         </Figure>
