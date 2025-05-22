@@ -6,6 +6,7 @@ export const translations = {
       about: "Sobre",
       skills: "Habilidades", 
       projects: "Projetos",
+      articles: "Artigos",
       contact: "Contato",
       hire: "Contratar"
     },
@@ -100,6 +101,7 @@ export const translations = {
       about: "About", 
       skills: "Skills",
       projects: "Projects",
+      articles: "Articles",
       contact: "Contact",
       hire: "Resume"
     },
