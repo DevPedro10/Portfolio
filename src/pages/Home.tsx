@@ -45,7 +45,7 @@ export const Home = () => {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/projects">
-                <Button size="lg" variant="transparent" className="capitalize">
+                <Button size="lg" className="capitalize">
                   {t.hero.viewProjects}
                 </Button>
               </Link>
