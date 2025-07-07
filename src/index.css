@@ -107,12 +107,13 @@
 
 @layer components {
   .imposing-card {
-    @apply bg-card border border-border shadow-strong backdrop-blur-sm;
+    @apply bg-card border border-border backdrop-blur-sm;
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .imposing-card:hover {
-    box-shadow: var(--shadow-imposing);
+    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
     transform: translateY(-8px) scale(1.02);
   }
 
@@ -127,11 +128,11 @@
   .imposing-button {
     @apply font-space font-semibold tracking-wide uppercase text-sm;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-strong);
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
   }
 
   .imposing-button:hover {
-    box-shadow: var(--shadow-imposing);
+    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
     transform: translateY(-2px);
   }
 
@@ -169,7 +170,7 @@
   }
 
   .shadow-imposing {
-    box-shadow: var(--shadow-imposing);
+    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
   }
 }
 
