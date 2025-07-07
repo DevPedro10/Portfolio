@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageToggle } from "@/components/LanguageToggle";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,63 +19,57 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const navItems = [
-    { label: "Início", id: "hero" },
-    { label: "Sobre", id: "about" },
-    { label: "Projetos", id: "projects" },
-    { label: "Contato", id: "contact" }
+    { label: t.nav.home, path: "/" },
+    { label: t.nav.about, path: "/about" },
+    { label: t.nav.skills, path: "/skills" },
+    { label: t.nav.projects, path: "/projects" },
+    { label: t.nav.contact, path: "/contact" }
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'subtle-card backdrop-blur-md py-4' : 'py-6'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled ? 'imposing-card backdrop-blur-xl py-4' : 'py-6'
     }`}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection('hero')}
-            className="text-xl font-space font-medium text-gradient"
+          <Link
+            to="/"
+            className="text-2xl font-space font-black text-gradient tracking-tight"
           >
-            Natã Pedro
-          </button>
+            {t.hero.name}
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`font-medium transition-colors duration-200 ${
+                  location.pathname === item.path 
+                    ? 'text-primary font-semibold' 
+                    : 'text-foreground hover:text-primary'
+                }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button
-              onClick={() => scrollToSection('contact')}
-              size="sm"
-              className="minimal-hover bg-primary hover:bg-primary/90"
-            >
-              Contratar
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2">
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <span className="w-full h-0.5 bg-foreground"></span>
-              <span className="w-full h-0.5 bg-foreground"></span>
-              <span className="w-full h-0.5 bg-foreground"></span>
+          {/* Controls */}
+          <div className="flex items-center space-x-3">
+            <ThemeToggle />
+            <LanguageToggle />
+            <div className="hidden md:block">
+              <Link to="/contact">
+                <Button className="imposing-button bg-imposing hover:bg-imposing/90">
+                  {t.nav.hire}
+                </Button>
+              </Link>
             </div>
-          </button>
+          </div>
         </div>
       </div>
     </nav>
