@@ -34,43 +34,38 @@ export const Contact = () => {
   const contactInfo = [
     {
       title: "Email",
-      value: "alex.silva@email.com",
-      href: "mailto:alex.silva@email.com"
+      value: "natapedro.dev@email.com",
+      href: "mailto:natapedro.dev@email.com"
     },
     {
       title: "LinkedIn",
-      value: "/in/alexsilva",
-      href: "https://linkedin.com/in/alexsilva"
+      value: "/in/natapedro",
+      href: "https://linkedin.com/in/natapedro"
     },
     {
       title: "GitHub",
-      value: "/alexsilva",
-      href: "https://github.com/alexsilva"
-    },
-    {
-      title: "Telefone",
-      value: "+55 (11) 99999-9999",
-      href: "tel:+5511999999999"
+      value: "/natapedro",
+      href: "https://github.com/natapedro"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 bg-secondary/20">
+    <section id="contact" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-space font-bold mb-6">
-            Vamos <span className="text-gradient">Conversar</span>
+          <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            Vamos <span className="text-gradient font-medium">Conversar</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Estou sempre aberto a novas oportunidades e projetos interessantes. 
+          <p className="text-lg text-soft max-w-2xl mx-auto leading-relaxed">
+            Estou sempre aberto a novos projetos e oportunidades interessantes. 
             Entre em contato e vamos criar algo incrível juntos!
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="glass p-8">
-            <h3 className="text-2xl font-space font-semibold mb-6">Envie uma Mensagem</h3>
+          <div className="subtle-card p-8 rounded-lg">
+            <h3 className="text-xl font-space font-medium mb-6">Envie uma Mensagem</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -82,7 +77,7 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="Seu nome"
                     required
-                    className="glass"
+                    className="subtle-card"
                   />
                 </div>
                 <div className="space-y-2">
@@ -95,7 +90,7 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder="seu@email.com"
                     required
-                    className="glass"
+                    className="subtle-card"
                   />
                 </div>
               </div>
@@ -109,7 +104,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   placeholder="Sobre o que você quer falar?"
                   required
-                  className="glass"
+                  className="subtle-card"
                 />
               </div>
               
@@ -123,54 +118,54 @@ export const Contact = () => {
                   placeholder="Conte-me mais sobre sua ideia ou projeto..."
                   rows={5}
                   required
-                  className="glass resize-none"
+                  className="subtle-card resize-none"
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full glass glow-primary font-medium">
+              <Button type="submit" size="lg" className="w-full minimal-hover bg-primary hover:bg-primary/90 font-medium">
                 Enviar Mensagem
               </Button>
             </form>
-          </Card>
+          </div>
 
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-space font-semibold mb-6">Outras Formas de Contato</h3>
+              <h3 className="text-xl font-space font-medium mb-6">Outras Formas de Contato</h3>
               <div className="grid gap-4">
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="glass p-4 hover:glow-secondary transition-all duration-300">
+                  <div key={index} className="subtle-card p-4 rounded-lg minimal-hover">
                     <a href={info.href} className="block">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{info.title}</span>
-                        <span className="text-muted-foreground">{info.value}</span>
+                        <span className="text-soft">{info.value}</span>
                       </div>
                     </a>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <Card className="glass p-6">
+            <div className="subtle-card p-6 rounded-lg">
               <h4 className="text-lg font-space font-medium mb-4">Localização</h4>
-              <p className="text-muted-foreground">
+              <p className="text-soft">
                 📍 São Paulo, SP - Brasil
               </p>
-              <p className="text-sm text-muted-foreground mt-2">
-                Disponível para trabalho remoto e presencial na região metropolitana
+              <p className="text-sm text-soft mt-2">
+                Disponível para trabalho remoto e presencial
               </p>
-            </Card>
+            </div>
 
-            <Card className="glass p-6">
+            <div className="subtle-card p-6 rounded-lg">
               <h4 className="text-lg font-space font-medium mb-4">Status</h4>
               <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                 <span className="text-sm">Disponível para novos projetos</span>
               </div>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-sm text-soft mt-2">
                 Responderei em até 24 horas
               </p>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

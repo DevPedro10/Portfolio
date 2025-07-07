@@ -5,94 +5,73 @@ export const About = () => {
     <section id="about" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-space font-bold mb-6">
-            Sobre <span className="text-gradient">Mim</span>
+          <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            Sobre <span className="text-gradient font-medium">Mim</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Desenvolvedor com mais de 5 anos de experiência criando aplicações 
-            web modernas e soluções digitais inovadoras
+          <p className="text-lg text-soft max-w-2xl mx-auto leading-relaxed">
+            Desenvolvedor Full Stack com experiência em React e Java, 
+            focado em criar aplicações eficientes e escaláveis
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-space font-semibold">Minha Jornada</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Comecei minha jornada no desenvolvimento aos 18 anos, fascinado pela 
-                possibilidade de criar soluções que impactam a vida das pessoas. 
-                Desde então, tenho me dedicado a aprender continuamente e 
-                acompanhar as mais recentes tecnologias do mercado.
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-xl font-space font-medium">Minha Jornada</h3>
+              <p className="text-soft leading-relaxed">
+                Especializado em desenvolvimento Full Stack, trabalho principalmente 
+                com React no frontend e Java no backend. Tenho paixão por criar 
+                soluções elegantes e funcionais que atendam às necessidades reais 
+                dos usuários.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Especializado em React, Node.js e TypeScript, adoro trabalhar tanto 
-                no frontend quanto no backend, criando experiências completas e 
-                performáticas. Meu foco está sempre na qualidade do código e na 
-                experiência do usuário.
+              <p className="text-soft leading-relaxed">
+                Meu foco está em escrever código limpo, manter boas práticas de 
+                desenvolvimento e sempre buscar a melhor experiência do usuário. 
+                Acredito que tecnologia deve simplificar e melhorar a vida das pessoas.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-lg font-space font-medium">O que me motiva:</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Resolver problemas complexos com soluções elegantes
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Aprender novas tecnologias e metodologias
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Colaborar em equipes multidisciplinares
-                </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                  Criar produtos que fazem a diferença
-                </li>
-              </ul>
+              <h4 className="text-lg font-space font-medium">Principais Tecnologias:</h4>
+              <div className="grid grid-cols-2 gap-3">
+                {["React", "Java", "Spring Boot", "TypeScript", "PostgreSQL", "Git"].map((tech) => (
+                  <div key={tech} className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-soft">{tech}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <Card className="glass p-6 space-y-4">
-              <h4 className="text-lg font-space font-medium">Experiência</h4>
+            <div className="subtle-card p-6 rounded-lg minimal-hover">
+              <h4 className="text-lg font-space font-medium mb-4">Experiência</h4>
               <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-4">
-                  <h5 className="font-medium">Senior Full Stack Developer</h5>
-                  <p className="text-sm text-muted-foreground">Tech Company • 2022 - Presente</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Liderança técnica em projetos de larga escala usando React, Node.js e AWS
-                  </p>
-                </div>
-                <div className="border-l-2 border-primary pl-4">
                   <h5 className="font-medium">Full Stack Developer</h5>
-                  <p className="text-sm text-muted-foreground">Startup Inc. • 2020 - 2022</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Desenvolvimento de aplicações web e mobile usando tecnologias modernas
+                  <p className="text-sm text-soft">Tech Solutions • 2022 - Presente</p>
+                  <p className="text-sm text-soft mt-2">
+                    Desenvolvimento de aplicações web usando React e Java Spring Boot
                   </p>
                 </div>
                 <div className="border-l-2 border-primary pl-4">
-                  <h5 className="font-medium">Junior Developer</h5>
-                  <p className="text-sm text-muted-foreground">AgenciaWeb • 2019 - 2020</p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Desenvolvimento frontend e integração com APIs REST
+                  <h5 className="font-medium">Desenvolvedor Java</h5>
+                  <p className="text-sm text-soft">Empresa Digital • 2021 - 2022</p>
+                  <p className="text-sm text-soft mt-2">
+                    APIs REST, microserviços e integração com bancos de dados
                   </p>
                 </div>
               </div>
-            </Card>
+            </div>
 
-            <Card className="glass p-6">
+            <div className="subtle-card p-6 rounded-lg minimal-hover">
               <h4 className="text-lg font-space font-medium mb-4">Educação</h4>
               <div className="border-l-2 border-primary pl-4">
-                <h5 className="font-medium">Ciência da Computação</h5>
-                <p className="text-sm text-muted-foreground">Universidade Federal • 2016 - 2020</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Bacharelado com foco em Engenharia de Software e Algoritmos
-                </p>
+                <h5 className="font-medium">Análise e Desenvolvimento de Sistemas</h5>
+                <p className="text-sm text-soft">Faculdade de Tecnologia • 2019 - 2022</p>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

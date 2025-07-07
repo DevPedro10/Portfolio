@@ -26,16 +26,16 @@ export const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'glass backdrop-blur-md py-4' : 'py-6'
+      isScrolled ? 'subtle-card backdrop-blur-md py-4' : 'py-6'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-2xl font-space font-bold text-gradient"
+            className="text-xl font-space font-medium text-gradient"
           >
-            Alex Silva
+            Natã Pedro
           </button>
 
           {/* Desktop Navigation */}
@@ -56,7 +56,7 @@ export const Navigation = () => {
             <Button
               onClick={() => scrollToSection('contact')}
               size="sm"
-              className="glass glow-primary"
+              className="minimal-hover bg-primary hover:bg-primary/90"
             >
               Contratar
             </Button>

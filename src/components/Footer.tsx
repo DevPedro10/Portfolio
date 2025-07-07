@@ -2,10 +2,10 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "LinkedIn", href: "https://linkedin.com/in/alexsilva" },
-    { name: "GitHub", href: "https://github.com/alexsilva" },
-    { name: "Twitter", href: "https://twitter.com/alexsilva" },
-    { name: "Instagram", href: "https://instagram.com/alexsilva" }
+    { name: "LinkedIn", href: "https://linkedin.com/in/natapedro" },
+    { name: "GitHub", href: "https://github.com/natapedro" },
+    { name: "Twitter", href: "https://twitter.com/natapedro" },
+    { name: "Instagram", href: "https://instagram.com/natapedro" }
   ];
 
   return (
@@ -14,23 +14,23 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-space font-bold text-gradient">
-              Alex Silva
+            <h3 className="text-xl font-space font-medium text-gradient">
+              Natã Pedro
             </h3>
-            <p className="text-muted-foreground">
-              Desenvolvedor Full Stack apaixonado por criar experiências 
-              digitais incríveis e soluções inovadoras.
+            <p className="text-soft">
+              Desenvolvedor Full Stack especializado em React e Java, 
+              criando soluções web modernas e eficientes.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="font-space font-semibold">Links Rápidos</h4>
+            <h4 className="font-space font-medium">Links Rápidos</h4>
             <div className="flex flex-col space-y-2">
               {["Sobre", "Projetos", "Habilidades", "Contato"].map((link) => (
                 <button
                   key={link}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-left"
+                  className="text-soft hover:text-foreground transition-colors duration-200 text-left"
                 >
                   {link}
                 </button>
@@ -40,7 +40,7 @@ export const Footer = () => {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h4 className="font-space font-semibold">Redes Sociais</h4>
+            <h4 className="font-space font-medium">Redes Sociais</h4>
             <div className="flex flex-wrap gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -48,7 +48,7 @@ export const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                  className="text-soft hover:text-primary transition-colors duration-200"
                 >
                   {social.name}
                 </a>
@@ -60,11 +60,11 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} Alex Silva. Todos os direitos reservados.
+            <p className="text-soft text-sm">
+              © {currentYear} Natã Pedro. Todos os direitos reservados.
             </p>
-            <p className="text-muted-foreground text-sm">
-              Feito com ❤️ usando React & TypeScript
+            <p className="text-soft text-sm">
+              Feito com ❤️ usando React & Java
             </p>
           </div>
         </div>
