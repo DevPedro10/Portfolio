@@ -59,7 +59,7 @@ export const Navigation = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 item.isSection ? (
                   <button
@@ -87,9 +87,13 @@ export const Navigation = () => {
 
             {/* Controls */}
             <div className="flex items-center space-x-3">
-              <ThemeToggle />
-              <LanguageToggle />
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
+                <ThemeToggle />
+              </div>
+              <div className="hidden lg:block">
+                <LanguageToggle />
+              </div>
+              <div className="hidden lg:block">
                 <Button 
                   variant="outline" 
                   onClick={() => scrollToSection('contact')}
@@ -97,6 +101,11 @@ export const Navigation = () => {
                 >
                   {t.nav.hire}
                 </Button>
+              </div>
+              
+              {/* Mobile menu button - only show on tablet sizes */}
+              <div className="md:hidden lg:hidden">
+                <ThemeToggle />
               </div>
             </div>
           </div>

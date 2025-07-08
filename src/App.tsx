@@ -14,6 +14,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AllProjects } from "@/pages/AllProjects";
 import { Articles } from "@/pages/Articles";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
                   <Route path="/articles" element={<Articles />} />
                 </Routes>
               </main>
+              <MobileBottomNav />
               <Footer />
             </div>
           </BrowserRouter>
