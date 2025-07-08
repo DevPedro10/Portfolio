@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
@@ -7,6 +8,7 @@ import { LanguageToggle } from "@/components/LanguageToggle";
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,11 @@ export const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      window.location.href = `/#${sectionId}`;
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -25,10 +32,11 @@ export const Navigation = () => {
   };
 
   const navItems = [
-    { label: t.nav.about, id: "about" },
-    { label: t.nav.skills, id: "skills" },
-    { label: t.nav.projects, id: "projects" },
-    { label: t.nav.contact, id: "contact" }
+    { label: t.nav.about, id: "about", isSection: true },
+    { label: t.nav.skills, id: "skills", isSection: true },
+    { label: t.nav.projects, id: "projects", isSection: true },
+    { label: "Articles", path: "/articles", isSection: false },
+    { label: t.nav.contact, id: "contact", isSection: true }
   ];
 
   return (
@@ -43,23 +51,37 @@ export const Navigation = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <button
-              onClick={() => scrollToSection('hero')}
+            <Link
+              to="/"
               className="text-2xl font-space font-black text-gradient tracking-tight hover:opacity-80 transition-opacity"
             >
               {t.hero.name}
-            </button>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="font-medium transition-colors duration-200 text-foreground hover:text-primary"
-                >
-                  {item.label}
-                </button>
+                item.isSection ? (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id!)}
+                    className="font-medium transition-colors duration-200 text-foreground hover:text-primary"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path!}
+                    className={`font-medium transition-colors duration-200 ${
+                      location.pathname === item.path
+                        ? "text-primary font-semibold"
+                        : "text-foreground hover:text-primary"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
             </div>
 

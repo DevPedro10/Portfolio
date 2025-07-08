@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import project1Image from "@/assets/project1.jpg";
 import project2Image from "@/assets/project2.jpg";
@@ -98,13 +99,15 @@ export const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-          >
-            Ver Todos os Projetos
-          </Button>
+          <Link to="/projects">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+            >
+              Ver Todos os Projetos
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

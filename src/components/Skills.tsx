@@ -6,33 +6,15 @@ export const Skills = () => {
   const skillCategories = [
     {
       title: t.skills.frontend,
-      skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 90 },
-        { name: "HTML/CSS", level: 85 },
-        { name: "Tailwind", level: 80 }
-      ]
+      skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS", "Redux"]
     },
     {
       title: t.skills.backend,
-      skills: [
-        { name: "Java", level: 90 },
-        { name: "Spring Boot", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MySQL", level: 75 },
-        { name: "REST APIs", level: 85 }
-      ]
+      skills: ["Java", "Spring Boot", "PostgreSQL", "MySQL", "REST APIs", "JPA/Hibernate"]
     },
     {
       title: t.skills.tools,
-      skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 70 },
-        { name: "Maven", level: 80 },
-        { name: "IntelliJ", level: 85 },
-        { name: "Linux", level: 75 }
-      ]
+      skills: ["Git", "Docker", "Maven", "IntelliJ IDEA", "Linux", "Gradle"]
     }
   ];
 
@@ -51,20 +33,16 @@ export const Skills = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <div key={index} className="bg-card/50 border border-border/20 p-6 rounded-lg space-y-6 hover:bg-card/70 transition-colors duration-300">
-              <h3 className="text-xl font-space font-medium text-center">{category.title}</h3>
-              <div className="space-y-4">
+              <h3 className="text-xl font-space font-medium text-center text-gradient">
+                {category.title}
+              </h3>
+              <div className="grid gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-foreground">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-secondary/50 rounded-full h-2">
-                      <div
-                        className="h-2 bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                  <div
+                    key={skillIndex}
+                    className="px-4 py-3 bg-secondary/50 rounded-lg text-center font-medium hover:bg-secondary/70 transition-colors duration-300"
+                  >
+                    {skill}
                   </div>
                 ))}
               </div>
@@ -78,8 +56,8 @@ export const Skills = () => {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "Spring Framework", "JPA/Hibernate", "Metodologias Ágeis", "Testes Unitários", 
-              "Clean Code", "SOLID", "Redux", "Jest", "Maven", "Gradle", 
-              "Microserviços", "Bootstrap"
+              "Clean Code", "SOLID", "Jest", "Maven", "Gradle", 
+              "Microserviços", "Bootstrap", "Figma", "VS Code"
             ].map((skill, index) => (
               <span
                 key={index}
