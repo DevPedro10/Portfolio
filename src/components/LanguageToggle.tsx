@@ -1,15 +1,19 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 
 export const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
+  const { theme } = useTheme();
+
+  const isDark = theme === "dark";
 
   return (
     <Button
-      variant="outline"
-      size="sm"
+      variant="link"
       onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
-      className="imposing-card font-space font-semibold"
+      className={`className="p-6 text-sm transition-colors duration-200" ${isDark ? "" : "text-black"
+        }`}
     >
       {language === "pt" ? "EN" : "PT"}
     </Button>

@@ -28,50 +28,62 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'imposing-card backdrop-blur-xl py-4' : 'py-6'
-    }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-space font-black text-gradient tracking-tight"
-          >
-            {t.hero.name}
-          </Link>
+    <header className="h-full">
+      <nav
+        className={`border fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+            ? "imposing-card backdrop-blur-xl py-4"
+            : "py-6"
+          }`}
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link
+              to="/"
+              className="text-2xl font-space font-black text-gradient tracking-tight"
+            >
+              {t.hero.name}
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-medium transition-colors duration-200 ${
-                  location.pathname === item.path 
-                    ? 'text-primary font-semibold' 
-                    : 'text-foreground hover:text-primary'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-medium transition-colors duration-200 ${location.pathname === item.path
+                      ? "text-primary font-semibold"
+                      : "text-foreground hover:text-primary"
+                    }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
 
-          {/* Controls */}
-          <div className="flex items-center space-x-3">
-            <ThemeToggle />
-            <LanguageToggle />
-            <div className="hidden md:block">
-              <Link to="/contact">
-                <Button className="imposing-button bg-imposing hover:bg-imposing/90">
-                  {t.nav.hire}
-                </Button>
-              </Link>
+            {/* Controls */}
+            <div className="flex items-center space-x-3">
+              <ThemeToggle />
+              <LanguageToggle />
+              <div className="hidden md:block">
+                <Link to="/contact">
+                  <Button variant="transparent" className="text-sm capitalize">
+                    {t.nav.hire}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Spacer */}
+      <div
+        className={`${isScrolled ? "h-[72px]" : "h-[96px]"
+          } transition-all duration-500`}
+      />
+    </header>
+
+
   );
 };

@@ -101,7 +101,7 @@ export const translations = {
       skills: "Skills",
       projects: "Projects",
       contact: "Contact",
-      hire: "Hire Me"
+      hire: "Resume"
     },
 
     // Hero Section

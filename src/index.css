@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 @layer base {
   :root {
@@ -75,8 +75,8 @@
     /* Dark mode imposing tokens */
     --hero-gradient: linear-gradient(135deg, hsl(142 35% 55%) 0%, hsl(120 30% 45%) 50%, hsl(95 25% 35%) 100%);
     --accent-gradient: linear-gradient(45deg, hsl(142 35% 55%) 0%, hsl(120 40% 65%) 100%);
-    --shadow-strong: 0 25px 50px -12px hsl(142 35% 55% / 0.3);
-    --shadow-imposing: 0 35px 60px -12px hsl(142 35% 55% / 0.5);
+    --shadow-strong: 0 5px 50px -12px hsl(142 35% 55% / 0.3);
+    --shadow-imposing: 0 15px 20px -4px hsl(142 35% 45% / 0.15);
     --text-soft: 25 8% 70%;
   }
 }
