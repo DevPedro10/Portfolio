@@ -35,12 +35,9 @@
     --ring: 142 35% 45%;
     --radius: 0.5rem;
 
-    /* Imposing design tokens */
+    /* Clean design tokens */
     --hero-gradient: linear-gradient(135deg, hsl(142 35% 45%) 0%, hsl(120 30% 35%) 50%, hsl(95 25% 25%) 100%);
     --accent-gradient: linear-gradient(45deg, hsl(142 35% 45%) 0%, hsl(120 40% 55%) 100%);
-    --shadow-strong: 0 25px 50px -12px hsl(142 35% 45% / 0.25);
-    --shadow-imposing: 0 35px 60px -12px hsl(142 35% 45% / 0.4);
-    --text-soft: 25 8% 35%;
   }
 
   .dark {
@@ -72,12 +69,9 @@
     --input: 20 14% 12%;
     --ring: 142 35% 55%;
 
-    /* Dark mode imposing tokens */
+    /* Dark mode clean tokens */
     --hero-gradient: linear-gradient(135deg, hsl(142 35% 55%) 0%, hsl(120 30% 45%) 50%, hsl(95 25% 35%) 100%);
     --accent-gradient: linear-gradient(45deg, hsl(142 35% 55%) 0%, hsl(120 40% 65%) 100%);
-    --shadow-strong: 0 5px 50px -12px hsl(142 35% 55% / 0.3);
-    --shadow-imposing: 0 15px 20px -4px hsl(142 35% 45% / 0.15);
-    --text-soft: 25 8% 70%;
   }
 }
 
@@ -104,34 +98,12 @@
 }
 
 @layer components {
-  .imposing-card {
-    @apply bg-card border border-border backdrop-blur-sm;
-    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .imposing-card:hover {
-    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
-    transform: translateY(-8px) scale(1.02);
-  }
-
   .hero-gradient {
     background: var(--hero-gradient);
   }
 
   .accent-gradient {
     background: var(--accent-gradient);
-  }
-
-  .imposing-button {
-    @apply font-space font-semibold tracking-wide uppercase text-sm;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.25);
-  }
-
-  .imposing-button:hover {
-    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
-    transform: translateY(-2px);
   }
 
   .animate-float {
@@ -147,7 +119,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-soft max-w-3xl mx-auto leading-relaxed;
+    @apply text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed;
   }
 }
 
@@ -159,16 +131,8 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .text-soft {
-    color: hsl(var(--text-soft));
-  }
-
   .bg-imposing {
     background: var(--hero-gradient);
-  }
-
-  .shadow-imposing {
-    box-shadow: 0 35px 60px -12px hsl(var(--primary) / 0.4);
   }
 }
 

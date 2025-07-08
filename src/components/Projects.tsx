@@ -1,10 +1,12 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import project1Image from "@/assets/project1.jpg";
 import project2Image from "@/assets/project2.jpg";
 import project3Image from "@/assets/project3.jpg";
 
 export const Projects = () => {
+  const { t } = useLanguage();
+
   const projects = [
     {
       id: 1,
@@ -39,29 +41,36 @@ export const Projects = () => {
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-space font-bold mb-6">
-            Meus <span className="text-gradient">Projetos</span>
+          <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            {t.projects.title} <span className="text-gradient font-medium">{t.projects.titleHighlight}</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Uma seleção dos projetos mais relevantes que desenvolvi, 
-            demonstrando minhas habilidades e paixão por tecnologia
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t.projects.subtitle}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="glass overflow-hidden group hover:glow-secondary transition-all duration-500">
+            <div key={project.id} className="bg-card/50 border border-border/20 rounded-lg overflow-hidden group hover:bg-card/70 transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <Button size="sm" variant="secondary" className="glass">
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="bg-background/90 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+                  >
                     Ver Demo
                   </Button>
-                  <Button size="sm" variant="outline" className="glass">
+                  <Button 
+                    size="sm" 
+                    variant="outline"
+                    className="bg-background/90 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
+                  >
                     GitHub
                   </Button>
                 </div>
@@ -77,19 +86,23 @@ export const Projects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-secondary rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-secondary/50 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="glass font-medium">
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+          >
             Ver Todos os Projetos
           </Button>
         </div>

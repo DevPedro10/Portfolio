@@ -1,9 +1,11 @@
-import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Skills = () => {
+  const { t } = useLanguage();
+
   const skillCategories = [
     {
-      title: "Frontend",
+      title: t.skills.frontend,
       skills: [
         { name: "React", level: 90 },
         { name: "TypeScript", level: 85 },
@@ -13,7 +15,7 @@ export const Skills = () => {
       ]
     },
     {
-      title: "Backend",
+      title: t.skills.backend,
       skills: [
         { name: "Java", level: 90 },
         { name: "Spring Boot", level: 85 },
@@ -23,7 +25,7 @@ export const Skills = () => {
       ]
     },
     {
-      title: "Ferramentas",
+      title: t.skills.tools,
       skills: [
         { name: "Git", level: 85 },
         { name: "Docker", level: 70 },
@@ -35,31 +37,31 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section id="skills" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
-            Minhas <span className="text-gradient font-medium">Habilidades</span>
+            {t.skills.title} <span className="text-gradient font-medium">{t.skills.titleHighlight}</span>
           </h2>
-          <p className="text-lg text-soft max-w-2xl mx-auto leading-relaxed">
-            Tecnologias que utilizo para criar soluções eficientes e escaláveis
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {t.skills.subtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="subtle-card p-6 rounded-lg space-y-6 minimal-hover">
+            <div key={index} className="bg-card/50 border border-border/20 p-6 rounded-lg space-y-6 hover:bg-card/70 transition-colors duration-300">
               <h3 className="text-xl font-space font-medium text-center">{category.title}</h3>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="font-medium text-foreground">{skill.name}</span>
-                      <span className="text-sm text-soft">{skill.level}%</span>
+                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-secondary/50 rounded-full h-2">
                       <div
-                        className="h-2 hero-gradient rounded-full transition-all duration-1000 ease-out"
+                        className="h-2 bg-gradient-to-r from-primary to-primary/80 rounded-full transition-all duration-1000 ease-out"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
@@ -72,7 +74,7 @@ export const Skills = () => {
 
         {/* Additional Skills */}
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-space font-medium mb-8 text-soft">Outras Competências</h3>
+          <h3 className="text-xl font-space font-medium mb-8 text-muted-foreground">{t.skills.otherSkills}</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "Spring Framework", "JPA/Hibernate", "Metodologias Ágeis", "Testes Unitários", 
@@ -81,7 +83,7 @@ export const Skills = () => {
             ].map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 subtle-card rounded-full text-sm font-medium minimal-hover"
+                className="px-4 py-2 bg-card/50 border border-border/20 rounded-full text-sm font-medium hover:bg-card/70 transition-colors duration-300"
               >
                 {skill}
               </span>
