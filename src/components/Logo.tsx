@@ -32,9 +32,9 @@ export const Logo = ({ className = "w-10 h-10" }: { className?: string }) => {
         {/* Gradient definition */}
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3ED598" />
-            <stop offset="50%" stopColor="#2DD4AA" />
-            <stop offset="100%" stopColor="#2DD4AA" />
+            <stop offset="0%" stopColor="hsl(142 35% 55%)" />
+            <stop offset="50%" stopColor="hsl(120 30% 45%)" />
+            <stop offset="100%" stopColor="hsl(142 35% 55%)" />
           </linearGradient>
         </defs>
       </svg>
