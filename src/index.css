@@ -162,3 +162,31 @@
 .animate-dash {
   animation: dash 2s ease-in-out infinite;
 }
+
+@keyframes gentle-pulse {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes smooth-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: smooth-rotate 2s linear infinite;
+}

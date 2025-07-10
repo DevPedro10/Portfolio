@@ -32,18 +32,27 @@ const HomePage = () => (
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Simula o carregamento do portfolio
+    // Simulate portfolio loading
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+      setFadeOut(true);
+      // Wait for fade out animation to complete
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className={`transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
+        <Loading />
+      </div>
+    );
   }
 
   return (
