@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { Logo } from "@/components/Logo";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,11 +51,8 @@ export const Navigation = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link
-              to="/"
-              className="text-2xl font-space font-black text-gradient tracking-tight hover:opacity-80 transition-opacity"
-            >
-              {t.hero.name}
+            <Link to="/" className="hover:opacity-80 transition-opacity">
+              <Logo className="w-10 h-10" />
             </Link>
 
             {/* Desktop Navigation */}
