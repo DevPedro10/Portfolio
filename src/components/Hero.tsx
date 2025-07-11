@@ -19,7 +19,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative">
+    <section id="hero" className="translate-y-[-80px] sm:translate-y-[0px] min-h-screen flex items-center justify-center relative">
       {/* Subtle background elements */}
       <div className="absolute top-32 left-16 w-24 h-24 bg-primary/5 rounded-full blur-xl animate-float"></div>
       <div className="absolute bottom-32 right-16 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-float" style={{ animationDelay: '3s' }}></div>
@@ -41,7 +41,7 @@ export const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-space font-light leading-tight">
                 {t.hero.greeting}{" "}
-                <span className="text-gradient font-medium">{t.hero.name}</span>
+                <span className="text-gradient font-medium sm:inline block">{t.hero.name}</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export const Hero = () => {
 
           {/* Scroll indicator */}
           <div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-[20vh] transform"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-[13vh] sm:translate-y-[20vh] transform"
           >
             <button
               onClick={scrollToAbout}
