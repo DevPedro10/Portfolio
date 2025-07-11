@@ -6,10 +6,8 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "LinkedIn", href: "https://linkedin.com/in/natapedro" },
-    { name: "GitHub", href: "https://github.com/natapedro" },
-    { name: "Twitter", href: "https://twitter.com/natapedro" },
-    { name: "Instagram", href: "https://instagram.com/natapedro" }
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/natapedro/" },
+    { name: "GitHub", href: "https://github.com/DevPedro10" },
   ];
 
   const quickLinks = [
@@ -71,11 +69,8 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-soft text-sm">
+            <p className="text-soft text-sm text-center">
               © {currentYear} {t.hero.name}. {t.footer.rights}
-            </p>
-            <p className="text-soft text-sm">
-              {t.footer.madeWith}
             </p>
           </div>
         </div>
