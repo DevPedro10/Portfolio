@@ -46,16 +46,15 @@ export const About = () => {
               <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-4">
                   <h5 className="font-medium">{t.about.positions.fullstack}</h5>
-                  <p className="text-sm text-muted-foreground">Tech Solutions • 2022 - Presente</p>
+                  <p className="text-sm text-muted-foreground">Plusoft • 2024 - Presente</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Desenvolvimento de aplicações web usando React e Java Spring Boot
-                  </p>
+                    Trabalho diretamente no core da aplicação, implementando funcionalidades críticas e garantindo a escalabilidade e a performance do sistema. Minhas responsabilidades incluem otimizar e desenvolver APIs, refatorar métodos para reduzir o consumo de memória, e resolver bugs reportados pelo suporte, assegurando a estabilidade e a qualidade do produto para os usuários finais. Utilizo principalmente Spring Boot, RabbitMQ e React.js, com integração de clientes de redes sociais (Facebook, WhatsApp, Instagram, Telegram) para atendimento via bot. Atuo com bancos de dados Oracle e MongoDB e utilizo CI/CD com Bamboo. Realizo análises de pods e nodes em ambientes Kubernetes hospedados na OCI e AWS.                  </p>
                 </div>
                 <div className="border-l-2 border-primary pl-4">
                   <h5 className="font-medium">{t.about.positions.java}</h5>
-                  <p className="text-sm text-muted-foreground">Empresa Digital • 2021 - 2022</p>
+                  <p className="text-sm text-muted-foreground">Plusoft • 2022 - 2024</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    APIs REST, microserviços e integração com bancos de dados
+                    Fui responsável pela criação e manutenção de fluxos no backend para um chatbot, integrando APIs internas e externas para aprimorar a experiência de usuário. Além de construir e ajustar esses fluxos, também trabalhei na melhoria da interface visual do bot, garantindo uma apresentação mais intuitiva e interativa para os usuários. Utilizei Groovy para o desenvolvimento backend e JavaScript para implementar melhorias visuais no frontend do bot.Fui responsável pela criação e manutenção de fluxos no backend para um chatbot, integrando APIs internas e externas para aprimorar a experiência de usuário. Além de construir e ajustar esses fluxos, também trabalhei na melhoria da interface visual do bot, garantindo uma apresentação mais intuitiva e interativa para os usuários. Utilizei Groovy para o desenvolvimento backend e JavaScript para implementar melhorias visuais no frontend do bot.
                   </p>
                 </div>
               </div>
@@ -65,7 +64,7 @@ export const About = () => {
               <h4 className="text-lg font-space font-medium mb-4">{t.about.education}</h4>
               <div className="border-l-2 border-primary pl-4">
                 <h5 className="font-medium">{t.about.positions.degree}</h5>
-                <p className="text-sm text-muted-foreground">Faculdade de Tecnologia • 2019 - 2022</p>
+                <p className="text-sm text-muted-foreground">Faculdade Impacta • 2023 - 2025</p>
               </div>
             </div>
           </div>
