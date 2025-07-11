@@ -14,6 +14,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AllProjects } from "@/pages/AllProjects";
 import { Articles } from "@/pages/Articles";
+import { PracticalTests } from "@/pages/PracticalTests";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Loading } from "@/components/Loading";
 import { useState, useEffect } from "react";
@@ -70,6 +71,7 @@ const App = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/projects" element={<AllProjects />} />
                     <Route path="/articles" element={<Articles />} />
+                    <Route path="/practical-tests" element={<PracticalTests />} />
                   </Routes>
                 </main>
                 <MobileBottomNav />

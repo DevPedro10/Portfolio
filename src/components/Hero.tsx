@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, TestTube } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import profileImage from "/lovable-uploads/d5ecf219-5f14-455f-8213-6945f16692ad.png";
 
 export const Hero = () => {
@@ -66,6 +67,26 @@ export const Hero = () => {
               >
                 {t.hero.contact}
               </Button>
+            </div>
+
+            {/* Call to Action for Practical Tests */}
+            <div className="mt-8 p-6 bg-card/30 border border-border/20 rounded-lg backdrop-blur-sm">
+              <div className="flex items-center justify-center space-x-3 mb-3">
+                <TestTube className="w-5 h-5 text-primary" />
+                <h3 className="text-lg font-space font-medium">Want to see my practical coding challenges?</h3>
+              </div>
+              <p className="text-muted-foreground text-sm mb-4 max-w-md mx-auto">
+                Explore real hiring challenges I've solved for different companies
+              </p>
+              <Link to="/practical-tests">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary/30 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+                >
+                  View Practical Tests
+                </Button>
+              </Link>
             </div>
           </div>
 

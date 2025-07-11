@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { Logo } from "@/components/Logo";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +37,7 @@ export const Navigation = () => {
     { label: t.nav.about, id: "about", isSection: true },
     { label: t.nav.skills, id: "skills", isSection: true },
     { label: t.nav.projects, id: "projects", isSection: true },
+    { label: "Practical Tests", path: "/practical-tests", isSection: false },
     { label: t.nav.articles, path: "/articles", isSection: false },
     { label: t.nav.contact, id: "contact", isSection: true },
   ];
@@ -97,6 +99,7 @@ export const Navigation = () => {
 
             {/* Controls */}
             <div className="flex items-center space-x-3">
+              <MobileMenu />
               <div className="hidden lg:block">
                 <Button
                   variant="outline"
