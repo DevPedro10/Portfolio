@@ -4,13 +4,13 @@ export const translations = {
     nav: {
       home: "Início",
       about: "Sobre",
-      skills: "Habilidades", 
+      skills: "Habilidades",
       projects: "Projetos",
       articles: "Artigos",
       contact: "Contato",
-      hire: "Contratar"
+      hire: "Currículo"
     },
-    
+
     // Hero Section
     hero: {
       greeting: "Olá, eu sou",
@@ -42,7 +42,7 @@ export const translations = {
     // Skills Section
     skills: {
       title: "Minhas",
-      titleHighlight: "Habilidades", 
+      titleHighlight: "Habilidades",
       subtitle: "Tecnologias que utilizo para criar soluções eficientes e escaláveis",
       frontend: "Frontend",
       backend: "Backend",
@@ -55,7 +55,7 @@ export const translations = {
       title: "Meus",
       titleHighlight: "Projetos",
       subtitle: "Uma seleção dos projetos mais relevantes que desenvolvi, demonstrando minhas habilidades e paixão por tecnologia",
-      viewDemo: "Ver Demo", 
+      viewDemo: "Ver Demo",
       viewCode: "Ver Código",
       allProjects: "Ver Todos os Projetos"
     },
@@ -78,7 +78,7 @@ export const translations = {
       response: "Responderei em até 24 horas",
       placeholders: {
         name: "Seu nome",
-        email: "seu@email.com", 
+        email: "seu@email.com",
         subject: "Sobre o que você quer falar?",
         message: "Conte-me mais sobre sua ideia ou projeto..."
       }
@@ -98,7 +98,7 @@ export const translations = {
     // Navigation
     nav: {
       home: "Home",
-      about: "About", 
+      about: "About",
       skills: "Skills",
       projects: "Projects",
       articles: "Articles",
@@ -125,7 +125,7 @@ export const translations = {
       description1: "Specialized in Full Stack development, I work mainly with React on the frontend and Java on the backend. I have a passion for creating elegant and functional solutions that meet real user needs.",
       description2: "My focus is on writing clean code, maintaining good development practices and always seeking the best user experience. I believe that technology should simplify and improve people's lives.",
       mainTech: "Main Technologies:",
-      experience: "Experience", 
+      experience: "Experience",
       education: "Education",
       positions: {
         fullstack: "Full Stack Developer",
@@ -140,7 +140,7 @@ export const translations = {
       titleHighlight: "Skills",
       subtitle: "Technologies I use to create efficient and scalable solutions",
       frontend: "Frontend",
-      backend: "Backend", 
+      backend: "Backend",
       tools: "Tools",
       otherSkills: "Other Skills"
     },
@@ -148,10 +148,10 @@ export const translations = {
     // Projects Section
     projects: {
       title: "My",
-      titleHighlight: "Projects", 
+      titleHighlight: "Projects",
       subtitle: "A selection of the most relevant projects I've developed, showcasing my skills and passion for technology",
       viewDemo: "View Demo",
-      viewCode: "View Code", 
+      viewCode: "View Code",
       allProjects: "View All Projects"
     },
 
@@ -162,7 +162,7 @@ export const translations = {
       subtitle: "I'm always open to new projects and interesting opportunities. Get in touch and let's create something amazing together!",
       sendMessage: "Send a Message",
       name: "Name",
-      email: "Email", 
+      email: "Email",
       subject: "Subject",
       message: "Message",
       send: "Send Message",
@@ -174,7 +174,7 @@ export const translations = {
       placeholders: {
         name: "Your name",
         email: "your@email.com",
-        subject: "What would you like to talk about?", 
+        subject: "What would you like to talk about?",
         message: "Tell me more about your idea or project..."
       }
     },
@@ -183,7 +183,7 @@ export const translations = {
     footer: {
       description: "Full Stack Developer specialized in React and Java, creating modern and efficient web solutions.",
       quickLinks: "Quick Links",
-      social: "Social Media", 
+      social: "Social Media",
       rights: "All rights reserved.",
       madeWith: "Made with ❤️ using React & Java"
     }
