@@ -34,8 +34,8 @@ export const Contact = () => {
   const contactInfo = [
     {
       title: "Email",
-      value: "natapedro.dev@email.com",
-      href: "mailto:natapedro.dev@email.com"
+      value: "natanpedrodasilva@email.com",
+      href: "mailto:natanpedrodasilva@email.com"
     },
     {
       title: "LinkedIn",
@@ -44,8 +44,8 @@ export const Contact = () => {
     },
     {
       title: "GitHub",
-      value: "/natapedro",
-      href: "https://github.com/natapedro"
+      value: "/DevPedro10",
+      href: "https://github.com/DevPedro10"
     }
   ];
 
@@ -93,7 +93,7 @@ export const Contact = () => {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium">{t.contact.subject}</label>
                 <Input
@@ -106,7 +106,7 @@ export const Contact = () => {
                   className="bg-background/50 border-border/20"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">{t.contact.message}</label>
                 <Textarea
@@ -121,9 +121,9 @@ export const Contact = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 variant="outline"
                 className="w-full border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
               >
