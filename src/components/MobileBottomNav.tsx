@@ -1,4 +1,4 @@
-import { Home, User, Code, FileText, Mail, Sun, Moon } from "lucide-react";
+import { Home, User, Code, FileText, Mail, Sun, Moon, Notebook } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -28,7 +28,7 @@ export const MobileBottomNav = () => {
       isActive: location.pathname === '/' && window.scrollY < 100
     },
     {
-      icon: User,
+      icon: Notebook,
       label: "About",
       action: () => scrollToSection('about'),
       isActive: false
@@ -60,7 +60,7 @@ export const MobileBottomNav = () => {
   ];
 
   return (
-    <div className="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+    <div className="md:hidden fixed bottom-1 left-1/2 transform -translate-x-1/2 z-50">
       <div className="bg-background/80 backdrop-blur-md border border-border/20 rounded-full px-4 py-3 shadow-lg">
         <div className="flex items-center space-x-6">
           {navItems.map((item, index) => {
