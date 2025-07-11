@@ -14,7 +14,7 @@ export const Skills = () => {
     },
     {
       title: t.skills.tools,
-      skills: ["Git", "Docker", "Maven", "Gradle", "IntelliJ IDEA", "Linux"]
+      skills: ["Git", "Docker", "Maven", "Gradle", "Linux"]
     }
   ];
 

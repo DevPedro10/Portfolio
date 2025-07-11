@@ -46,16 +46,33 @@ export const About = () => {
               <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-4">
                   <h5 className="font-medium">{t.about.positions.fullstack}</h5>
-                  <p className="text-sm text-muted-foreground">Plusoft • 2024 - Presente</p>
+                  <p className="text-sm text-muted-foreground">
+                    <a
+                      href="https://www.plusoft.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Plusoft - empresa onde trabalho"
+                      aria-label="Site externo da Plusoft"
+                      className="underline hover:text-primary transition-colors"
+                    >
+                      Plusoft</a>{" "}• 2024 - Presente</p>
                   <p className="text-sm text-muted-foreground mt-2">
                     Trabalho diretamente no core da aplicação, implementando funcionalidades críticas e garantindo a escalabilidade e a performance do sistema. Minhas responsabilidades incluem otimizar e desenvolver APIs, refatorar métodos para reduzir o consumo de memória, e resolver bugs reportados pelo suporte, assegurando a estabilidade e a qualidade do produto para os usuários finais. Utilizo principalmente Spring Boot, RabbitMQ e React.js, com integração de clientes de redes sociais (Facebook, WhatsApp, Instagram, Telegram) para atendimento via bot. Atuo com bancos de dados Oracle e MongoDB e utilizo CI/CD com Bamboo. Realizo análises de pods e nodes em ambientes Kubernetes hospedados na OCI e AWS.                  </p>
                 </div>
                 <div className="border-l-2 border-primary pl-4">
                   <h5 className="font-medium">{t.about.positions.java}</h5>
-                  <p className="text-sm text-muted-foreground">Plusoft • 2022 - 2024</p>
+                  <p className="text-sm text-muted-foreground">
+                    <a
+                      href="https://www.plusoft.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Plusoft - empresa onde trabalho"
+                      aria-label="Site externo da Plusoft"
+                      className="underline hover:text-primary transition-colors"
+                    >
+                      Plusoft</a>{" "}• 2022 - 2024</p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    Fui responsável pela criação e manutenção de fluxos no backend para um chatbot, integrando APIs internas e externas para aprimorar a experiência de usuário. Além de construir e ajustar esses fluxos, também trabalhei na melhoria da interface visual do bot, garantindo uma apresentação mais intuitiva e interativa para os usuários. Utilizei Groovy para o desenvolvimento backend e JavaScript para implementar melhorias visuais no frontend do bot.Fui responsável pela criação e manutenção de fluxos no backend para um chatbot, integrando APIs internas e externas para aprimorar a experiência de usuário. Além de construir e ajustar esses fluxos, também trabalhei na melhoria da interface visual do bot, garantindo uma apresentação mais intuitiva e interativa para os usuários. Utilizei Groovy para o desenvolvimento backend e JavaScript para implementar melhorias visuais no frontend do bot.
-                  </p>
+                    Criação e manutenção de fluxos backend para chatbot, integrando APIs internas e externas para melhorar a experiência do usuário. Também atuei na melhoria da interface visual do bot, utilizando Groovy no backend e JavaScript no frontend.                  </p>
                 </div>
               </div>
             </div>
