@@ -6,15 +6,15 @@ export const Skills = () => {
   const skillCategories = [
     {
       title: t.skills.frontend,
-      skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS", "Redux"]
+      skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"]
     },
     {
       title: t.skills.backend,
-      skills: ["Java", "Spring Boot", "PostgreSQL", "MySQL", "REST APIs", "JPA/Hibernate"]
+      skills: ["Java", "Spring Boot", "PostgreSQL", "MySQL", "Redis", "REST APIs", "JPA/Hibernate", "RabbitMQ"]
     },
     {
       title: t.skills.tools,
-      skills: ["Git", "Docker", "Maven", "IntelliJ IDEA", "Linux", "Gradle"]
+      skills: ["Git", "Docker", "Maven", "Gradle", "IntelliJ IDEA", "Linux"]
     }
   ];
 
@@ -55,9 +55,8 @@ export const Skills = () => {
           <h3 className="text-xl font-space font-medium mb-8 text-muted-foreground">{t.skills.otherSkills}</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Spring Framework", "JPA/Hibernate", "Metodologias Ágeis", "Testes Unitários", 
-              "Clean Code", "SOLID", "Jest", "Maven", "Gradle", 
-              "Microserviços", "Bootstrap", "Figma", "VS Code"
+              "Spring Framework", "JPA/Hibernate", "Metodologias Ágeis", "Testes Unitários",
+              "Clean Code", "Microserviços",
             ].map((skill, index) => (
               <span
                 key={index}
