@@ -69,25 +69,6 @@ export const Hero = () => {
               </Button>
             </div>
 
-            {/* Call to Action for Practical Tests */}
-            <div className="mt-8 p-6 bg-card/30 border border-border/20 rounded-lg backdrop-blur-sm">
-              <div className="flex items-center justify-center space-x-3 mb-3">
-                <TestTube className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-space font-medium">Want to see my practical coding challenges?</h3>
-              </div>
-              <p className="text-muted-foreground text-sm mb-4 max-w-md mx-auto">
-                Explore real hiring challenges I've solved for different companies
-              </p>
-              <Link to="/practical-tests">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-primary/30 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
-                >
-                  View Practical Tests
-                </Button>
-              </Link>
-            </div>
           </div>
 
           {/* Scroll indicator */}

@@ -37,9 +37,12 @@ export const Navigation = () => {
     { label: t.nav.about, id: "about", isSection: true },
     { label: t.nav.skills, id: "skills", isSection: true },
     { label: t.nav.projects, id: "projects", isSection: true },
-    { label: "Practical Tests", path: "/practical-tests", isSection: false },
-    { label: t.nav.articles, path: "/articles", isSection: false },
     { label: t.nav.contact, id: "contact", isSection: true },
+  ];
+
+  const pageItems = [
+    { label: t.nav.practicalTests, path: "/practical-tests" },
+    { label: t.nav.articles, path: "/articles" },
   ];
 
   return (
@@ -52,64 +55,67 @@ export const Navigation = () => {
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="hidden lg:block">
-                <ThemeToggle />
-              </div>
-              <div className="hidden lg:block">
-                <LanguageToggle />
-              </div>
-            </div>
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-3">
+              <Logo className="w-10 h-10" />
+            </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item) => {
-                const isActive =
-                  !item.isSection && location.pathname === item.path;
-
-                const commonStyle = {
-                  color: isActive ? "var(--tw-color-primary)" : undefined,
-                  transition: "color ease",
-                };
-
-                const commonClass =
-                  "font-medium transition-colors duration-500 hover:text-primary";
-
-                return item.isSection ? (
+            <div className="hidden lg:flex items-center space-x-12">
+              {/* Main Navigation */}
+              <div className="flex items-center space-x-8">
+                {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id!)}
-                    className={commonClass}
-                    style={commonStyle}
+                    className="font-medium transition-colors duration-300 hover:text-primary text-sm tracking-wide"
                   >
                     {item.label}
                   </button>
-                ) : (
-                  <Link
-                    key={item.path}
-                    to={item.path!}
-                    className={commonClass}
-                    style={commonStyle}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
+                ))}
+              </div>
 
-            {/* Controls */}
-            <div className="flex items-center space-x-3">
-              <MobileMenu />
-              <div className="hidden lg:block">
+              {/* Separator */}
+              <div className="w-px h-6 bg-border/40"></div>
+
+              {/* Page Links */}
+              <div className="flex items-center space-x-6">
+                {pageItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={`font-medium transition-colors duration-300 hover:text-primary text-sm tracking-wide ${
+                        isActive ? "text-primary" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Separator */}
+              <div className="w-px h-6 bg-border/40"></div>
+
+              {/* Controls */}
+              <div className="flex items-center space-x-4">
+                <ThemeToggle />
+                <LanguageToggle />
                 <Button
                   variant="outline"
+                  size="sm"
                   onClick={() => scrollToSection("contact")}
-                  className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+                  className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 px-6"
                 >
                   {t.nav.hire}
                 </Button>
               </div>
             </div>
+
+            {/* Mobile Menu */}
+            <MobileMenu />
           </div>
         </div>
       </nav>

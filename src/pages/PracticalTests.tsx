@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const PracticalTests = () => {
+  const { t } = useLanguage();
+
   const tests = [
     {
       id: 1,
@@ -103,22 +106,22 @@ export const PracticalTests = () => {
         <div className="mb-12">
           <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Voltar ao início
+            {t.practicalTests.backToHome}
           </Link>
           
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
-              Practical <span className="text-gradient font-medium">Tests</span>
+              {t.practicalTests.title} <span className="text-gradient font-medium">{t.practicalTests.titleHighlight}</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Real coding challenges from hiring processes at different companies. Each project demonstrates my problem-solving skills and technical expertise in various scenarios.
+              {t.practicalTests.subtitle}
             </p>
           </div>
         </div>
 
         {/* Featured Tests */}
         <div className="mb-16">
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">Featured Challenges</h2>
+          <h2 className="text-2xl font-space font-semibold mb-8 text-center">{t.practicalTests.featuredChallenges}</h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {featuredTests.map((test) => (
               <div key={test.id} className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300">
@@ -142,7 +145,7 @@ export const PracticalTests = () => {
 
                   <div className="space-y-4">
                     <div className="p-4 bg-secondary/30 rounded-lg border-l-4 border-primary">
-                      <h4 className="font-semibold text-sm mb-2">Challenge:</h4>
+                      <h4 className="font-semibold text-sm mb-2">{t.practicalTests.challenge}</h4>
                       <p className="text-sm text-muted-foreground">{test.challenge}</p>
                     </div>
 
@@ -169,7 +172,7 @@ export const PracticalTests = () => {
                       className="border-primary/20 hover:border-primary/40 hover:bg-primary/5"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      {t.practicalTests.liveDemo}
                     </Button>
                     <Button 
                       size="sm" 
@@ -177,7 +180,7 @@ export const PracticalTests = () => {
                       className="border-primary/20 hover:border-primary/40 hover:bg-primary/5"
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      View Code
+                      {t.practicalTests.viewCode}
                     </Button>
                   </div>
                 </div>
@@ -188,7 +191,7 @@ export const PracticalTests = () => {
 
         {/* Other Tests */}
         <div>
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">Other Challenges</h2>
+          <h2 className="text-2xl font-space font-semibold mb-8 text-center">{t.practicalTests.otherChallenges}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherTests.map((test) => (
               <div key={test.id} className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300">
@@ -236,7 +239,7 @@ export const PracticalTests = () => {
                       className="flex-1 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-xs"
                     >
                       <ExternalLink className="w-3 h-3 mr-1" />
-                      Demo
+                      {t.practicalTests.liveDemo}
                     </Button>
                     <Button 
                       size="sm" 
@@ -244,7 +247,7 @@ export const PracticalTests = () => {
                       className="flex-1 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-xs"
                     >
                       <Github className="w-3 h-3 mr-1" />
-                      Code
+                      {t.practicalTests.viewCode}
                     </Button>
                   </div>
                 </div>
@@ -256,16 +259,16 @@ export const PracticalTests = () => {
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-card/50 border border-border/20 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-space font-semibold mb-4">Interested in my approach?</h3>
+            <h3 className="text-xl font-space font-semibold mb-4">{t.practicalTests.interestedTitle}</h3>
             <p className="text-muted-foreground mb-6">
-              These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.
+              {t.practicalTests.interestedDescription}
             </p>
             <Link to="/contact">
               <Button 
                 variant="outline"
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
               >
-                Let's discuss your next project
+                {t.practicalTests.discussProject}
               </Button>
             </Link>
           </div>

@@ -7,7 +7,7 @@ export const translations = {
       skills: "Habilidades",
       projects: "Projetos",
       articles: "Artigos",
-      practicalTests: "Testes Práticos",
+      practicalTests: "Practical Tests",
       contact: "Contato",
       hire: "Currículo"
     },
@@ -92,6 +92,31 @@ export const translations = {
       social: "Redes Sociais",
       rights: "Todos os direitos reservados.",
       madeWith: "Feito com ❤️ usando React & Java"
+    },
+
+    // Practical Tests Section
+    practicalTests: {
+      title: "Practical",
+      titleHighlight: "Tests",
+      subtitle: "Desafios reais de contratação de diferentes empresas. Cada projeto demonstra minhas habilidades de resolução de problemas e expertise técnica em vários cenários.",
+      callToAction: {
+        title: "Quer ver meus desafios práticos de programação?",
+        description: "Explore desafios reais de contratação que resolvi para diferentes empresas",
+        button: "Ver Practical Tests"
+      },
+      featuredChallenges: "Desafios em Destaque",
+      otherChallenges: "Outros Desafios",
+      challenge: "Desafio:",
+      company: "Empresa",
+      completedDate: "Data de Conclusão",
+      duration: "Duração",
+      technologies: "Tecnologias",
+      liveDemo: "Ver Demo",
+      viewCode: "Ver Código",
+      backToHome: "Voltar ao início",
+      interestedTitle: "Interessado na minha abordagem?",
+      interestedDescription: "Estes testes práticos demonstram minha metodologia de resolução de problemas e habilidades técnicas. Cada desafio foi concluído dentro do prazo estabelecido, mantendo a qualidade do código e as melhores práticas.",
+      discussProject: "Vamos discutir seu próximo projeto"
     }
   },
 
@@ -188,6 +213,31 @@ export const translations = {
       social: "Social Media",
       rights: "All rights reserved.",
       madeWith: "Made with ❤️ using React & Java"
+    },
+
+    // Practical Tests Section
+    practicalTests: {
+      title: "Practical",
+      titleHighlight: "Tests",
+      subtitle: "Real coding challenges from hiring processes at different companies. Each project demonstrates my problem-solving skills and technical expertise in various scenarios.",
+      callToAction: {
+        title: "Want to see my practical coding challenges?",
+        description: "Explore real hiring challenges I've solved for different companies",
+        button: "View Practical Tests"
+      },
+      featuredChallenges: "Featured Challenges",
+      otherChallenges: "Other Challenges",
+      challenge: "Challenge:",
+      company: "Company",
+      completedDate: "Completed Date",
+      duration: "Duration",
+      technologies: "Technologies",
+      liveDemo: "Live Demo",
+      viewCode: "View Code",
+      backToHome: "Back to home",
+      interestedTitle: "Interested in my approach?",
+      interestedDescription: "These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.",
+      discussProject: "Let's discuss your next project"
     }
   }
 } as const;

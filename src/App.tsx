@@ -15,6 +15,7 @@ import { Footer } from "@/components/Footer";
 import { AllProjects } from "@/pages/AllProjects";
 import { Articles } from "@/pages/Articles";
 import { PracticalTests } from "@/pages/PracticalTests";
+import { PracticalTestsCallToAction } from "@/components/PracticalTestsCallToAction";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Loading } from "@/components/Loading";
 import { useState, useEffect } from "react";
@@ -26,6 +27,7 @@ const HomePage = () => (
     <Hero />
     <About />
     <Skills />
+    <PracticalTestsCallToAction />
     <Projects />
     <Contact />
   </>
