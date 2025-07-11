@@ -12,7 +12,7 @@ export const Home = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen mt-10 sm:min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute top-20 left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl animate-float"></div>
       <div className="absolute bottom-20 right-20 w-56 h-56 bg-accent/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       <div className="absolute top-1/2 left-10 w-24 h-24 bg-primary/5 rounded-full blur-xl animate-pulse-slow"></div>
