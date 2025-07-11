@@ -42,18 +42,22 @@ export const Navigation = () => {
 
   return (
     <header className="h-full">
-      <nav
+      <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
-            : "py-6"
+          ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
+          : "py-6"
           }`}
       >
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="hover:opacity-80 transition-opacity">
-              <Logo className="w-10 h-10" />
-            </Link>
+            <div className="flex items-center space-x-3">
+              <div className="hidden lg:block">
+                <ThemeToggle />
+              </div>
+              <div className="hidden lg:block">
+                <LanguageToggle />
+              </div>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -94,12 +98,6 @@ export const Navigation = () => {
             {/* Controls */}
             <div className="flex items-center space-x-3">
               <div className="hidden lg:block">
-                <ThemeToggle />
-              </div>
-              <div className="hidden lg:block">
-                <LanguageToggle />
-              </div>
-              <div className="hidden lg:block">
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("contact")}
@@ -107,11 +105,6 @@ export const Navigation = () => {
                 >
                   {t.nav.hire}
                 </Button>
-              </div>
-
-              {/* Mobile theme toggle */}
-              <div className="md:hidden lg:hidden">
-                <ThemeToggle />
               </div>
             </div>
           </div>
