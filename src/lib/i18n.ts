@@ -18,7 +18,7 @@ export const translations = {
     hero: {
       greeting: "Olá, eu sou",
       name: "Natã Pedro",
-      subtitle: "Desenvolvedor Full Stack especializado em React e Java, criando soluções web modernas e escaláveis",
+      subtitle: "Desenvolvedor Full Stack especializado em React e Java",
       viewProjects: "Ver Projetos",
       contact: "Entrar em Contato",
       scrollDown: "Rolar para baixo"
@@ -118,7 +118,7 @@ export const translations = {
       backToHome: "Voltar ao início",
       interestedTitle: "Interessado na minha abordagem?",
       interestedDescription: "Estes testes práticos demonstram minha metodologia de resolução de problemas e habilidades técnicas. Cada desafio foi concluído dentro do prazo estabelecido, mantendo a qualidade do código e as melhores práticas.",
-      discussProject: "Vamos discutir seu próximo projeto"
+      discussProject: "Enviar mensagem"
     }
   },
 
@@ -142,7 +142,7 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       name: "Natã Pedro",
-      subtitle: "Full Stack Developer specialized in React and Java, creating modern and scalable web solutions",
+      subtitle: "Full Stack Developer specialized in React and Java",
       viewProjects: "View Projects",
       contact: "Get In Touch",
       scrollDown: "Scroll down"
@@ -242,7 +242,7 @@ export const translations = {
       backToHome: "Back to home",
       interestedTitle: "Interested in my approach?",
       interestedDescription: "These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.",
-      discussProject: "Let's discuss your next project"
+      discussProject: "Send a message"
     }
   }
 } as const;
