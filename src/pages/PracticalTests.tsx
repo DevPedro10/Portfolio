@@ -100,7 +100,7 @@ export const PracticalTests = () => {
   };
 
   return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen py-0 sm:py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12">
           <div className="text-center mb-16">
@@ -119,7 +119,7 @@ export const PracticalTests = () => {
             {featuredTests.map((test) => (
               <div key={test.id} className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300">
                 <div className="space-y-6">
-                  <div className="flex items-start justify-between">
+                  <div className="flex sm:flex-row flex-col gap-4 items-start justify-between">
                     <div className="space-y-2">
                       <h3 className="text-xl font-space font-semibold">{test.title}</h3>
                       <p className="text-sm text-primary font-medium">{test.company}</p>
@@ -194,7 +194,7 @@ export const PracticalTests = () => {
                     <p className="text-sm text-primary font-medium">{test.company}</p>
                   </div>
 
-                  <div className="flex items-center space-x-4 text-xs text-muted-foreground">
+                  <div className="flex sm:items-center sm:space-x-4 text-xs text-muted-foreground flex-col sm:flex-row space-x-0 items-start gap-2 sm:gap-0">
                     <div className="flex items-center space-x-1">
                       <Calendar className="w-3 h-3" />
                       <span>{formatDate(test.completedDate)}</span>
