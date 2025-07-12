@@ -33,7 +33,7 @@ export const Hero = () => {
             <img
               src={profileImage}
               alt="Natã Pedro"
-              className="w-full h-full object-cover rounded-full shadow-sm border border-border/20"
+              className="w-full h-full object-cover rounded-md sm:rounded-full shadow-sm border border-border/20"
             />
           </div>
 
@@ -41,8 +41,7 @@ export const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-space font-light leading-tight">
-                {t.hero.greeting}{" "}
-                <span className="text-gradient font-medium sm:inline block">{t.hero.name}</span>
+                <span className="text-foreground font-medium sm:inline block">{t.hero.name}</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
