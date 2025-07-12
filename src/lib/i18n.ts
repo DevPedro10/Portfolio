@@ -7,9 +7,11 @@ export const translations = {
       skills: "Habilidades",
       projects: "Projetos",
       articles: "Artigos",
-      practicalTests: "Practical Tests",
+      practicalTests: "Testes práticos",
       contact: "Contato",
-      hire: "Currículo"
+      hire: "Currículo",
+      more: "Mais",
+      soon: "Em breve"
     },
 
     // Hero Section
@@ -34,8 +36,8 @@ export const translations = {
       experience: "Experiência",
       education: "Educação",
       positions: {
-        fullstack: "Full Stack Developer",
-        java: "Desenvolvedor Java",
+        fullstack: "Desenvolvedor java",
+        java: "Analista desenvolvedor",
         degree: "Análise e Desenvolvimento de Sistemas"
       }
     },
@@ -96,13 +98,13 @@ export const translations = {
 
     // Practical Tests Section
     practicalTests: {
-      title: "Practical",
-      titleHighlight: "Tests",
+      title: "Testes",
+      titleHighlight: "práticos",
       subtitle: "Desafios reais de contratação de diferentes empresas. Cada projeto demonstra minhas habilidades de resolução de problemas e expertise técnica em vários cenários.",
       callToAction: {
         title: "Quer ver meus desafios práticos de programação?",
         description: "Explore desafios reais de contratação que resolvi para diferentes empresas",
-        button: "Ver Practical Tests"
+        button: "Ver Testes práticos"
       },
       featuredChallenges: "Desafios em Destaque",
       otherChallenges: "Outros Desafios",
@@ -130,7 +132,10 @@ export const translations = {
       articles: "Articles",
       practicalTests: "Practical Tests",
       contact: "Contact",
-      hire: "Resume"
+      hire: "Resume",
+      more: "More",
+      soon: "Soon"
+
     },
 
     // Hero Section
