@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Notebook } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Articles = () => {
@@ -75,13 +75,7 @@ export const Articles = () => {
   return (
     <div className="min-h-screen py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="mb-12">
-          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Voltar ao início
-          </Link>
-          
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
               Meus <span className="text-gradient font-medium">Artigos</span>
@@ -109,15 +103,15 @@ export const Articles = () => {
                       <span>{article.readTime}</span>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-xl font-space font-semibold group-hover:text-primary transition-colors duration-200">
                     {article.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground leading-relaxed">
                     {article.excerpt}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {article.tags.map((tag, index) => (
                       <span
@@ -128,9 +122,9 @@ export const Articles = () => {
                       </span>
                     ))}
                   </div>
-                  
-                  <Button 
-                    variant="outline" 
+
+                  <Button
+                    variant="outline"
                     size="sm"
                     className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
                   >
@@ -159,15 +153,15 @@ export const Articles = () => {
                       <span>{article.readTime}</span>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-space font-semibold group-hover:text-primary transition-colors duration-200">
                     {article.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {article.excerpt}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {article.tags.slice(0, 3).map((tag, index) => (
                       <span
@@ -183,9 +177,9 @@ export const Articles = () => {
                       </span>
                     )}
                   </div>
-                  
-                  <Button 
-                    variant="outline" 
+
+                  <Button
+                    variant="outline"
                     size="sm"
                     className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
                   >
@@ -200,6 +194,11 @@ export const Articles = () => {
         {/* Newsletter Signup */}
         <div className="mt-16 text-center">
           <div className="bg-card/50 border border-border/20 rounded-lg p-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-6">
+              <div className="p-4 bg-primary/10 rounded-full">
+                <Notebook className="w-8 h-8 text-primary" />
+              </div>
+            </div>
             <h3 className="text-xl font-space font-semibold mb-4">Receba novos artigos</h3>
             <p className="text-muted-foreground mb-6">
               Inscreva-se para receber notificações sobre novos artigos e conteúdos sobre desenvolvimento de software.
@@ -210,7 +209,7 @@ export const Articles = () => {
                 placeholder="Seu email"
                 className="flex-1 px-4 py-2 bg-background/50 border border-border/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
-              <Button 
+              <Button
                 variant="outline"
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
               >

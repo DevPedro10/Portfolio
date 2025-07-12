@@ -102,13 +102,7 @@ export const PracticalTests = () => {
   return (
     <div className="min-h-screen py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="mb-12">
-          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            {t.practicalTests.backToHome}
-          </Link>
-          
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
               {t.practicalTests.title} <span className="text-gradient font-medium">{t.practicalTests.titleHighlight}</span>
@@ -119,7 +113,6 @@ export const PracticalTests = () => {
           </div>
         </div>
 
-        {/* Featured Tests */}
         <div className="mb-16">
           <h2 className="text-2xl font-space font-semibold mb-8 text-center">{t.practicalTests.featuredChallenges}</h2>
           <div className="grid lg:grid-cols-2 gap-8">
@@ -131,7 +124,7 @@ export const PracticalTests = () => {
                       <h3 className="text-xl font-space font-semibold">{test.title}</h3>
                       <p className="text-sm text-primary font-medium">{test.company}</p>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                    <div className="flex flex-col items-left gap-3 text-sm text-muted-foreground">
                       <div className="flex items-center space-x-1">
                         <Calendar className="w-4 h-4" />
                         <span>{formatDate(test.completedDate)}</span>
@@ -153,7 +146,7 @@ export const PracticalTests = () => {
                       {test.description}
                     </p>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {test.technologies.map((tech, index) => (
                       <span
@@ -166,16 +159,16 @@ export const PracticalTests = () => {
                   </div>
 
                   <div className="flex space-x-4">
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       variant="outline"
                       className="border-primary/20 hover:border-primary/40 hover:bg-primary/5"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       {t.practicalTests.liveDemo}
                     </Button>
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       variant="outline"
                       className="border-primary/20 hover:border-primary/40 hover:bg-primary/5"
                     >
@@ -215,7 +208,7 @@ export const PracticalTests = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {test.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {test.technologies.slice(0, 3).map((tech, index) => (
                       <span
@@ -233,16 +226,16 @@ export const PracticalTests = () => {
                   </div>
 
                   <div className="flex space-x-2">
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       variant="outline"
                       className="flex-1 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-xs"
                     >
                       <ExternalLink className="w-3 h-3 mr-1" />
                       {t.practicalTests.liveDemo}
                     </Button>
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       variant="outline"
                       className="flex-1 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-xs"
                     >
@@ -264,7 +257,7 @@ export const PracticalTests = () => {
               {t.practicalTests.interestedDescription}
             </p>
             <Link to="/contact">
-              <Button 
+              <Button
                 variant="outline"
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
               >
