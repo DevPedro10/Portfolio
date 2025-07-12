@@ -6,6 +6,8 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { Logo } from "@/components/Logo";
 import { MobileMenu } from "@/components/MobileMenu";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu";
+import { FlaskConical, Notebook } from "lucide-react";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,93 +40,122 @@ export const Navigation = () => {
     { label: t.nav.skills, id: "skills", isSection: true },
     { label: t.nav.projects, id: "projects", isSection: true },
     { label: t.nav.contact, id: "contact", isSection: true },
+    { label: t.nav.practicalTests, path: "/practical-tests", icon: FlaskConical, available: false },
+    { label: t.nav.articles, path: "/articles", icon: Notebook, available: false },
   ];
 
-  const pageItems = [
-    { label: t.nav.practicalTests, path: "/practical-tests" },
-    { label: t.nav.articles, path: "/articles" },
-  ];
 
   return (
     <header className="h-full">
-      <nav 
+      <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
           : "py-6"
           }`}
       >
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <Logo className="w-10 h-10" />
-            </Link>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-3 items-center w-full">
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-12">
-              {/* Main Navigation */}
-              <div className="flex items-center space-x-8">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id!)}
-                    className="font-medium transition-colors duration-300 hover:text-primary text-sm tracking-wide"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center">
+                <span className="text-gradient block md:inline text-xl">
+                  {t.hero.name.split(" ")[0]}
+                </span>
+              </Link>
+            </div>
 
-              {/* Separator */}
-              <div className="w-px h-6 bg-border/40"></div>
-
-              {/* Page Links */}
-              <div className="flex items-center space-x-6">
-                {pageItems.map((item) => {
-                  const isActive = location.pathname === item.path;
-                  return (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`font-medium transition-colors duration-300 hover:text-primary text-sm tracking-wide ${
-                        isActive ? "text-primary" : ""
-                      }`}
+            <div className="hidden lg:flex justify-center">
+              <div className="flex items-center gap-3">
+                {navItems
+                  .filter((item) => item.isSection)
+                  .map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id!)}
+                      className="py-2 px-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300"
                     >
                       {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
+                    </button>
+                  ))}
 
-              {/* Separator */}
-              <div className="w-px h-6 bg-border/40"></div>
-
-              {/* Controls */}
-              <div className="flex items-center space-x-4">
-                <ThemeToggle />
-                <LanguageToggle />
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => scrollToSection("contact")}
-                  className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 px-6"
-                >
-                  {t.nav.hire}
-                </Button>
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger
+                        className="px-3 py-0 m-0 text-sm font-medium text-muted-foreground 
+                      hover:text-primary 
+                      data-[state=open]:text-primary 
+                      focus:text-primary 
+                      active:text-primary 
+                      transition-colors duration-300 
+                      bg-transparent 
+                      hover:bg-transparent 
+                      focus:bg-transparent 
+                      active:bg-transparent 
+                      data-[state=open]:bg-transparent"
+                      >
+                        {t.nav.more}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="min-w-[180px] bg-background rounded-md">
+                        {navItems
+                          .filter((item) => !item.isSection)
+                          .map((item) => {
+                            const Icon = item.icon;
+                            return (
+                              <NavigationMenuLink asChild key={item.label}>
+                                <a
+                                  href={item.path}
+                                  className="flex items-center gap-2 py-3 px-2 text-sm text-muted-foreground 
+                                hover:text-primary 
+                                transition-colors duration-200 
+                                bg-transparent 
+                                hover:bg-transparent 
+                                focus:bg-transparent 
+                                active:bg-transparent 
+                                data-[state=open]:bg-transparent"
+                                >
+                                  {Icon && (
+                                    <Icon
+                                      size={16}
+                                      className="text-muted-foreground"
+                                    />
+                                  )}
+                                  {item.label}
+                                  {/* {!item.available && (
+                                    <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
+                                      DEV
+                                    </span>
+                                  )} */}
+                                </a>
+                              </NavigationMenuLink>
+                            );
+                          })}
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
               </div>
             </div>
 
-            {/* Mobile Menu */}
-            <MobileMenu />
+            <div className="flex items-center justify-end space-x-4">
+              <ThemeToggle />
+              <LanguageToggle />
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => scrollToSection("contact")}
+                className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 px-6"
+              >
+                {t.nav.hire}
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* Spacer */}
-      <div
-        className={`${isScrolled ? "h-[72px]" : "h-[96px]"
-          } transition-all duration-500`}
-      />
+      {/* Spacer para compensar altura fixa do nav */}
+      <div className={`${isScrolled ? "h-[72px]" : "h-[96px]"} transition-all duration-500`} />
     </header>
+
   );
 };
