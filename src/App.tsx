@@ -19,6 +19,7 @@ import { PracticalTestsCallToAction } from "@/components/PracticalTestsCallToAct
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Loading } from "@/components/Loading";
 import { useState, useEffect } from "react";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => {
             <Toaster />
             <Sonner />
             <BrowserRouter>
+              <ScrollToTop />
               <div className="min-h-screen bg-background">
                 <Navigation />
                 <main>
