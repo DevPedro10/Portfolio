@@ -17,7 +17,6 @@ import { Articles } from "@/pages/Articles";
 import { PracticalTests } from "@/pages/PracticalTests";
 import { PracticalTestsCallToAction } from "@/components/PracticalTestsCallToAction";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { Loading } from "@/components/Loading";
 import { useState, useEffect } from "react";
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -38,26 +37,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
-  useEffect(() => {
-    // Simulate portfolio loading
-    const timer = setTimeout(() => {
-      setFadeOut(true);
-      // Wait for fade out animation to complete
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    }, 2500);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className={`transition-opacity duration-500 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
-        <Loading />
-      </div>
-    );
-  }
 
   return (
     <QueryClientProvider client={queryClient}>
