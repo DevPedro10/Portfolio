@@ -4,7 +4,7 @@ export const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="scroll-mt-[100px] px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
