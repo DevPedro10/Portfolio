@@ -34,8 +34,8 @@ export const Contact = () => {
   const contactInfo = [
     {
       title: "Email",
-      value: "natanpedrodasilva@email.com",
-      href: "mailto:natanpedrodasilva@email.com"
+      value: "natanpedrodasilva@gmail.com",
+      href: "mailto:natanpedrodasilva@gmail.com"
     },
     {
       title: "LinkedIn",
