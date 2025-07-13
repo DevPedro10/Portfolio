@@ -8,7 +8,7 @@ import { Logo } from "@/components/Logo";
 import { MobileMenu } from "@/components/MobileMenu";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu";
 import { FlaskConical, Notebook } from "lucide-react";
-
+import CV from '@/assets/Desenvolvedor Java.pdf';
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
@@ -143,7 +143,7 @@ export const Navigation = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open(CV, '_blank')}
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 px-6"
               >
                 {t.nav.hire}
