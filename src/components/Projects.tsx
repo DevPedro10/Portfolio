@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Project } from "@/types/project";
 import project1Image from "@/assets/project1.jpg";
 import project2Image from "@/assets/project2.jpg";
 import project3Image from "@/assets/project3.jpg";
@@ -8,7 +10,7 @@ import project3Image from "@/assets/project3.jpg";
 export const Projects = () => {
   const { t } = useLanguage();
 
-  const projects = [
+  const projects: Project[] = [
     {
       id: 1,
       title: "E-Commerce Platform",
@@ -16,7 +18,8 @@ export const Projects = () => {
       image: project1Image,
       technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      isHighlighted: true
     },
     {
       id: 2,
@@ -25,7 +28,8 @@ export const Projects = () => {
       image: project2Image,
       technologies: ["Vue.js", "Python", "MongoDB", "Chart.js", "Docker"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      isHighlighted: true
     },
     {
       id: 3,
@@ -34,9 +38,13 @@ export const Projects = () => {
       image: project3Image,
       technologies: ["React Native", "Firebase", "TypeScript", "WebSocket"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      isHighlighted: false
     }
   ];
+
+  const highlightedProjects = projects.filter(project => project.isHighlighted);
+  const regularProjects = projects.filter(project => !project.isHighlighted);
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -50,53 +58,33 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div key={project.id} className="bg-card/50 border border-border/20 rounded-lg overflow-hidden group hover:bg-card/70 transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        {/* Projetos em Destaque */}
+        {highlightedProjects.length > 0 && (
+          <div className="mb-12">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {highlightedProjects.map((project) => (
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  isHighlighted={true} 
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="bg-background/90 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
-                  >
-                    Ver Demo
-                  </Button>
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="bg-background/90 border-primary/20 hover:border-primary/40 hover:bg-primary/5"
-                  >
-                    GitHub
-                  </Button>
-                </div>
-              </div>
-              
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-space font-semibold">{project.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-secondary/50 rounded-full text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        {/* Projetos Regulares */}
+        {regularProjects.length > 0 && (
+          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {regularProjects.map((project) => (
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                isHighlighted={false} 
+              />
+            ))}
+          </div>
+        )}
 
         <div className="text-center mt-12">
           <Link to="/projects">
