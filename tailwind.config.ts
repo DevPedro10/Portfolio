@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
 				space: ['Space Grotesk', 'sans-serif'],
+				dmserif: ['"DM Serif Text"', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

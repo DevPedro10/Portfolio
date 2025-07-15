@@ -36,7 +36,7 @@ export const translations = {
       experience: "Experiência",
       education: "Educação",
       positions: {
-        fullstack: "Desenvolvedor java",
+        fullstack: "Desenvolvedor Java",
         java: "Analista desenvolvedor",
         degree: "Análise e Desenvolvimento de Sistemas"
       }

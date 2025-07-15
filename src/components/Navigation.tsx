@@ -58,8 +58,8 @@ export const Navigation = () => {
 
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
-                <span className="text-gradient block md:inline text-xl">
-                  {t.hero.name.split(" ")[0]}
+                <span className="text-gradient block md:inline text-4xl font-dmserif">
+                  n.
                 </span>
               </Link>
             </div>

@@ -1,19 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natã Pedro</title>
-    <meta name="description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
-    <meta name="author" content="Natã Pedro" />
+<html lang="pt-BR">
 
-    <meta property="og:title" content="Natã Pedro - Desenvolvedor Full Stack" />
-    <meta property="og:description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
-    <meta property="og:type" content="website" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natã Pedro</title>
+  <meta name="description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
+  <meta name="author" content="Natã Pedro" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <meta property="og:title" content="Natã Pedro - Desenvolvedor Full Stack" />
+  <meta property="og:description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
+  <meta property="og:type" content="website" />
+
+  <link id="favicon" rel="icon" type="image/png" href="/favicon/light/favicon-32x32.png" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+  <script>
+    const html = document.documentElement;
+    const favicon = document.getElementById('favicon');
+
+    function updateFavicon() {
+      const isDark = html.classList.contains('dark');
+      favicon.href = isDark
+        ? '/favicon/dark/favicon-32x32.png'
+        : '/favicon/light/favicon-32x32.png';
+    }
+
+    updateFavicon();
+
+    const observer = new MutationObserver(updateFavicon);
+    observer.observe(html, { attributes: true, attributeFilter: ['class'] });
+  </script>
+</body>
+
 </html>
