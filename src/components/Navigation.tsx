@@ -4,11 +4,16 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
-import { Logo } from "@/components/Logo";
-import { MobileMenu } from "@/components/MobileMenu";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "./ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "./ui/navigation-menu";
 import { FlaskConical, Notebook } from "lucide-react";
-import CV from '@/assets/Desenvolvedor Java.pdf';
+import CV from "@/assets/Desenvolvedor Java.pdf";
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
@@ -40,26 +45,35 @@ export const Navigation = () => {
     { label: t.nav.skills, id: "skills", isSection: true },
     { label: t.nav.projects, id: "projects", isSection: true },
     { label: t.nav.contact, id: "contact", isSection: true },
-    { label: t.nav.practicalTests, path: "/practical-tests", icon: FlaskConical, available: false },
-    { label: t.nav.articles, path: "/articles", icon: Notebook, available: false },
+    {
+      label: t.nav.practicalTests,
+      path: "/practical-tests",
+      icon: FlaskConical,
+      available: false,
+    },
+    {
+      label: t.nav.articles,
+      path: "/articles",
+      icon: Notebook,
+      available: false,
+    },
   ];
-
 
   return (
     <header className="h-full">
       <nav
-        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
-          : "py-6"
-          }`}
+        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
+            : "py-6"
+        }`}
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 items-center w-full">
-
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
-                <span className="text-gradient block md:inline text-4xl font-dmserif">
-                  n.
+                <span className="block md:inline text-2xl font-arial">
+                  Natã Pedro
                 </span>
               </Link>
             </div>
@@ -143,7 +157,7 @@ export const Navigation = () => {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open(CV, '_blank')}
+                onClick={() => window.open(CV, "_blank")}
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 px-6"
               >
                 {t.nav.hire}
@@ -154,8 +168,11 @@ export const Navigation = () => {
       </nav>
 
       {/* Spacer para compensar altura fixa do nav */}
-      <div className={`${isScrolled ? "h-[72px]" : "h-[96px]"} transition-all duration-500`} />
+      <div
+        className={`${
+          isScrolled ? "h-[72px]" : "h-[96px]"
+        } transition-all duration-500`}
+      />
     </header>
-
   );
 };
