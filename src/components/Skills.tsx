@@ -6,16 +6,25 @@ export const Skills = () => {
   const skillCategories = [
     {
       title: t.skills.frontend,
-      skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"]
+      skills: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Tailwind CSS"],
     },
     {
       title: t.skills.backend,
-      skills: ["Java", "Spring Boot", "PostgreSQL", "MySQL", "Redis", "REST APIs", "JPA/Hibernate", "RabbitMQ"]
+      skills: [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "REST APIs",
+        "JPA/Hibernate",
+        "RabbitMQ",
+      ],
     },
     {
       title: t.skills.tools,
-      skills: ["Git", "Docker", "Maven", "Gradle", "Linux"]
-    }
+      skills: ["Git", "Docker", "Maven", "Gradle", "Linux"],
+    },
   ];
 
   return (
@@ -23,7 +32,7 @@ export const Skills = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
-            {t.skills.title} <span className="text-gradient font-medium">{t.skills.titleHighlight}</span>
+            {t.skills.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {t.skills.subtitle}
@@ -32,8 +41,11 @@ export const Skills = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-card/50 border border-border/20 p-6 rounded-lg space-y-6 hover:bg-card/70 transition-colors duration-300">
-              <h3 className="text-xl font-space font-medium text-center text-gradient">
+            <div
+              key={index}
+              className="bg-card/50 border border-border/20 p-6 rounded-lg space-y-6 hover:bg-card/70 transition-colors duration-300"
+            >
+              <h3 className="text-xl font-space font-medium text-center">
                 {category.title}
               </h3>
               <div className="grid gap-3">
@@ -52,11 +64,15 @@ export const Skills = () => {
 
         {/* Additional Skills */}
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-space font-medium mb-8 text-muted-foreground">{t.skills.otherSkills}</h3>
+          <h3 className="text-xl font-space font-medium mb-8 text-muted-foreground">
+            {t.skills.otherSkills}
+          </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Spring Framework", "JPA/Hibernate", "Metodologias Ágeis", "Testes Unitários",
-              "Clean Code", "Microserviços",
+              "Spring Framework",
+              "Metodologias Ágeis",
+              "Testes Unitários",
+              "Microserviços",
             ].map((skill, index) => (
               <span
                 key={index}
