@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
-import { translations, Language } from '@/lib/i18n';
+/* eslint-disable react-refresh/only-export-components */
+import React, { createContext, useContext, useState } from "react";
+import { translations, Language } from "@/lib/i18n";
 
 interface LanguageContextType {
   language: Language;
@@ -7,11 +8,15 @@ interface LanguageContextType {
   t: typeof translations.pt | typeof translations.en;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('pt');
-  
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [language, setLanguage] = useState<Language>("pt");
+
   const t = translations[language] as typeof translations.pt;
 
   return (
@@ -24,7 +29,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 };

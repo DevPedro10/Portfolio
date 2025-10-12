@@ -11,63 +11,65 @@ export const translations = {
       contact: "Contato",
       hire: "Currículo",
       more: "Mais",
-      soon: "Em breve"
+      soon: "Em breve",
     },
 
     // Hero Section
     hero: {
       greeting: "Olá, eu sou",
       name: "Natã Pedro",
-      subtitle: "Desenvolvedor Full Stack especializado em React e Java",
+      subtitle: "Desenvolvedor Java",
       viewProjects: "Ver Projetos",
       contact: "Entrar em Contato",
-      scrollDown: "Rolar para baixo"
+      scrollDown: "Rolar para baixo",
     },
 
     // About Section
     about: {
       title: "Sobre",
       titleHighlight: "Mim",
-      subtitle: "Desenvolvedor Full Stack com experiência em React e Java, focado em criar aplicações eficientes e escaláveis",
-      myJourney: "Minha Jornada",
-      description1: "Especializado em desenvolvimento Full Stack, trabalho principalmente com React no frontend e Java no backend. Tenho paixão por criar soluções elegantes e funcionais que atendam às necessidades reais dos usuários.",
-      description2: "Meu foco está em escrever código limpo, manter boas práticas de desenvolvimento e sempre buscar a melhor experiência do usuário. Acredito que tecnologia deve simplificar e melhorar a vida das pessoas.",
+      subtitle:
+        "Desenvolvedor Full Stack com experiência em React e Java, focado em criar aplicações eficientes e escaláveis",
+      myJourney: "Atuação",
+      description1:
+        "Trabalho no ecossistema Java e React, com atuação em Vue. Atualmente Alocado na Tokio Marine Seguradora como Desenvolvedor JAva, foco no desenvolvimento de sistemas para o setor de seguros.",
+      description2:
+        "Fora do ambiente corporativo, construo projetos open source como o ShipSHort, onde exploro arquitetura de software, mensageria e bancos de dados NoSQL.",
       mainTech: "Principais Tecnologias:",
       experience: "Experiência",
       education: "Educação",
       positions: {
         fullstack: "Desenvolvedor Java",
         java: "Analista desenvolvedor",
-        degree: "Análise e Desenvolvimento de Sistemas"
-      }
+        degree: "Análise e Desenvolvimento de Sistemas",
+      },
     },
 
     // Skills Section
     skills: {
-      title: "Minhas",
-      titleHighlight: "Habilidades",
-      subtitle: "Tecnologias que utilizo para criar soluções eficientes e escaláveis",
+      title: "Minhas habilidades",
+      subtitle: "Tecnologias que utilizo",
       frontend: "Frontend",
       backend: "Backend",
       tools: "Ferramentas",
-      otherSkills: "Outras Competências"
+      otherSkills: "Outras Competências",
     },
 
     // Projects Section
     projects: {
-      title: "Meus",
-      titleHighlight: "Projetos",
-      subtitle: "Uma seleção dos projetos mais relevantes que desenvolvi, demonstrando minhas habilidades e paixão por tecnologia",
+      title: "Meus projetos",
+      subtitle:
+        "Repositório que serve como laboratório técnico para experimentação e validação de stacks. O Objetivo de cada implementação é explorar curiosidades específicas sobre o ecossistema de software, testando conceitos de arquitetura e desenvolvimento.",
       viewDemo: "Ver Demo",
       viewCode: "Ver Código",
-      allProjects: "Ver Todos os Projetos"
+      allProjects: "Ver Todos os Projetos",
     },
 
     // Contact Section
     contact: {
-      title: "Vamos",
-      titleHighlight: "Conversar",
-      subtitle: "Estou sempre aberto a novos projetos e oportunidades interessantes. Entre em contato e vamos criar algo incrível juntos!",
+      title: "Entre em contato",
+      subtitle:
+        "Entre em contato para discutirmos projeto ou possíveis colaborações.",
       sendMessage: "Envie uma Mensagem",
       name: "Nome",
       email: "Email",
@@ -83,28 +85,31 @@ export const translations = {
         name: "Seu nome",
         email: "seu@email.com",
         subject: "Sobre o que você quer falar?",
-        message: "Conte-me mais sobre sua ideia ou projeto..."
-      }
+        message: "Conte-me mais sobre sua ideia ou projeto...",
+      },
     },
 
     // Footer
     footer: {
-      description: "Desenvolvedor Full Stack especializado em React e Java, criando soluções web modernas e eficientes.",
+      description:
+        "Desenvolvedor Full Stack especializado em React e Java, criando soluções web modernas e eficientes.",
       quickLinks: "Links Rápidos",
       social: "Redes Sociais",
       rights: "Todos os direitos reservados.",
-      madeWith: "Feito com ❤️ usando React & Java"
+      madeWith: "Feito com React & Java",
     },
 
     // Practical Tests Section
     practicalTests: {
       title: "Testes",
       titleHighlight: "práticos",
-      subtitle: "Desafios reais de contratação de diferentes empresas. Cada projeto demonstra minhas habilidades de resolução de problemas e expertise técnica em vários cenários.",
+      subtitle:
+        "Desafios reais de contratação de diferentes empresas. Cada projeto demonstra minhas habilidades de resolução de problemas e expertise técnica em vários cenários.",
       callToAction: {
         title: "Quer ver meus desafios práticos de programação?",
-        description: "Explore desafios reais de contratação que resolvi para diferentes empresas",
-        button: "Ver Testes práticos"
+        description:
+          "Explore desafios reais de contratação que resolvi para diferentes empresas",
+        button: "Ver Testes práticos",
       },
       featuredChallenges: "Desafios em Destaque",
       otherChallenges: "Outros Desafios",
@@ -117,9 +122,10 @@ export const translations = {
       viewCode: "Ver Código",
       backToHome: "Voltar ao início",
       interestedTitle: "Interessado na minha abordagem?",
-      interestedDescription: "Estes testes práticos demonstram minha metodologia de resolução de problemas e habilidades técnicas. Cada desafio foi concluído dentro do prazo estabelecido, mantendo a qualidade do código e as melhores práticas.",
-      discussProject: "Enviar mensagem"
-    }
+      interestedDescription:
+        "Estes testes práticos demonstram minha metodologia de resolução de problemas e habilidades técnicas. Cada desafio foi concluído dentro do prazo estabelecido, mantendo a qualidade do código e as melhores práticas.",
+      discussProject: "Enviar mensagem",
+    },
   },
 
   en: {
@@ -134,8 +140,7 @@ export const translations = {
       contact: "Contact",
       hire: "Resume",
       more: "More",
-      soon: "Soon"
-
+      soon: "Soon",
     },
 
     // Hero Section
@@ -145,25 +150,28 @@ export const translations = {
       subtitle: "Full Stack Developer specialized in React and Java",
       viewProjects: "View Projects",
       contact: "Get In Touch",
-      scrollDown: "Scroll down"
+      scrollDown: "Scroll down",
     },
 
-    // About Section  
+    // About Section
     about: {
       title: "About",
       titleHighlight: "Me",
-      subtitle: "Full Stack Developer with experience in React and Java, focused on creating efficient and scalable applications",
+      subtitle:
+        "Full Stack Developer with experience in React and Java, focused on creating efficient and scalable applications",
       myJourney: "My Journey",
-      description1: "Specialized in Full Stack development, I work mainly with React on the frontend and Java on the backend. I have a passion for creating elegant and functional solutions that meet real user needs.",
-      description2: "My focus is on writing clean code, maintaining good development practices and always seeking the best user experience. I believe that technology should simplify and improve people's lives.",
+      description1:
+        "Specialized in Full Stack development, I work mainly with React on the frontend and Java on the backend. I have a passion for creating elegant and functional solutions that meet real user needs.",
+      description2:
+        "My focus is on writing clean code, maintaining good development practices and always seeking the best user experience. I believe that technology should simplify and improve people's lives.",
       mainTech: "Main Technologies:",
       experience: "Experience",
       education: "Education",
       positions: {
         fullstack: "Full Stack Developer",
         java: "Java Developer",
-        degree: "Systems Analysis and Development"
-      }
+        degree: "Systems Analysis and Development",
+      },
     },
 
     // Skills Section
@@ -174,24 +182,26 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       tools: "Tools",
-      otherSkills: "Other Skills"
+      otherSkills: "Other Skills",
     },
 
     // Projects Section
     projects: {
       title: "My",
       titleHighlight: "Projects",
-      subtitle: "A selection of the most relevant projects I've developed, showcasing my skills and passion for technology",
+      subtitle:
+        "A selection of the most relevant projects I've developed, showcasing my skills and passion for technology",
       viewDemo: "View Demo",
       viewCode: "View Code",
-      allProjects: "View All Projects"
+      allProjects: "View All Projects",
     },
 
     // Contact Section
     contact: {
       title: "Let's",
       titleHighlight: "Talk",
-      subtitle: "I'm always open to new projects and interesting opportunities. Get in touch and let's create something amazing together!",
+      subtitle:
+        "I'm always open to new projects and interesting opportunities. Get in touch and let's create something amazing together!",
       sendMessage: "Send a Message",
       name: "Name",
       email: "Email",
@@ -207,28 +217,31 @@ export const translations = {
         name: "Your name",
         email: "your@email.com",
         subject: "What would you like to talk about?",
-        message: "Tell me more about your idea or project..."
-      }
+        message: "Tell me more about your idea or project...",
+      },
     },
 
     // Footer
     footer: {
-      description: "Full Stack Developer specialized in React and Java, creating modern and efficient web solutions.",
+      description:
+        "Full Stack Developer specialized in React and Java, creating modern and efficient web solutions.",
       quickLinks: "Quick Links",
       social: "Social Media",
       rights: "All rights reserved.",
-      madeWith: "Made with ❤️ using React & Java"
+      madeWith: "Made with React & Java",
     },
 
     // Practical Tests Section
     practicalTests: {
       title: "Practical",
       titleHighlight: "Tests",
-      subtitle: "Real coding challenges from hiring processes at different companies. Each project demonstrates my problem-solving skills and technical expertise in various scenarios.",
+      subtitle:
+        "Real coding challenges from hiring processes at different companies. Each project demonstrates my problem-solving skills and technical expertise in various scenarios.",
       callToAction: {
         title: "Want to see my practical coding challenges?",
-        description: "Explore real hiring challenges I've solved for different companies",
-        button: "View Practical Tests"
+        description:
+          "Explore real hiring challenges I've solved for different companies",
+        button: "View Practical Tests",
       },
       featuredChallenges: "Featured Challenges",
       otherChallenges: "Other Challenges",
@@ -241,10 +254,11 @@ export const translations = {
       viewCode: "View Code",
       backToHome: "Back to home",
       interestedTitle: "Interested in my approach?",
-      interestedDescription: "These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.",
-      discussProject: "Send a message"
-    }
-  }
+      interestedDescription:
+        "These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.",
+      discussProject: "Send a message",
+    },
+  },
 } as const;
 
 export type Language = keyof typeof translations;
