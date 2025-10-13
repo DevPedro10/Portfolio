@@ -1,126 +1,114 @@
-import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Project } from "@/types/project";
-import project1Image from "@/assets/project1.jpg";
-import project2Image from "@/assets/project2.jpg";
-import project3Image from "@/assets/project3.jpg";
+import { useSupabaseQuery } from "@/hooks/useSupabase";
+
+interface ProjectFromDB {
+  id: number;
+  title: string;
+  description: string;
+  image_url: string;
+  technologies: string[];
+  live_url?: string;
+  github_url?: string;
+  is_highlighted: boolean;
+}
 
 export const AllProjects = () => {
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "Plataforma completa de e-commerce com sistema de pagamento integrado, painel administrativo e gestão de estoque em tempo real. Desenvolvida com React no frontend e Node.js no backend, utilizando PostgreSQL como banco de dados e integração com Stripe para processamento de pagamentos.",
-      image: project1Image,
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS", "Redux", "Express"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: true
-    },
-    {
-      id: 2,
-      title: "Dashboard Analytics",
-      description: "Dashboard interativo para análise de dados com visualizações dinâmicas, relatórios personalizáveis e integração com múltiplas APIs. Interface moderna construída com Vue.js e backend em Python, utilizando MongoDB para armazenamento de dados.",
-      image: project2Image,
-      technologies: ["Vue.js", "Python", "MongoDB", "Chart.js", "Docker", "FastAPI"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: true
-    },
-    {
-      id: 3,
-      title: "Social Media App",
-      description: "Aplicação social com chat em tempo real, sistema de posts, stories e notificações push. Interface responsiva e moderna desenvolvida com React Native e backend em Firebase para sincronização em tempo real.",
-      image: project3Image,
-      technologies: ["React Native", "Firebase", "TypeScript", "WebSocket", "Expo"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: false
-    },
-    {
-      id: 4,
-      title: "Task Management System",
-      description: "Sistema completo de gerenciamento de tarefas com funcionalidades de colaboração em equipe, notificações em tempo real e interface intuitiva. Desenvolvido com React e Java Spring Boot.",
-      image: project1Image,
-      technologies: ["React", "Java", "Spring Boot", "PostgreSQL", "WebSocket"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: false
-    },
-    {
-      id: 5,
-      title: "Weather Forecast App",
-      description: "Aplicativo de previsão do tempo com interface moderna e dados em tempo real. Integração com APIs meteorológicas e geolocalização para fornecer informações precisas.",
-      image: project2Image,
-      technologies: ["React", "TypeScript", "OpenWeather API", "Geolocation API"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: false
-    },
-    {
-      id: 6,
-      title: "Portfolio Website",
-      description: "Website portfolio responsivo com design moderno e animações suaves. Desenvolvido com React e Tailwind CSS, focando em performance e experiência do usuário.",
-      image: project3Image,
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
-      isHighlighted: false
-    }
-  ];
+  const {
+    data: dbProjects,
+    loading,
+    error,
+    execute,
+  } = useSupabaseQuery<ProjectFromDB>("projects");
 
-  const featuredProjects = projects.filter(project => project.isHighlighted);
-  const otherProjects = projects.filter(project => !project.isHighlighted);
+  useEffect(() => {
+    execute();
+  }, [execute]);
+
+  const projects: Project[] = (dbProjects || []).map((p) => ({
+    id: p.id,
+    title: p.title,
+    description: p.description,
+    image: p.image_url,
+    technologies: p.technologies,
+    liveUrl: p.live_url,
+    githubUrl: p.github_url,
+    isHighlighted: p.is_highlighted,
+  }));
+
+  const featuredProjects = projects.filter((project) => project.isHighlighted);
+  const otherProjects = projects.filter((project) => !project.isHighlighted);
 
   return (
     <div className="min-h-screen py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="mb-12">
-          <Link to="/" className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8">
+          <Link
+            to="/"
+            className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200 mb-8"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar ao início
           </Link>
-          
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
-              Todos os <span className="text-gradient font-medium">Projetos</span>
+              Todos os{" "}
+              <span className="text-gradient font-medium">Projetos</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Uma coleção completa dos projetos que desenvolvi, demonstrando diferentes tecnologias e soluções criativas para problemas reais.
+              Uma coleção completa dos projetos que desenvolvi, demonstrando
+              diferentes tecnologias e soluções criativas.
             </p>
           </div>
         </div>
 
-        {/* Featured Projects */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">Projetos em Destaque</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {featuredProjects.map((project) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
-                isHighlighted={true} 
-              />
-            ))}
+        {loading ? (
+          <div className="text-center py-12">Carregando projetos...</div>
+        ) : error ? (
+          <div className="text-center py-12 text-red-500">
+            Erro ao carregar projetos
           </div>
-        </div>
+        ) : (
+          <>
+            {featuredProjects.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+                  Projetos em Destaque
+                </h2>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  {featuredProjects.map((project) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      isHighlighted={true}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
-        {/* Other Projects */}
-        <div>
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">Outros Projetos</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
-                isHighlighted={false} 
-              />
-            ))}
-          </div>
-        </div>
+            {otherProjects.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+                  Outros Projetos
+                </h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {otherProjects.map((project) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      isHighlighted={false}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
