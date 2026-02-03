@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Project } from "@/types/project";
 import { useSupabaseQuery } from "@/hooks/useSupabase";
+import { FadeInUp } from "@/components/animations";
 
 interface ProjectFromDB {
   id: number;
@@ -41,21 +42,23 @@ export const Projects = () => {
   }));
 
   const highlightedProjects = projects.filter(
-    (project) => project.isHighlighted
+    (project) => project.isHighlighted,
   );
   const regularProjects = projects.filter((project) => !project.isHighlighted);
 
   return (
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
-            {t.projects.title}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t.projects.subtitle}
-          </p>
-        </div>
+        <FadeInUp duration={0.7}>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+              {t.projects.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t.projects.subtitle}
+            </p>
+          </div>
+        </FadeInUp>
 
         {loading ? (
           <div className="text-center py-12">Carregando projetos...</div>
@@ -65,12 +68,14 @@ export const Projects = () => {
             {highlightedProjects.length > 0 && (
               <div className="mb-12">
                 <div className="grid lg:grid-cols-2 gap-8">
-                  {highlightedProjects.map((project) => (
-                    <ProjectCard
+                  {highlightedProjects.map((project, index) => (
+                    <FadeInUp
                       key={project.id}
-                      project={project}
-                      isHighlighted={true}
-                    />
+                      delay={index * 0.15}
+                      duration={0.6}
+                    >
+                      <ProjectCard project={project} isHighlighted={true} />
+                    </FadeInUp>
                   ))}
                 </div>
               </div>
@@ -79,29 +84,33 @@ export const Projects = () => {
             {/* Projetos Regulares */}
             {regularProjects.length > 0 && (
               <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-                {regularProjects.map((project) => (
-                  <ProjectCard
+                {regularProjects.map((project, index) => (
+                  <FadeInUp
                     key={project.id}
-                    project={project}
-                    isHighlighted={false}
-                  />
+                    delay={index * 0.12}
+                    duration={0.6}
+                  >
+                    <ProjectCard project={project} isHighlighted={false} />
+                  </FadeInUp>
                 ))}
               </div>
             )}
           </>
         )}
 
-        <div className="text-center mt-12">
-          <Link to="/projects">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
-            >
-              Ver Todos os Projetos
-            </Button>
-          </Link>
-        </div>
+        <FadeInUp delay={0.3} duration={0.7}>
+          <div className="text-center mt-12">
+            <Link to="/projects">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+              >
+                Ver Todos os Projetos
+              </Button>
+            </Link>
+          </div>
+        </FadeInUp>
       </div>
     </section>
   );
