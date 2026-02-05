@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# 📜 Portfólio Pessoal
 
-## Project info
+Este projeto é o meu **portfólio técnico**.  
 
-**URL**: https://lovable.dev/projects/456f4cea-1983-4c38-ab51-0fe57c320ae4
+Ele concentra informações pessoais, área de atuação, experiências, estudos em andamento e uma seção de **artigos**. Tudo versionado, revisável e sujeito a refatoração.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🎯 Objetivo
 
-**Use Lovable**
+O objetivo é duplo:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/456f4cea-1983-4c38-ab51-0fe57c320ae4) and start prompting.
+1. **Apresentação profissional**  
+   Mostrar, de forma objetiva, minha atuação, decisões técnicas e linha de raciocínio.
 
-Changes made via Lovable will be committed automatically to this repo.
+2. **Laboratório técnico** 🧪  
+   Um ambiente controlado para testar tecnologias, padrões, abordagens arquiteturais e ideias antes de levá-las para contextos maiores ou comerciais.
 
-**Use your preferred IDE**
+Não existe “estado final”. O projeto evolui conforme minha experiência evolui.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Stack e Direção Técnica
 
-Follow these steps:
+Atualmente o projeto utiliza:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **React + TypeScript** no frontend  
+- **Supabase** para persistência e serviços de backend  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+A escolha prioriza **velocidade de iteração**, tipagem forte e simplicidade operacional.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Parte da base inicial do frontend foi gerada com apoio de **IA**, utilizando ferramentas como **Lovable** e **Bolt**. O foco não foi “gerar o projeto pronto”, mas acelerar o ponto de partida.  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Após a geração inicial, a interface foi **refatorada, ajustada e lapidada manualmente**, de acordo com meu gosto pessoal.
 
-**Edit a file directly in GitHub**
+O **Bolt** acabou sendo adotado como ferramenta principal, especialmente pela integração com **shadcn/ui**, cujo UI Kit se mostrou alinhado com a proposta do projeto: componentes simples, composáveis e sem excesso de abstração.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+O próximo passo planejado é a **migração para Next.js** 🔜.  
 
-**Use GitHub Codespaces**
+Com isso, o backend passará a ser implementado no próprio Next, consolidando frontend e backend em uma base única, com ganhos claros em:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Organização  
+- SEO  
+- Performance  
 
-## What technologies are used for this project?
+A stack não é fixa. Se parar de fazer sentido, muda.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## ✍️ Artigos
 
-## How can I deploy this project?
+A seção de artigos é uma das **principais áreas do projeto** e está em desenvolvimento.  
 
-Simply open [Lovable](https://lovable.dev/projects/456f4cea-1983-4c38-ab51-0fe57c320ae4) and click on Share -> Publish.
+Ela funciona como um **registro técnico**, onde concentro aprendizados práticos, decisões de implementação, erros cometidos e ajustes feitos ao longo do processo.
 
-## Can I connect a custom domain to my Lovable project?
+Além do conteúdo, essa área também serve como **campo de experimentação técnica**. A intenção é utilizá-la para testar conceitos mais avançados, como:
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Comunicação em tempo real (ex.: **WebSocket**) na área de comentários  
+- Desenvolvimento de um **editor próprio**, integrado ao projeto  
+- Exploração de diferentes abordagens de persistência, renderização e experiência de escrita  
