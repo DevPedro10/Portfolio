@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState } from "react";
-import { translations, Language } from "@/lib/i18n";
+import { translations, Language } from "@/i18n";
 
 interface LanguageContextType {
   language: Language;
