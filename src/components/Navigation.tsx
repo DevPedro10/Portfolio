@@ -73,7 +73,7 @@ export const Navigation = () => {
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
                 <span className="block md:inline text-2xl font-arial">
-                  Natã Pedro
+                  {t.hero.name}
                 </span>
               </Link>
             </div>

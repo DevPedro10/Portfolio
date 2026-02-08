@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, Code, FileText, Mail, TestTube, Notebook } from "lucide-react";
+import {
+  Menu,
+  X,
+  Home,
+  User,
+  Code,
+  FileText,
+  Mail,
+  TestTube,
+  Notebook,
+} from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -17,7 +27,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
 
   const scrollToSection = (sectionId: string) => {
     setIsOpen(false);
-    if (location.pathname !== '/') {
+    if (location.pathname !== "/") {
       window.location.href = `/#${sectionId}`;
       return;
     }
@@ -25,23 +35,48 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }, 100);
   };
 
   const menuItems = [
-    { icon: Home, label: t.nav.home, action: () => scrollToSection('hero') },
-    { icon: User, label: t.nav.about, action: () => scrollToSection('about') },
-    { icon: Code, label: t.nav.skills, action: () => scrollToSection('skills') },
-    { icon: FileText, label: t.nav.projects, action: () => scrollToSection('projects') },
-    { icon: TestTube, label: t.nav.practicalTests, action: () => { setIsOpen(false); window.location.href = '/practical-tests'; } },
-    { icon: Notebook, label: t.nav.articles, action: () => { setIsOpen(false); window.location.href = '/articles'; } },
-    { icon: Mail, label: t.nav.contact, action: () => scrollToSection('contact') },
+    { icon: Home, label: t.nav.home, action: () => scrollToSection("hero") },
+    { icon: User, label: t.nav.about, action: () => scrollToSection("about") },
+    {
+      icon: Code,
+      label: t.nav.skills,
+      action: () => scrollToSection("skills"),
+    },
+    {
+      icon: FileText,
+      label: t.nav.projects,
+      action: () => scrollToSection("projects"),
+    },
+    {
+      icon: TestTube,
+      label: t.nav.practicalTests,
+      action: () => {
+        setIsOpen(false);
+        window.location.href = "/practical-tests";
+      },
+    },
+    {
+      icon: Notebook,
+      label: t.nav.articles,
+      action: () => {
+        setIsOpen(false);
+        window.location.href = "/articles";
+      },
+    },
+    {
+      icon: Mail,
+      label: t.nav.contact,
+      action: () => scrollToSection("contact"),
+    },
   ];
 
   if (!isOpen) return null;
-
 
   return (
     <>
@@ -67,8 +102,9 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
           <div className="relative h-full bg-background/95 backdrop-blur-lg">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border/20">
-              <h2 className="text-xl font-space font-semibold text-primary">Menu</h2>
-
+              <h2 className="text-xl font-space font-semibold text-primary">
+                Menu
+              </h2>
             </div>
 
             {/* Navigation Items */}
@@ -111,8 +147,6 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
                   <X className="w-6 h-6" />
                 </Button>
               </div>
-
-
             </div>
           </div>
         </div>
