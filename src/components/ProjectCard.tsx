@@ -1,25 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Project } from "@/types/project";
+import { ProjectInterface } from "@/types/projects";
 
-interface ProjectCardProps {
-  project: Project;
-  isHighlighted?: boolean;
-}
+type ProjectCardProps = { project: ProjectInterface };
 
-export const ProjectCard = ({
-  project,
-  isHighlighted = false,
-}: ProjectCardProps) => {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   const { t } = useLanguage();
 
-  if (isHighlighted) {
-    // Layout para projetos em destaque (maior)
+  if (project.isHighlighted) {
     return (
       <div className="bg-card/50 border border-border/20 rounded-lg overflow-hidden group hover:bg-card/70 transition-all duration-300">
         <div className="relative overflow-hidden">
           <img
-            src={project.image}
+            src={project.image_url}
             alt={project.title}
             className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -67,7 +60,7 @@ export const ProjectCard = ({
     <div className="bg-card/50 border border-border/20 rounded-lg overflow-hidden group hover:bg-card/70 transition-all duration-300">
       <div className="relative overflow-hidden">
         <img
-          src={project.image}
+          src={project.image_url}
           alt={project.title}
           className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
         />
