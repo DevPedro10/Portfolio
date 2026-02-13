@@ -22,11 +22,10 @@ export const ThemeToggle = () => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (
-        <Sun className="!w-5 !h-5" />
+        <Sun className="!w-5 !h-5 text-white" />
       ) : (
         <Moon className="!w-5 !h-5 text-black" />
       )}
     </Button>
-
   );
 };
