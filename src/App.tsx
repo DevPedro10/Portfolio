@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { LoadingProvider } from "@/contexts/LoadingContext";
-import { Navigation } from "@/components/Navigation";
 import { Home } from "@/components/Home";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
@@ -18,10 +17,11 @@ import { PracticalTestsCallToAction } from "@/components/PracticalTestsCallToAct
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { About } from "@/components/About";
-import { Articles } from "./components/Articles";
+import { Blog } from "./components/Blog";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { useLoading } from "@/contexts/LoadingContext";
 import { SlideIn } from "@/components/animations";
+import { Header } from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -30,41 +30,53 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SlideIn direction="down" duration={0.8} delay={2.5}>
-        <Navigation />
-      </SlideIn>
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <SlideIn direction="down" duration={0.8} delay={3}>
-                  <Home />
-                </SlideIn>
-                <About />
-                <Skills />
-                <PracticalTestsCallToAction />
-                <Projects />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="/projects" element={<AllProjects />} />
-          <Route path="/articles" element={<Articles />} />
-          <Route path="/practical-tests" element={<PracticalTests />} />
-        </Routes>
-      </main>
-      <div
-        style={{
-          opacity: isLoading ? 0 : 1,
-          transition: "opacity 0.8s ease-in-out",
-          pointerEvents: isLoading ? "none" : "auto",
-        }}
-      >
-        <MobileBottomNav />
-      </div>
-      <Footer />
+      <Routes>
+        <Route path="/blog" element={<Blog />} />
+
+        <Route
+          path="*"
+          element={
+            <>
+              <SlideIn direction="down" duration={0.8} delay={2.5}>
+                <Header />
+              </SlideIn>
+
+              <main>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <>
+                        <SlideIn direction="down" duration={0.8} delay={3}>
+                          <Home />
+                        </SlideIn>
+                        <About />
+                        <Skills />
+                        <PracticalTestsCallToAction />
+                        <Projects />
+                        <Contact />
+                      </>
+                    }
+                  />
+                  <Route path="/projects" element={<AllProjects />} />
+                  <Route path="/practical-tests" element={<PracticalTests />} />
+                </Routes>
+              </main>
+
+              <div
+                style={{
+                  opacity: isLoading ? 0 : 1,
+                  transition: "opacity 0.8s ease-in-out",
+                  pointerEvents: isLoading ? "none" : "auto",
+                }}
+              >
+                <MobileBottomNav />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 };

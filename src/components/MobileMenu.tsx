@@ -66,7 +66,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
       label: t.nav.articles,
       action: () => {
         setIsOpen(false);
-        window.location.href = "/articles";
+        window.location.href = "/blog";
       },
     },
     {
