@@ -21,6 +21,7 @@ export default {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
 				space: ['Space Grotesk', 'sans-serif'],
+				sourceserif: ["gf_Source_Serif_4 variant0", 'serif'],
 				dmserif: ['"DM Serif Text"', 'serif'],
 			},
 			colors: {
