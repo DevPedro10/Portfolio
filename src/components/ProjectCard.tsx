@@ -35,7 +35,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         <div className="p-6 space-y-4">
-          <h3 className="text-xl font-space font-semibold">{project.title}</h3>
+          <h3 className="text-xl font-inter font-semibold">{project.title}</h3>
           <p className="text-muted-foreground leading-relaxed">
             {project.description}
           </p>
@@ -83,7 +83,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       </div>
 
       <div className="p-6 space-y-4">
-        <h3 className="text-xl font-space font-semibold">{project.title}</h3>
+        <h3 className="text-xl font-inter font-semibold">{project.title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">
           {project.description}
         </p>

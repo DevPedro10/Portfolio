@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { LoadingProvider } from "@/contexts/LoadingContext";
 import { Home } from "@/components/Home";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
@@ -13,31 +12,29 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AllProjects } from "@/pages/AllProjects";
 import { PracticalTests } from "@/pages/PracticalTests";
+import { BlogPostPage } from "@/pages/BlogPostPage";
 import { PracticalTestsCallToAction } from "@/components/PracticalTestsCallToAction";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { About } from "@/components/About";
 import { Blog } from "./components/Blog";
-import { LoadingScreen } from "@/components/LoadingScreen";
-import { useLoading } from "@/contexts/LoadingContext";
 import { SlideIn } from "@/components/animations";
 import { Header } from "./components/Header";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  const { isLoading } = useLoading();
-
   return (
     <div className="min-h-screen bg-background">
       <Routes>
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
 
         <Route
           path="*"
           element={
             <>
-              <SlideIn direction="down" duration={0.8} delay={2.5}>
+              <SlideIn direction="down" duration={0.5}>
                 <Header />
               </SlideIn>
 
@@ -47,7 +44,7 @@ const AppContent = () => {
                     path="/"
                     element={
                       <>
-                        <SlideIn direction="down" duration={0.8} delay={3}>
+                        <SlideIn direction="down" duration={0.5} delay={0.5}>
                           <Home />
                         </SlideIn>
                         <About />
@@ -63,15 +60,7 @@ const AppContent = () => {
                 </Routes>
               </main>
 
-              <div
-                style={{
-                  opacity: isLoading ? 0 : 1,
-                  transition: "opacity 0.8s ease-in-out",
-                  pointerEvents: isLoading ? "none" : "auto",
-                }}
-              >
-                <MobileBottomNav />
-              </div>
+              <MobileBottomNav />
               <Footer />
             </>
           }
@@ -86,17 +75,14 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <LanguageProvider>
-          <LoadingProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              <LoadingScreen />
-              <BrowserRouter>
-                <ScrollToTop />
-                <AppContent />
-              </BrowserRouter>
-            </TooltipProvider>
-          </LoadingProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <ScrollToTop />
+              <AppContent />
+            </BrowserRouter>
+          </TooltipProvider>
         </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>

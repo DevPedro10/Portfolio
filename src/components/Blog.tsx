@@ -1,17 +1,16 @@
 // src/components/Blog.tsx
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { BlogHeader } from "./BlogHeader";
 import { Footer } from "./Footer";
 import { BlogNewsletter } from "./BlogNewsletter";
-import { BlogPost } from "./BlogPost";
-import { SlideIn } from "./animations";
 import { useEffect, useState } from "react";
 import { loadArticles, type Article } from "@/lib/markdown";
 
 export const Blog = () => {
+  const navigate = useNavigate();
   const [articles, setArticles] = useState<Article[]>([]);
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,6 +30,7 @@ export const Blog = () => {
 
   const featuredArticles = articles.filter((article) => article.featured);
   const otherArticles = articles.filter((article) => !article.featured);
+  const allArticles = [...featuredArticles, ...otherArticles];
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -40,8 +40,6 @@ export const Blog = () => {
       day: "numeric",
     });
   };
-
-  if (selectedArticle) return <BlogPost article={selectedArticle} />
 
   if (loading) {
     return (
@@ -56,108 +54,60 @@ export const Blog = () => {
 
   return (
     <>
-      <SlideIn direction="down" duration={0.8} delay={2.5}>
-        <BlogHeader />
-      </SlideIn>
+      <BlogHeader />
       <div className="min-h-screen py-0 sm:py-20 px-6">
         <div className="container mx-auto max-w-6xl">
-          {featuredArticles.length > 0 && (
-            <div className="mb-8">
-              <div className="grid lg:grid-cols-1 gap-8">
-                {featuredArticles.map((article) => (
-                  <article
-                    key={article.id}
-                    onClick={() => setSelectedArticle(article)}
-                    className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300 group cursor-pointer"
-                  >
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{formatDate(article.date)}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Clock className="w-4 h-4" />
-                          <span>{article.readTime}</span>
-                        </div>
-                      </div>
-
-                      <h3 className="font-sourceserif text-xl font-semibold text-foreground group-hover:text-foreground/80 transition-colors duration-200">
-                        {article.title}
-                      </h3>
-
-                      <p className="text-muted-foreground leading-relaxed">
-                        {article.excerpt}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {article.tags.map((tag, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-secondary/50 rounded-full text-xs font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedArticle(article);
-                        }}
-                        className="border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
-                      >
-                        Ler artigo
-                      </Button>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-muted-foreground">
+              {articles.length} artigos publicados
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {otherArticles.map((article) => (
+            {allArticles.map((article) => (
               <article
                 key={article.id}
-                onClick={() => setSelectedArticle(article)}
-                className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300 group cursor-pointer"
+                className="bg-card/50 border border-border/20 rounded-xl p-6 hover:bg-card/60 transition-colors duration-300"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                    <div className="flex items-center space-x-1">
+                <div className="flex flex-col h-full gap-4">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       <span>{formatDate(article.date)}</span>
                     </div>
-                    <div className="flex items-center space-x-1">
+                    <span>•</span>
+                    <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
                       <span>{article.readTime}</span>
                     </div>
+                    {article.featured && (
+                      <span className="ml-1 px-2 py-0.5 text-[10px] uppercase tracking-wide rounded-full border border-primary/30 text-primary">
+                        Destaque
+                      </span>
+                    )}
                   </div>
 
-                  <h3 className="font-sourceserif text-lg font-semibold text-foreground group-hover:text-foreground/80 transition-colors duration-200">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {article.excerpt}
-                  </p>
+                  <div className="space-y-2">
+                    <h3 className="font-sourceserif text-lg md:text-xl font-semibold text-foreground">
+                      {article.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {article.excerpt}
+                    </p>
+                  </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {article.tags.slice(0, 3).map((tag, index) => (
+                    {article.tags.slice(0, 4).map((tag, index) => (
                       <span
                         key={index}
-                        className="px-2 py-1 bg-secondary/50 rounded-full text-xs font-medium"
+                        className="px-2 py-1 bg-secondary/40 rounded-full text-[11px] font-medium"
                       >
                         {tag}
                       </span>
                     ))}
-                    {article.tags.length > 3 && (
-                      <span className="px-2 py-1 bg-secondary/50 rounded-full text-xs font-medium">
-                        +{article.tags.length - 3}
+                    {article.tags.length > 4 && (
+                      <span className="px-2 py-1 bg-secondary/40 rounded-full text-[11px] font-medium">
+                        +{article.tags.length - 4}
                       </span>
                     )}
                   </div>
@@ -165,11 +115,8 @@ export const Blog = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedArticle(article);
-                    }}
-                    className="border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
+                    onClick={() => navigate(`/blog/${article.slug}`)}
+                    className="mt-auto border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
                   >
                     Ler artigo
                   </Button>

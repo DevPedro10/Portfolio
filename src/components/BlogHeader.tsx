@@ -25,7 +25,7 @@ export const BlogHeader = () => {
           : "py-6"
           }`}
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="flex justify-between w-full">
             <div className="flex items-center">
               <Link to="/" className="flex items-center">

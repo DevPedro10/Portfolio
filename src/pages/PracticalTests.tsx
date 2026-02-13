@@ -134,7 +134,7 @@ export const PracticalTests = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
+            <h1 className="text-4xl md:text-6xl font-inter font-light mb-6">
               {t.practicalTests.title}{" "}
               <span className="text-gradient font-medium">
                 {t.practicalTests.titleHighlight}
@@ -147,7 +147,7 @@ export const PracticalTests = () => {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+          <h2 className="text-2xl font-inter font-semibold mb-8 text-center">
             {t.practicalTests.featuredChallenges}
           </h2>
           <div className="grid lg:grid-cols-2 gap-8">
@@ -159,7 +159,7 @@ export const PracticalTests = () => {
                 <div className="space-y-6">
                   <div className="flex sm:flex-row flex-col gap-4 items-start justify-between">
                     <div className="space-y-2">
-                      <h3 className="text-xl font-space font-semibold">
+                      <h3 className="text-xl font-inter font-semibold">
                         {test.title}
                       </h3>
                       <p className="text-sm text-primary font-medium">
@@ -230,7 +230,7 @@ export const PracticalTests = () => {
 
         {/* Other Tests */}
         <div>
-          <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+          <h2 className="text-2xl font-inter font-semibold mb-8 text-center">
             {t.practicalTests.otherChallenges}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -241,7 +241,7 @@ export const PracticalTests = () => {
               >
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <h3 className="text-lg font-space font-semibold">
+                    <h3 className="text-lg font-inter font-semibold">
                       {test.title}
                     </h3>
                     <p className="text-sm text-primary font-medium">
@@ -307,7 +307,7 @@ export const PracticalTests = () => {
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-card/50 border border-border/20 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-space font-semibold mb-4">
+            <h3 className="text-xl font-inter font-semibold mb-4">
               {t.practicalTests.interestedTitle}
             </h3>
             <p className="text-muted-foreground mb-6">

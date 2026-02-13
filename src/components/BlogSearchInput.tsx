@@ -1,45 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Search, X } from "lucide-react";
+import { loadArticles, type Article } from "@/lib/markdown";
 
 export default function BlogSearchInput() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<Article[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [articles, setArticles] = useState<Article[]>([]);
 
-  // Dados de exemplo dos artigos do blog
-  const blogArticles = [
-    {
-      id: 1,
-      title: "Introdução ao React",
-      excerpt: "Aprenda os conceitos básicos do React",
-      slug: "introducao-react",
-    },
-    {
-      id: 2,
-      title: "shadcn/ui: Guia Completo",
-      excerpt: "Como usar componentes shadcn/ui",
-      slug: "shadcn-ui-guia",
-    },
-    {
-      id: 3,
-      title: "Next.js 14: Novidades",
-      excerpt: "Conheça as features do Next.js 14",
-      slug: "nextjs-14-novidades",
-    },
-    {
-      id: 4,
-      title: "Tailwind CSS Tips",
-      excerpt: "Dicas práticas de Tailwind CSS",
-      slug: "tailwind-tips",
-    },
-    {
-      id: 5,
-      title: "TypeScript para Iniciantes",
-      excerpt: "Primeiros passos com TypeScript",
-      slug: "typescript-iniciantes",
-    },
-  ];
+  // Carregar artigos ao montar o componente
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const loadedArticles = await loadArticles();
+        setArticles(loadedArticles);
+      } catch (error) {
+        console.error("Erro ao carregar artigos:", error);
+      }
+    };
+
+    fetchArticles();
+  }, []);
 
   // Função de busca
   useEffect(() => {
@@ -53,10 +37,11 @@ export default function BlogSearchInput() {
 
     // Simula delay de busca
     const timer = setTimeout(() => {
-      const results = blogArticles.filter(
+      const results = articles.filter(
         (article) =>
           article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()),
+          article.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          article.description.toLowerCase().includes(searchQuery.toLowerCase()),
       );
       setSearchResults(results);
       setShowResults(true);
@@ -64,7 +49,7 @@ export default function BlogSearchInput() {
     }, 300);
 
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, articles]);
 
   const clearSearch = () => {
     setSearchQuery("");
@@ -72,9 +57,9 @@ export default function BlogSearchInput() {
     setShowResults(false);
   };
 
-  const handleArticleClick = (slug) => {
+  const handleArticleClick = (article: Article) => {
     // Navegar para o artigo
-    console.log("Navegando para:", slug);
+    navigate(`/blog/${article.slug}`);
     clearSearch();
   };
 
@@ -117,7 +102,7 @@ export default function BlogSearchInput() {
               {searchResults.map((article) => (
                 <button
                   key={article.id}
-                  onClick={() => handleArticleClick(article.slug)}
+                  onClick={() => handleArticleClick(article)}
                   className="w-full text-left px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors border-t border-border first:border-t-0"
                 >
                   <h3 className="font-medium text-foreground mb-1">

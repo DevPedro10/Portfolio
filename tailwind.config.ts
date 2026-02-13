@@ -19,10 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
-				space: ['Space Grotesk', 'sans-serif'],
-				sourceserif: ["gf_Source_Serif_4 variant0", 'serif'],
-				dmserif: ['"DM Serif Text"', 'serif'],
+				inter: ["Inter", "sans-serif"],
+				sourceserif: ["Source Serif 4", "serif"],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

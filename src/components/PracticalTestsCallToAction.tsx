@@ -15,15 +15,15 @@ export const PracticalTestsCallToAction = () => {
               <TestTube className="w-8 h-8 text-primary" />
             </div>
           </div>
-          
-          <h2 className="text-2xl md:text-3xl font-space font-medium mb-4">
+
+          <h2 className="text-2xl md:text-3xl font-inter font-medium mb-4">
             {t.practicalTests.callToAction.title}
           </h2>
-          
+
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             {t.practicalTests.callToAction.description}
           </p>
-          
+
           <Link to="/practical-tests">
             <Button
               variant="outline"

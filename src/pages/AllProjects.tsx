@@ -21,7 +21,7 @@ export const AllProjects = () => {
           </Link>
 
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-space font-light mb-6">
+            <h1 className="text-4xl md:text-6xl font-inter font-light mb-6">
               Todos os{" "}
               <span className="text-gradient font-medium">Projetos</span>
             </h1>
@@ -34,7 +34,7 @@ export const AllProjects = () => {
 
         {featuredProjects.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+            <h2 className="text-2xl font-inter font-semibold mb-8 text-center">
               Projetos em Destaque
             </h2>
             <div className="grid lg:grid-cols-2 gap-8">
@@ -47,7 +47,7 @@ export const AllProjects = () => {
 
         {otherProjects.length > 0 && (
           <div>
-            <h2 className="text-2xl font-space font-semibold mb-8 text-center">
+            <h2 className="text-2xl font-inter font-semibold mb-8 text-center">
               Outros Projetos
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

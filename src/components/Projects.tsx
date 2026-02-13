@@ -19,7 +19,7 @@ export const Projects = () => {
       <div className="container mx-auto max-w-6xl">
         <FadeInUp duration={0.7}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
               {t.projects.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">

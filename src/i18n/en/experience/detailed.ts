@@ -1,5 +1,3 @@
-import type { ExperienceId } from "@/i18n/experiences";
-
 export const experience = {
     tokio: {
         jobTitle: "Java Developer",

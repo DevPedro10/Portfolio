@@ -36,7 +36,7 @@ export const About = () => {
             <div className="space-y-8">
               <FadeInUp duration={0.6}>
                 <div className="space-y-6">
-                  <h3 className="text-xl font-space font-medium">
+                  <h3 className="text-xl font-inter font-medium">
                     {t.about.myJourney}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -50,7 +50,7 @@ export const About = () => {
 
               <FadeInUp delay={0.2} duration={0.6}>
                 <div className="space-y-4">
-                  <h4 className="text-lg font-space font-medium">
+                  <h4 className="text-lg font-inter font-medium">
                     {t.about.mainTech}
                   </h4>
                   <div className="grid grid-cols-2 gap-3">
@@ -76,7 +76,7 @@ export const About = () => {
           <SlideIn direction="right" duration={0.7} delay={0.1}>
             <div className="space-y-6">
               <div className="min-h-98 bg-card/50 border border-border/20 p-6 rounded-lg hover:bg-card/70 transition-colors duration-300 flex flex-col">
-                <h4 className="text-lg font-space font-medium mb-6">
+                <h4 className="text-lg font-inter font-medium mb-6">
                   {t.about.experience}
                 </h4>
 
@@ -136,11 +136,10 @@ export const About = () => {
                           <button
                             key={index}
                             onClick={() => setCurrentExperienceIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-all ${
-                              index === currentExperienceIndex
+                            className={`w-2 h-2 rounded-full transition-all ${index === currentExperienceIndex
                                 ? "bg-primary w-6"
                                 : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                            }`}
+                              }`}
                             aria-label={`Ir para experiência ${index + 1}`}
                           />
                         ))}
@@ -151,7 +150,7 @@ export const About = () => {
               </div>
 
               <div className="bg-card/50 border border-border/20 p-6 rounded-lg hover:bg-card/70 transition-colors duration-300">
-                <h4 className="text-lg font-space font-medium mb-4">
+                <h4 className="text-lg font-inter font-medium mb-4">
                   {t.about.education}
                 </h4>
                 <div className="border-l-2 border-primary pl-4">
