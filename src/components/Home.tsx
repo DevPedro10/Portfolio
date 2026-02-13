@@ -36,13 +36,13 @@ export const Home = () => {
       ></div>
 
       <div className="container mx-auto px-6 z-10">
-        <SlideIn direction="up" duration={0.8}>
+        <SlideIn direction="up" duration={0.5}>
           <div
             className="text-center space-y-12 max-w-4xl mx-auto"
             style={{ transform: "translateY(-10vh)" }}
           >
             {/* Profile Image */}
-            <FadeInUp duration={0.8}>
+            <FadeInUp duration={0.5}>
               <div className="relative mx-auto w-40 h-40 mb-8">
                 <img
                   src="https://avatars.githubusercontent.com/u/84449259?v=4"
@@ -91,7 +91,7 @@ export const Home = () => {
             </StaggerContainer>
 
             {/* Scroll indicator */}
-            <FadeIn delay={0.5} duration={0.8}>
+            <FadeIn delay={0.5} duration={0.5}>
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 translate-y-[13vh] sm:translate-y-[20vh] transform">
                 <button
                   onClick={scrollToAbout}
