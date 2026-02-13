@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
 import { FlaskConical, Notebook } from "lucide-react";
-export const Navigation = () => {
+export const Header = () => {
   const curriculum =
     "https://xqwpehgbydwembomdtlg.supabase.co/storage/v1/object/sign/Portfolio%20Assets/Desenvolvedor%20Java.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYWE4MTAzOS05ZjUyLTQ3ZWItYmM4MC05NWNhMGRiYTdiNTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8gQXNzZXRzL0Rlc2Vudm9sdmVkb3IgSmF2YS5wZGYiLCJpYXQiOjE3NzA3NzQzNTksImV4cCI6MjA4NjEzNDM1OX0.0ld2fbQ_QiKTrdUwSeRPNBPgxeWdIvDMney3iOftJBI";
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,7 @@ export const Navigation = () => {
     },
     {
       label: t.nav.articles,
-      path: "/articles",
+      path: "/blog",
       icon: Notebook,
       available: false,
     },

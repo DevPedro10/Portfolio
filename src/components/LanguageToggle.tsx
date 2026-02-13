@@ -12,8 +12,9 @@ export const LanguageToggle = () => {
     <Button
       variant="link"
       onClick={() => setLanguage(language === "pt" ? "en" : "pt")}
-      className={`className="p-6 text-sm transition-colors duration-200" ${isDark ? "" : "text-black"
-        }`}
+      className={`className="p-6 text-sm transition-colors duration-200" ${
+        isDark ? "text-white" : "text-black"
+      }`}
     >
       {language === "pt" ? "EN" : "PT"}
     </Button>

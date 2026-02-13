@@ -1,3 +1,5 @@
+import { ProjectInterface } from "@/types/projects";
+
 export const projects: ProjectInterface[] = [
   {
     id: 1,

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ProjectCard } from "@/components/ProjectCard";
 import { FadeInUp } from "@/components/animations";
-import { projects } from "@/data/projects";
+import { projects } from "@/content/projects";
 
 export const Projects = () => {
   const { t } = useLanguage();
