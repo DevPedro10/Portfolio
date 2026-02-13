@@ -1,17 +1,16 @@
 // src/components/Blog.tsx
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { BlogHeader } from "./BlogHeader";
 import { Footer } from "./Footer";
 import { BlogNewsletter } from "./BlogNewsletter";
-import { BlogPost } from "./BlogPost";
-import { SlideIn } from "./animations";
 import { useEffect, useState } from "react";
 import { loadArticles, type Article } from "@/lib/markdown";
 
 export const Blog = () => {
+  const navigate = useNavigate();
   const [articles, setArticles] = useState<Article[]>([]);
-  const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -41,8 +40,6 @@ export const Blog = () => {
     });
   };
 
-  if (selectedArticle) return <BlogPost article={selectedArticle} />
-
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -56,9 +53,7 @@ export const Blog = () => {
 
   return (
     <>
-      <SlideIn direction="down" duration={0.8} delay={2.5}>
-        <BlogHeader />
-      </SlideIn>
+      <BlogHeader />
       <div className="min-h-screen py-0 sm:py-20 px-6">
         <div className="container mx-auto max-w-6xl">
           {featuredArticles.length > 0 && (
@@ -67,7 +62,6 @@ export const Blog = () => {
                 {featuredArticles.map((article) => (
                   <article
                     key={article.id}
-                    onClick={() => setSelectedArticle(article)}
                     className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300 group cursor-pointer"
                   >
                     <div className="space-y-4">
@@ -104,10 +98,7 @@ export const Blog = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedArticle(article);
-                        }}
+                        onClick={() => navigate(`/blog/${article.slug}`)}
                         className="border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
                       >
                         Ler artigo
@@ -123,7 +114,6 @@ export const Blog = () => {
             {otherArticles.map((article) => (
               <article
                 key={article.id}
-                onClick={() => setSelectedArticle(article)}
                 className="bg-card/50 border border-border/20 rounded-lg p-6 hover:bg-card/70 transition-all duration-300 group cursor-pointer"
               >
                 <div className="space-y-4">
@@ -165,10 +155,7 @@ export const Blog = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedArticle(article);
-                    }}
+                    onClick={() => navigate(`/blog/${article.slug}`)}
                     className="border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
                   >
                     Ler artigo
