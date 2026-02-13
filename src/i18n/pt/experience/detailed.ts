@@ -1,5 +1,3 @@
-import type { ExperienceId } from "@/i18n/experiences";
-
 export const experience = {
   tokio: {
     jobTitle: "Desenvolvedor Java",
@@ -29,7 +27,7 @@ export const experience = {
   plusoft: {
     jobTitle: "Desenvolvedor Full Stack",
     company: "Plusoft",
-    period: "2022 - 2024",
+    period: "2022 - 2025",
     description:
       "Criação e manutenção de fluxos backend para chatbot, integrando APIs internas e externas para melhorar a experiência do usuário. Também atuei na melhoria da interface visual do bot, utilizando Groovy no backend e JavaScript no frontend.",
     technologies: [
