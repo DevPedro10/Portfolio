@@ -93,7 +93,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                         <h2
                                             id={headings[headings.findIndex(h => h.text === (children as any)[0])]?.id}
                                             style={{
-                                                fontFamily: 'gf_Source_Serif_4 variant0, serif',
+                                                fontFamily: 'Source Serif 4, serif',
                                                 fontWeight: 'bold',
                                                 fontSize: '24px',
                                                 marginTop: '40px',
@@ -111,7 +111,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                         <h3
                                             id={headings[headings.findIndex(h => h.text === (children as any)[0])]?.id}
                                             style={{
-                                                fontFamily: 'gf_Source_Serif_4 variant0, serif',
+                                                fontFamily: 'Source Serif 4, serif',
                                                 fontWeight: 'bold',
                                                 fontSize: '20px',
                                                 marginTop: '32px',
@@ -126,7 +126,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                     p: ({ node, ...props }) => (
                                         <p style={{
                                             fontSize: '16px',
-                                            fontFamily: 'gf_Source_Serif_4 variant0, serif',
+                                            fontFamily: 'Source Serif 4, serif',
                                             color: 'currentColor', lineHeight: '1.625', marginBottom: '24px'
                                         }} {...props} />
                                     ),
@@ -138,7 +138,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                                 color: 'currentColor',
                                                 marginTop: '24px',
                                                 marginBottom: '24px',
-                                                fontFamily: 'Georgia, serif',
+                                                fontFamily: 'Source Serif 4, serif',
                                             }}
                                             {...props}
                                         />
@@ -151,13 +151,13 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                                 color: 'currentColor',
                                                 marginTop: '24px',
                                                 marginBottom: '24px',
-                                                fontFamily: 'Georgia, serif',
+                                                fontFamily: 'Source Serif 4, serif',
                                             }}
                                             {...props}
                                         />
                                     ),
                                     li: ({ node, ...props }) => (
-                                        <li style={{ marginLeft: '8px', marginBottom: '8px', fontFamily: 'Georgia, serif' }} {...props} />
+                                        <li style={{ marginLeft: '8px', marginBottom: '8px', fontFamily: 'Source Serif 4, serif' }} {...props} />
                                     ),
                                     code: ({ node, ...props }) => {
                                         return <code {...props} />;
@@ -185,7 +185,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                                 color: 'currentColor',
                                                 marginTop: '24px',
                                                 marginBottom: '24px',
-                                                fontFamily: 'Georgia, serif',
+                                                fontFamily: 'Source Serif 4, serif',
                                             }}
                                             {...props}
                                         />
@@ -202,13 +202,13 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                         />
                                     ),
                                     a: ({ node, ...props }) => (
-                                        <a style={{ color: 'currentColor', textDecoration: 'underline', fontFamily: 'Georgia, serif' }} {...props} />
+                                        <a style={{ color: 'currentColor', textDecoration: 'underline', fontFamily: 'Source Serif 4, serif' }} {...props} />
                                     ),
                                     strong: ({ node, ...props }) => (
-                                        <strong style={{ fontWeight: '600', color: 'currentColor', fontFamily: 'Georgia, serif' }} {...props} />
+                                        <strong style={{ fontWeight: '600', color: 'currentColor', fontFamily: 'Source Serif 4, serif' }} {...props} />
                                     ),
                                     em: ({ node, ...props }) => (
-                                        <em style={{ fontStyle: 'italic', color: 'currentColor', fontFamily: 'Georgia, serif' }} {...props} />
+                                        <em style={{ fontStyle: 'italic', color: 'currentColor', fontFamily: 'Source Serif 4, serif' }} {...props} />
                                     ),
                                 }}
                             >
