@@ -6,11 +6,11 @@ export const BlogNewsletter = () => {
     <div className="mt-16 text-center w-full">
       <div className="bg-card/50 border border-border/20 rounded-lg p-8 max-w-2xl mx-auto">
         <div className="flex items-center justify-center mb-6">
-          <div className="p-4 bg-primary/10 rounded-full">
-            <Notebook className="w-8 h-8 text-primary" />
+          <div className="p-4 bg-secondary/30 rounded-full">
+            <Notebook className="w-8 h-8 text-foreground" />
           </div>
         </div>
-        <h3 className="text-xl font-space font-semibold mb-4">
+        <h3 className="font-sourceserif text-xl font-semibold mb-4 text-foreground">
           Receba novos artigos
         </h3>
         <p className="text-muted-foreground mb-6">
@@ -21,11 +21,11 @@ export const BlogNewsletter = () => {
           <input
             type="email"
             placeholder="Seu email"
-            className="flex-1 px-4 py-2 bg-background/50 border border-border/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="flex-1 px-4 py-2 bg-background/50 border border-border/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-foreground/20"
           />
           <Button
             variant="outline"
-            className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+            className="border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
           >
             Inscrever-se
           </Button>
