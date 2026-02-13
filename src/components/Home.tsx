@@ -56,8 +56,8 @@ export const Home = () => {
             <StaggerContainer staggerDelay={0.15}>
               <FadeInUp delay={0.2} duration={0.7}>
                 <div className="space-y-4">
-                  <h1 className="text-4xl md:text-6xl font-space font-light leading-tight">
-                    <span className="text-foreground font-medium sm:inline block">
+                  <h1 className="text-4xl md:text-6xl font-inter font-light leading-tight">
+                    <span className="text-foreground font-medium font-inter sm:inline block">
                       {t.hero.name}
                     </span>
                   </h1>

@@ -33,7 +33,7 @@ export const Skills = () => {
       <div className="container mx-auto max-w-6xl">
         <FadeInUp duration={0.7}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
               {t.skills.title}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -46,7 +46,7 @@ export const Skills = () => {
           {skillCategories.map((category, index) => (
             <ScaleIn key={index} delay={index * 0.2} duration={0.6}>
               <div className="bg-card/50 border border-border/20 p-6 rounded-lg space-y-6 hover:bg-card/70 transition-colors duration-300">
-                <h3 className="text-xl font-space font-medium text-center">
+                <h3 className="text-xl font-inter font-medium text-center">
                   {category.title}
                 </h3>
                 <div className="grid gap-3">
@@ -67,7 +67,7 @@ export const Skills = () => {
         {/* Additional Skills */}
         <FadeInUp delay={0.4} duration={0.7}>
           <div className="mt-16 text-center">
-            <h3 className="text-xl font-space font-medium mb-8 text-muted-foreground">
+            <h3 className="text-xl font-inter font-medium mb-8 text-muted-foreground">
               {t.skills.otherSkills}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">

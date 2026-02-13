@@ -57,7 +57,7 @@ export const Contact = () => {
       <div className="container mx-auto max-w-6xl">
         <FadeInUp duration={0.7}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-space font-light mb-6">
+            <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
               {t.contact.title}{" "}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -70,7 +70,7 @@ export const Contact = () => {
           {/* Contact Form */}
           <FadeInUp duration={0.7} delay={0.1}>
             <div className="bg-card/50 border border-border/20 p-6 md:p-8 rounded-lg">
-              <h3 className="text-lg md:text-xl font-space font-medium mb-6">
+              <h3 className="text-lg md:text-xl font-inter font-medium mb-6">
                 {t.contact.sendMessage}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
@@ -152,7 +152,7 @@ export const Contact = () => {
           <FadeInUp duration={0.7} delay={0.2}>
             <div className="bg-card/50 border border-border/20 p-6 md:p-8 rounded-lg">
               <div>
-                <h3 className="text-lg md:text-xl font-space font-medium mb-6">
+                <h3 className="text-lg md:text-xl font-inter font-medium mb-6">
                   {t.contact.otherWays}
                 </h3>
                 <div className="grid gap-4">

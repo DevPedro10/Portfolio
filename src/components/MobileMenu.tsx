@@ -102,7 +102,7 @@ export const MobileMenu = ({ isOpen, setIsOpen }: MobileMenuProps) => {
           <div className="relative h-full bg-background/95 backdrop-blur-lg">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-border/20">
-              <h2 className="text-xl font-space font-semibold text-primary">
+              <h2 className="text-xl font-inter font-semibold text-primary">
                 Menu
               </h2>
             </div>
