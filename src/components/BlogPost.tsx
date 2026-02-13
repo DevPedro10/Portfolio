@@ -54,9 +54,9 @@ export const BlogPost = ({ article }: BlogPostProps) => {
 
             <div className="flex justify-center py-12">
                 <div className="max-w-2xl px-6 w-full">
-                    <article>
+                    <article className="font-sourceserif">
                         <header className="mb-12">
-                            <h1 className="font-sourceserif text-2xl md:text-3xl font-bold mb-6 text-foreground">
+                            <h1 className="font-sourceserif font-normal text-2xl md:text-3xl font-bold mb-6 text-foreground">
                                 {article.title}
                             </h1>
 
