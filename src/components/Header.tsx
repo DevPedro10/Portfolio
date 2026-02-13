@@ -63,13 +63,12 @@ export const Header = () => {
   return (
     <header className="h-full">
       <nav
-        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
+        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
             ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
             : "py-6"
-        }`}
+          }`}
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-3 items-center w-full">
             <div className="flex items-center">
               <Link to="/" className="flex items-center">
@@ -170,9 +169,8 @@ export const Header = () => {
 
       {/* Spacer para compensar altura fixa do nav */}
       <div
-        className={`${
-          isScrolled ? "h-[72px]" : "h-[96px]"
-        } transition-all duration-500`}
+        className={`${isScrolled ? "h-[72px]" : "h-[96px]"
+          } transition-all duration-500`}
       />
     </header>
   );
