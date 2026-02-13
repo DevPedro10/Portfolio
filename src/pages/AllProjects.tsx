@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { projects } from "@/content/projects";
 
 export const AllProjects = () => {
   const featuredProjects = projects.filter((project) => project.isHighlighted);
