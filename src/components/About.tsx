@@ -137,8 +137,8 @@ export const About = () => {
                             key={index}
                             onClick={() => setCurrentExperienceIndex(index)}
                             className={`w-2 h-2 rounded-full transition-all ${index === currentExperienceIndex
-                                ? "bg-primary w-6"
-                                : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                              ? "bg-primary w-6"
+                              : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                               }`}
                             aria-label={`Ir para experiência ${index + 1}`}
                           />
