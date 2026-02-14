@@ -8,7 +8,7 @@ export const PracticalTestsCallToAction = () => {
 
   return (
     <section className="py-16 px-6">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto sm:max-w-4xl px-4 sm:px-6">
         <div className="bg-card/30 border border-border/20 rounded-xl p-8 md:p-12 text-center backdrop-blur-sm">
           <div className="flex items-center justify-center mb-6">
             <div className="p-4 bg-primary/10 rounded-full">

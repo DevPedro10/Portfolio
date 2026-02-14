@@ -10,7 +10,7 @@ export const AllProjects = () => {
 
   return (
     <div className="min-h-screen py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto sm:max-w-6xl px-4 sm:px-6">
         <div className="mb-12">
           <Link
             to="/"
