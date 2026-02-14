@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { BlogHeader } from "./BlogHeader";
+import { MobileBottomNav } from "./MobileBottomNav";
 import { Footer } from "./Footer";
 import { BlogNewsletter } from "./BlogNewsletter";
 import { useEffect, useState } from "react";
@@ -55,8 +56,8 @@ export const Blog = () => {
   return (
     <>
       <BlogHeader />
-      <div className="min-h-screen py-0 sm:py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+      <div className="min-h-screen py-0 sm:py-20 px-0 sm:px-6">
+        <div className="container mx-auto sm:max-w-6xl px-4 sm:px-0">
           <div className="flex items-center justify-between mb-6">
             <p className="text-sm text-muted-foreground">
               {articles.length} artigos publicados
@@ -116,7 +117,7 @@ export const Blog = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => navigate(`/blog/${article.slug}`)}
-                    className="mt-auto border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300"
+                    className="mt-auto border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300 w-max"
                   >
                     Ler artigo
                   </Button>
@@ -132,10 +133,11 @@ export const Blog = () => {
           )}
         </div>
 
-        <div className="mt-16 text-center w-full">
+        <div className="mb-10 p-3 text-center w-full">
           <BlogNewsletter />
         </div>
       </div>
+      <MobileBottomNav />
       <Footer />
     </>
   );

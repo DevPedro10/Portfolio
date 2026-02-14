@@ -74,7 +74,7 @@ export default function BlogSearchInput() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => searchQuery && setShowResults(true)}
-          className="w-full pl-10 pr-10 py-2 bg-background border border-input rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background transition-all"
+          className="w-full pl-10 pr-10 py-2 bg-background border-2 border-neutral-400 dark:border-neutral-700 focus:border-neutral-500 dark:focus:border-neutral-600 rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none"
         />
         {searchQuery && (
           <button
@@ -88,7 +88,7 @@ export default function BlogSearchInput() {
 
       {/* Resultados da Busca */}
       {showResults && (
-        <div className="absolute top-full mt-2 w-full bg-popover border border-border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full mt-2 w-full bg-popover rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           {isSearching ? (
             <div className="p-4 text-center text-muted-foreground">
               Buscando...
@@ -103,7 +103,7 @@ export default function BlogSearchInput() {
                 <button
                   key={article.id}
                   onClick={() => handleArticleClick(article)}
-                  className="w-full text-left px-4 py-3 hover:bg-accent hover:text-accent-foreground transition-colors border-t border-border first:border-t-0"
+                  className="w-full text-left px-4 py-3 hover:text-accent-foreground transition-colors border-t border-border first:border-t-0"
                 >
                   <h3 className="font-medium text-foreground mb-1">
                     {article.title}
