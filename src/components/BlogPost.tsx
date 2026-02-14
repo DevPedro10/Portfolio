@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 import { type Article } from "@/lib/markdown";
 import { BlogHeader } from "./BlogHeader";
+import { MobileBottomNav } from "./MobileBottomNav";
 import { TableOfContents } from "./TableOfContents";
 import ReactMarkdown from "react-markdown";
 import { Footer } from "./Footer";
@@ -52,11 +53,11 @@ export const BlogPost = ({ article }: BlogPostProps) => {
         <div className="min-h-screen" >
             <BlogHeader />
 
-            <div className="flex justify-center py-12">
-                <div className="max-w-2xl px-6 w-full">
+            <div className="flex justify-center py-8 sm:py-12">
+                <div className="max-w-2xl px-4 sm:px-6 w-full">
                     <article className="font-sourceserif">
                         <header className="mb-12">
-                            <h1 className="font-sourceserif font-normal text-2xl md:text-3xl font-bold mb-6 text-foreground">
+                            <h1 className="font-sourceserif font-normal text-3xl md:text-4xl font-bold mb-6 text-foreground">
                                 {article.title}
                             </h1>
 
@@ -86,7 +87,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                             */}
                         </header>
 
-                        <div style={{ color: 'var(--foreground)', fontSize: '15px' }}>
+                        <div style={{ color: 'var(--foreground)', fontSize: '18px' }}>
                             <ReactMarkdown
                                 components={{
                                     h2: ({ node, children, ...props }) => (
@@ -95,7 +96,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                             style={{
                                                 fontFamily: 'Source Serif 4, serif',
                                                 fontWeight: 'bold',
-                                                fontSize: '24px',
+                                                fontSize: '28px',
                                                 marginTop: '40px',
                                                 marginBottom: '24px',
                                                 paddingBottom: '12px',
@@ -113,7 +114,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                             style={{
                                                 fontFamily: 'Source Serif 4, serif',
                                                 fontWeight: 'bold',
-                                                fontSize: '20px',
+                                                fontSize: '24px',
                                                 marginTop: '32px',
                                                 marginBottom: '16px',
                                                 color: 'currentColor',
@@ -125,7 +126,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
                                     ),
                                     p: ({ node, ...props }) => (
                                         <p style={{
-                                            fontSize: '16px',
+                                            fontSize: '18px',
                                             fontFamily: 'Source Serif 4, serif',
                                             color: 'currentColor', lineHeight: '1.625', marginBottom: '24px'
                                         }} {...props} />
@@ -220,6 +221,7 @@ export const BlogPost = ({ article }: BlogPostProps) => {
             </div>
 
             <TableOfContents headings={headings} />
+            <MobileBottomNav />
             <Footer />
         </div >
     );
