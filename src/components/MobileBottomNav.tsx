@@ -59,7 +59,7 @@ export const MobileBottomNav = () => {
   return (
     <>
       <div className="md:hidden fixed bottom-[-3px] left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-background/95 backdrop-blur-lg border-2 border-border/40 px-6 py-4 shadow-2xl">
+        <div className="bg-background/95 backdrop-blur-lg border-t-2 sm:border-2 border-border/40 px-6 py-4 shadow-2xl">
           <div className="flex items-center space-x-8">
             {navItems.map((item, index) => {
               const Icon = item.icon;
@@ -81,7 +81,6 @@ export const MobileBottomNav = () => {
         </div>
       </div>
 
-      {/* MobileMenu integrado */}
       <MobileMenu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
     </>
   );

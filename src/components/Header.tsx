@@ -64,11 +64,11 @@ export const Header = () => {
     <header className="h-full">
       <nav
         className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
-            : "py-6"
+          ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
+          : "py-6"
           }`}
       >
-        <div className="container mx-auto max-w-6xl px-6">
+        <div className="container mx-auto sm:max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-3 items-center w-full">
             <div className="flex items-center">
               <Link to="/" className="flex items-center">

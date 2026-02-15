@@ -26,16 +26,10 @@ export const Home = () => {
   return (
     <section
       id="hero"
-      className="translate-y-[-80px] sm:translate-y-[0px] min-h-screen flex items-center justify-center relative"
-    >
-      {/* Subtle background elements */}
-      <div className="absolute top-32 left-16 w-24 h-24 bg-primary/5 rounded-full blur-xl animate-float"></div>
-      <div
-        className="absolute bottom-32 right-16 w-32 h-32 bg-accent/5 rounded-full blur-xl animate-float"
-        style={{ animationDelay: "3s" }}
-      ></div>
+      className="flex items-center justify-center pt-24 sm:py-32 relative"    >
 
-      <div className="container mx-auto px-6 z-10">
+
+      <div className="container mx-auto px-4 sm:px-6 z-10">
         <SlideIn direction="up" duration={0.5}>
           <div
             className="text-center space-y-12 max-w-4xl mx-auto"

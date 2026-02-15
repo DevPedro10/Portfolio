@@ -131,7 +131,7 @@ export const PracticalTests = () => {
 
   return (
     <div className="min-h-screen py-0 sm:py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto sm:max-w-6xl px-4 sm:px-6">
         <div className="mb-12">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-inter font-light mb-6">

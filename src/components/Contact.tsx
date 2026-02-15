@@ -54,7 +54,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto sm:max-w-6xl px-4 sm:px-6">
         <FadeInUp duration={0.7}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-inter font-light mb-6">
