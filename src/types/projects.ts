@@ -5,6 +5,6 @@ export interface ProjectInterface {
   technologies: string[];
   image_url: string;
   github: string;
-  live: string;
+  live?: string;
   isHighlighted?: boolean;
 }
