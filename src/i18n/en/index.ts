@@ -5,8 +5,8 @@ import { experienceSection, experience } from "./experience";
 import { skills } from "./skills";
 import { projects } from "./projects";
 import { contact } from "./contact";
-import { footer } from "./footer";
 import { practicalTests } from "./practicalTests";
+import { footer } from "./footer";
 
 export const en = {
     nav: navigation,
