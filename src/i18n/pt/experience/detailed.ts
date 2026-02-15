@@ -1,48 +1,34 @@
 export const experience = {
   tokio: {
     jobTitle: "Desenvolvedor Java",
-    company: "Tokio Marine Seguradora",
+    company: "Wayon IT | Tokio Marine Seguradora",
     period: "Atual",
     description:
-      "Trabalho diretamente no core da aplicação, implementando funcionalidades críticas e garantindo a escalabilidade e a performance do sistema. Minhas responsabilidades incluem otimizar e desenvolver APIs.",
+      "Aualmente na Wayon IT, alocado na Tokio Marine Seguradora, onde atuo no desenvolvimento de sistemas para o setor de seguros utilizando tecnologias web e móveis como JavaScript, TypeScript, Vue, Java, Spring Boot e bancos de dados Oracle SQL e MongoDB.",
     technologies: [
       "Spring Boot",
       "RabbitMQ",
-      "React.js",
+      "Vue",
       "Oracle",
       "MongoDB",
-      "Bamboo CI/CD",
-      "Kubernetes",
-      "OCI",
-      "AWS",
-    ],
-    highlights: [
-      "Desenvolvimento core da aplicação com funcionalidades críticas",
-      "Otimização e desenvolvimento de APIs",
-      "Otimização do consumo de memória",
-      "Integração de redes sociais (Facebook, WhatsApp, Instagram, Telegram)",
-      "Gerenciamento de infraestrutura Kubernetes e cloud",
-    ],
+      "GitLab",
+      "JSP (Java Server Pages)",
+    ]
   },
   plusoft: {
     jobTitle: "Desenvolvedor Full Stack",
     company: "Plusoft",
     period: "2022 - 2025",
     description:
-      "Criação e manutenção de fluxos backend para chatbot, integrando APIs internas e externas para melhorar a experiência do usuário. Também atuei na melhoria da interface visual do bot, utilizando Groovy no backend e JavaScript no frontend.",
+      "Atuei no desenvolvimento e evolução de APIs e sistemas em Java com Spring dentro de uma plataforma de Inteligência Artificial, integrando clientes de redes sociais para atendimento automatizado via bots. Também colaborei com deploys e gestão de bancos de dados, garantindo alta disponibilidade e performance.",
     technologies: [
-      "Groovy",
-      "JavaScript",
-      "Backend",
-      "Frontend",
-      "Integração de APIs",
-    ],
-    highlights: [
-      "Desenvolvimento de fluxos backend para chatbot",
-      "Integração de APIs (internas e externas)",
-      "Melhorias na interface visual",
-      "Desenvolvimento Full Stack",
-    ],
+      "Java (Spring Framework)",
+      "Kubernetes (OCI)",
+      "RabbitMQ",
+      "Reddit",
+      "MongoDB",
+      "React.js (TypeScript)"
+    ]
   },
 } as const;
 

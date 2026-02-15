@@ -1,12 +1,10 @@
 export const about = {
     title: "About Me",
-    subtitle:
-        "Full Stack Developer with experience in React and Java, focused on creating efficient and scalable applications",
     myJourney: "My Journey",
     description1:
-        "Specialized in Full Stack development, I work mainly with React on the frontend and Java on the backend. I have a passion for creating elegant and functional solutions that meet real user needs.",
+        "I work within the Java and React ecosystem, with experience in Vue. Currently allocated at Tokio Marine Seguradora as a Java Developer, focusing on building systems for the insurance sector.",
     description2:
-        "My focus is on writing clean code, maintaining good development practices and always seeking the best user experience. I believe that technology should simplify and improve people's lives.",
+        "Outside the corporate environment, I develop open-source projects such as ShipShort, where I explore software architecture, messaging, and NoSQL databases.",
     mainTech: "Main Technologies:",
     experience: "Experience",
     education: "Education",
