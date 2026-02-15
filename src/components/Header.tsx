@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
@@ -19,6 +19,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +30,22 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Quando há um hash na URL, fazer scroll para a seção
+    if (location.hash) {
+      const sectionId = location.hash.replace("#", "");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+    }
+  }, [location.hash]);
+
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/") {
-      window.location.href = `/#${sectionId}`;
+      navigate(`/#${sectionId}`);
       return;
     }
 
