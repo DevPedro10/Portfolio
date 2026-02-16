@@ -1,41 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natã Pedro</title>
+    <meta
+      name="description"
+      content="Portfólio de Natã Pedro - Desenvolvedor Full Stack"
+    />
+    <meta name="author" content="Natã Pedro" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Natã Pedro</title>
-  <meta name="description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
-  <meta name="author" content="Natã Pedro" />
+    <meta property="og:title" content="Natã Pedro - Desenvolvedor Full Stack" />
+    <meta
+      property="og:description"
+      content="Portfólio de Natã Pedro - Desenvolvedor Full Stack"
+    />
+    <meta property="og:type" content="website" />
 
-  <meta property="og:title" content="Natã Pedro - Desenvolvedor Full Stack" />
-  <meta property="og:description" content="Portfólio de Natã Pedro - Desenvolvedor Full Stack" />
-  <meta property="og:type" content="website" />
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/png"
+      href="./favicon/light/favicon-32x32.png"
+    />
+    <script type="module" crossorigin src="/Portfolio/assets/index-CoNF5xDd.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BS14gJAl.css">
+  </head>
 
-  <link id="favicon" rel="icon" type="image/png" href="/Portfolio/favicon/light/favicon-32x32.png" />
-  <script type="module" crossorigin src="/Portfolio/assets/index-CoNF5xDd.js"></script>
-  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BS14gJAl.css">
-</head>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root"></div>
+    <script>
+      const html = document.documentElement;
+      const favicon = document.getElementById("favicon");
 
-  <script>
-    const html = document.documentElement;
-    const favicon = document.getElementById('favicon');
+      function updateFavicon() {
+        const isDark = html.classList.contains("dark");
+        favicon.href = isDark
+          ? "/favicon/dark/favicon-32x32.png"
+          : "/favicon/light/favicon-32x32.png";
+      }
 
-    function updateFavicon() {
-      const isDark = html.classList.contains('dark');
-      favicon.href = isDark
-        ? '/favicon/dark/favicon-32x32.png'
-        : '/favicon/light/favicon-32x32.png';
-    }
+      updateFavicon();
 
-    updateFavicon();
-
-    const observer = new MutationObserver(updateFavicon);
-    observer.observe(html, { attributes: true, attributeFilter: ['class'] });
-  </script>
-</body>
-
+      const observer = new MutationObserver(updateFavicon);
+      observer.observe(html, { attributes: true, attributeFilter: ["class"] });
+    </script>
+  </body>
 </html>
