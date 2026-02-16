@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState } from "react";
-import { MobileMenu } from "@/components/MobileMenu";
+import { MobileMenu } from "@/components/shared/MobileMenu";
 
 export const MobileBottomNav = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { loadArticleBySlug, type Article } from "@/lib/markdown";
-import { BlogPost } from "@/components/BlogPost";
+import { BlogPost } from "@/components/blog/BlogPost";
 
 export const BlogPostPage = () => {
     const { slug } = useParams();

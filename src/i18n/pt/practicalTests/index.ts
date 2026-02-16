@@ -18,8 +18,8 @@ export const practicalTests = {
     liveDemo: "Ver Demo",
     viewCode: "Ver Código",
     backToHome: "Voltar ao início",
-    interestedTitle: "Interessado na minha abordagem?",
+    interestedTitle: "Vamos conversar",
     interestedDescription:
-        "Estes testes práticos demonstram minha metodologia de resolução de problemas e habilidades técnicas. Cada desafio foi concluído dentro do prazo estabelecido, mantendo a qualidade do código e as melhores práticas.",
+        "Estou disponível para falar sobre oportunidades, projetos ou qualquer dúvida.",
     discussProject: "Enviar mensagem",
 } as const;

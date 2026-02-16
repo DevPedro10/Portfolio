@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 import { type Article } from "@/lib/markdown";
 import { BlogHeader } from "./BlogHeader";
-import { MobileBottomNav } from "./MobileBottomNav";
+import { MobileBottomNav } from "@/components/shared/MobileBottomNav";
 import { TableOfContents } from "./TableOfContents";
 import ReactMarkdown from "react-markdown";
-import { Footer } from "./Footer";
+import { Footer } from "@/components/footer/Footer";
 
 
 interface BlogPostProps {

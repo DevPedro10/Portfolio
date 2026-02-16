@@ -18,8 +18,7 @@ export const practicalTests = {
     liveDemo: "Live Demo",
     viewCode: "View Code",
     backToHome: "Back to home",
-    interestedTitle: "Interested in my approach?",
-    interestedDescription:
-        "These practical tests showcase my problem-solving methodology and technical skills. Each challenge was completed within the given timeframe while maintaining code quality and best practices.",
+    interestedTitle: "Let’s build something meaningful together.",
+    interestedDescription: "I’m open to discussing projects, roles, and collaborations.",
     discussProject: "Send a message",
 } as const;
