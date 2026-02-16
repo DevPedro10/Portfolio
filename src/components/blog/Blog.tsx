@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { BlogHeader } from "./BlogHeader";
-import { MobileBottomNav } from "./MobileBottomNav";
-import { Footer } from "./Footer";
 import { BlogNewsletter } from "./BlogNewsletter";
 import { useEffect, useState } from "react";
 import { loadArticles, type Article } from "@/lib/markdown";
+import { MobileBottomNav } from "../shared/MobileBottomNav";
+import { Footer } from "../footer/Footer";
 
 export const Blog = () => {
   const navigate = useNavigate();

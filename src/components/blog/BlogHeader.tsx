@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import BlogSearchInput from "./BlogSearchInput";
 import { Home } from "lucide-react";
 export const BlogHeader = () => {

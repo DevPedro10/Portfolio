@@ -2,17 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { LanguageToggle } from "@/components/LanguageToggle";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
+import { ThemeToggle } from "@/components/shared/ThemeToggle";
+import { LanguageToggle } from "@/components/shared/LanguageToggle";
+
 import { FlaskConical, Notebook } from "lucide-react";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "../ui/navigation-menu";
 export const Header = () => {
   const curriculum =
     "https://xqwpehgbydwembomdtlg.supabase.co/storage/v1/object/sign/Portfolio%20Assets/Desenvolvedor%20Java.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYWE4MTAzOS05ZjUyLTQ3ZWItYmM4MC05NWNhMGRiYTdiNTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8gQXNzZXRzL0Rlc2Vudm9sdmVkb3IgSmF2YS5wZGYiLCJpYXQiOjE3NzA3NzQzNTksImV4cCI6MjA4NjEzNDM1OX0.0ld2fbQ_QiKTrdUwSeRPNBPgxeWdIvDMney3iOftJBI";
