@@ -59,7 +59,7 @@ export default function BlogSearchInput() {
 
   const handleArticleClick = (article: Article) => {
     // Navegar para o artigo
-    navigate(`/blog/${article.slug}`);
+    navigate(`/blog/${article.slug}`, { replace: true });
     clearSearch();
   };
 

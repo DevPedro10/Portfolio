@@ -116,7 +116,9 @@ export const Blog = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => navigate(`/blog/${article.slug}`)}
+                    onClick={() =>
+                      navigate(`/blog/${article.slug}`, { replace: true })
+                    }
                     className="mt-auto border-border/50 hover:border-border hover:bg-secondary/30 transition-all duration-300 w-max"
                   >
                     Ler artigo
