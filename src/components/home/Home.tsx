@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, TestTube } from "lucide-react";
+import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   FadeInUp,
@@ -23,12 +24,20 @@ export const Home = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash === "contact") {
+      setTimeout(() => {
+        scrollToContact();
+      }, 100);
+    }
+  }, []);
+
   return (
     <section
       id="hero"
-      className="flex items-center justify-center pt-24 sm:py-32 relative"    >
-
-
+      className="flex items-center justify-center pt-24 sm:py-32 relative sm:h-screen h-full"
+    >
       <div className="container mx-auto px-4 sm:px-6 z-10">
         <SlideIn direction="up" duration={0.5}>
           <div
