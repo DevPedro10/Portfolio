@@ -5,7 +5,7 @@ slug: "guia-desenvolvimento-web"
 excerpt: "Aprenda as melhores práticas e ferramentas para desenvolvimento web em 2026"
 description: "Um guia abrangente sobre as tendências, ferramentas e melhores práticas do desenvolvimento web moderno"
 date: "2026-02-13"
-author: "Predo"
+author: "Natã Pedro"
 tags: ["web", "desenvolvimento", "tutorial"]
 ---
 
@@ -20,12 +20,14 @@ O desenvolvimento web evoluiu significativamente nos últimos anos, e é importa
 React continua sendo uma das bibliotecas mais populares para construir interfaces de usuário. Quando combinado com TypeScript, oferece uma experiência de desenvolvimento mais segura e eficiente.
 
 ### Por que React?
+
 - Componentes reutilizáveis
 - Virtual DOM para melhor performance
 - Grande comunidade e ecossistema
 - Fácil curva de aprendizado
 
 ### TypeScript para Tipo Segurança
+
 TypeScript adiciona um sistema de tipos ao JavaScript, ajudando a prevenir erros em tempo de desenvolvimento. Isso resulta em código mais seguro e mantível.
 
 ```typescript
@@ -45,6 +47,7 @@ const getUserInfo = (user: User): string => {
 Vite revolucionou a forma como fazemos build de aplicações web. Com seu servidor de desenvolvimento rápido e build otimizado, é a escolha ideal para muitos projetos.
 
 ### Vite vs Webpack
+
 - Vite oferece recarregamento instantâneo (HMR)
 - Webpack é mais configurável e maduro
 - Vite é ideal para projetos menores
@@ -53,16 +56,16 @@ Vite revolucionou a forma como fazemos build de aplicações web. Com seu servid
 ### Configuração do Vite
 
 ```typescript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
-  }
-})
+    open: true,
+  },
+});
 ```
 
 ## 3. Estilização com Tailwind CSS
@@ -70,14 +73,18 @@ export default defineConfig({
 Tailwind CSS revolucionou a forma como estilizamos nossas aplicações web. Com abordagem utility-first, é possível construir designs personalizados sem sair do HTML.
 
 ### Vantagens do Tailwind
+
 - Desenvolvimento mais rápido
 - Consistência visual
 - Arquivo CSS menor com PurgeCSS
 - Excelente documentação
 
 ### Exemplo de Estilo
+
 ```html
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+<button
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+>
   Clique aqui
 </button>
 ```
@@ -87,6 +94,7 @@ Tailwind CSS revolucionou a forma como estilizamos nossas aplicações web. Com 
 A Context API do React oferece uma forma elegante de gerenciar estado global sem necessidade de bibliotecas externas complexas.
 
 ### Quando usar Context API
+
 - Estado global simples
 - Aplicações pequenas a médias
 - Temas e configurações globais
@@ -95,10 +103,10 @@ A Context API do React oferece uma forma elegante de gerenciar estado global sem
 ### Exemplo de Context
 
 ```typescript
-import { createContext, useContext, ReactNode } from 'react';
+import { createContext, useContext, ReactNode } from "react";
 
 interface ThemeContextType {
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   toggleTheme: () => void;
 }
 
@@ -107,7 +115,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme deve ser usado dentro de ThemeProvider');
+    throw new Error("useTheme deve ser usado dentro de ThemeProvider");
   }
   return context;
 };
@@ -118,11 +126,13 @@ export const useTheme = () => {
 A performance é crucial para a experiência do usuário. Aqui estão as principais estratégias para otimizar sua aplicação web.
 
 ### Métricas Importantes
+
 - **FCP** (First Contentful Paint): Tempo até o primeiro conteúdo pintar
 - **LCP** (Largest Contentful Paint): Tempo até o maior conteúdo pintar
 - **CLS** (Cumulative Layout Shift): Mudanças de layout não esperadas
 
 ### Técnicas de Otimização
+
 - Code splitting e lazy loading
 - Compressão de imagens
 - Minificação de CSS e JavaScript
