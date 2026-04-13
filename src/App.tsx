@@ -78,7 +78,7 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
+            <BrowserRouter basename="/Portfolio">
               <ScrollToTop />
               <AppContent />
             </BrowserRouter>

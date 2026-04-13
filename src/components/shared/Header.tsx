@@ -4,12 +4,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { LanguageToggle } from "@/components/shared/LanguageToggle";
+import curriculum from "@/../public/files/Desenvolvedor Java - 2026.pdf";
 
 import { FlaskConical, Notebook } from "lucide-react";
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "../ui/navigation-menu";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "../ui/navigation-menu";
 export const Header = () => {
-  const curriculum =
-    "https://xqwpehgbydwembomdtlg.supabase.co/storage/v1/object/sign/Portfolio%20Assets/Desenvolvedor%20Java.pdf?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iYWE4MTAzOS05ZjUyLTQ3ZWItYmM4MC05NWNhMGRiYTdiNTkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8gQXNzZXRzL0Rlc2Vudm9sdmVkb3IgSmF2YS5wZGYiLCJpYXQiOjE3NzA3NzQzNTksImV4cCI6MjA4NjEzNDM1OX0.0ld2fbQ_QiKTrdUwSeRPNBPgxeWdIvDMney3iOftJBI";
   const [isScrolled, setIsScrolled] = useState(false);
   const { t } = useLanguage();
   const location = useLocation();
@@ -39,7 +45,7 @@ export const Header = () => {
 
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== "/") {
-      navigate(`/#${sectionId}`);
+      navigate(`/#${sectionId}`, { replace: true });
       return;
     }
 
@@ -71,10 +77,11 @@ export const Header = () => {
   return (
     <header className="h-full">
       <nav
-        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
-          : "py-6"
-          }`}
+        className={`sm:block hidden fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? "bg-background/80 backdrop-blur-md border-b border-border/20 py-4"
+            : "py-6"
+        }`}
       >
         <div className="container mx-auto sm:max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-3 items-center w-full">
@@ -125,8 +132,8 @@ export const Header = () => {
                             const Icon = item.icon;
                             return (
                               <NavigationMenuLink asChild key={item.label}>
-                                <a
-                                  href={item.path}
+                                <Link
+                                  to={item.path}
                                   className="flex items-center gap-2 py-3 px-2 text-sm text-muted-foreground 
                                 hover:text-primary 
                                 transition-colors duration-200 
@@ -143,12 +150,7 @@ export const Header = () => {
                                     />
                                   )}
                                   {item.label}
-                                  {/* {!item.available && (
-                                    <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                                      DEV
-                                    </span>
-                                  )} */}
-                                </a>
+                                </Link>
                               </NavigationMenuLink>
                             );
                           })}
@@ -177,8 +179,9 @@ export const Header = () => {
 
       {/* Spacer para compensar altura fixa do nav */}
       <div
-        className={`${isScrolled ? "h-[72px]" : "h-[96px]"
-          } transition-all duration-500`}
+        className={`${
+          isScrolled ? "h-[72px]" : "h-[96px]"
+        } transition-all duration-500`}
       />
     </header>
   );

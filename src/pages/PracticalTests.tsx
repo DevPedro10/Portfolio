@@ -7,7 +7,6 @@ import { practicalTests } from "@/content/practicalTests";
 export const PracticalTests = () => {
   const { t } = useLanguage();
 
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("pt-BR", {
@@ -87,7 +86,11 @@ export const PracticalTests = () => {
 
                 <div className="flex space-x-4">
                   {test.demoUrl && (
-                    <a href={test.demoUrl} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={test.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button
                         size="sm"
                         variant="outline"
@@ -98,7 +101,11 @@ export const PracticalTests = () => {
                       </Button>
                     </a>
                   )}
-                  <a href={test.codeUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={test.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       size="sm"
                       variant="outline"
@@ -123,7 +130,7 @@ export const PracticalTests = () => {
             <p className="text-muted-foreground mb-6">
               {t.practicalTests.interestedDescription}
             </p>
-            <Link to="/contact">
+            <Link to="/#contact">
               <Button
                 variant="outline"
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
